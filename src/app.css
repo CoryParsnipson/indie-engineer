@@ -1,3 +1,5 @@
+@import url('./lib/styles/prism-coldark-dark.css');
+
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
