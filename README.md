@@ -1,40 +1,47 @@
-# create-svelte
+# Cory's Blog
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a sveltekit + MDsveX blog.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Creating a svelte kit project
 
 ```bash
-# create a new project in the current directory
-npm init svelte@next
+npm init svelte@next app
 
-# create a new project in my-app
-npm init svelte@next my-app
+mv app corys-blog
+cd corys-blog
+
+npm install
+npm run dev # or npm run dev:host
+
+git init && git add -A && git commit -m "Initial commit"
 ```
 
-> Note: the `@next` is temporary
+## Adding tailwindcss and MDsveX
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Do this before modifying the project.
 
 ```bash
-npm run dev
+npx svelte-add@latest tailwindcss --forms --typography
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm install
+git add -A && git commit -m "Add tailwindcss"
 ```
-
-## Building
-
-To create a production version of your app:
 
 ```bash
-npm run build
+npx svelte-add@latest mdsvex
+
+npm install
+git add -A && git commit -m "Add mdsvex"
 ```
 
-You can preview the production build with `npm run preview`.
+## Deploy to Heroku
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+TBD
+
+## Generate site API keys and Heroku key access
+
+TBD
+
+## Set up automated email hook
+
+TBD
