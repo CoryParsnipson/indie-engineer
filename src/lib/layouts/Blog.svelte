@@ -13,8 +13,8 @@
   let title_slug = slugify(title);
 </script>
 
-<div class="flex justify-center gap-6 pt-8 pb-4" class:flex-row-reverse={sidebar_on_left}>
-  <main class="flex-initial max-w-[700px] w-[700px]">
+<div class="flex justify-center gap-6" class:flex-row-reverse={sidebar_on_left}>
+  <main class="flex-initial w-full lg:w-2/3 bg-green-300">
     <h6>{date}</h6>
     <h1 id="{title_slug}">{title}
       <a aria-hidden="true" tabindex="-1" class="align-middle" href="#{title_slug}">
@@ -28,4 +28,13 @@
 
     <slot />
   </main>
+
+  <sidebar class="w-1/3 hidden lg:block bg-purple-300">
+    <div
+      class="fixed pl-4 border-slate-400 bg-cyan-400"
+      class:border-l-4={!sidebar_on_left}
+      class:border-r-4={sidebar_on_left}
+    >
+    </div>
+  </sidebar>
 </div>
