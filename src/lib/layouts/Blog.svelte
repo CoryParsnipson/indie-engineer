@@ -38,3 +38,186 @@
     </div>
   </sidebar>
 </div>
+
+<style>
+  /* markdown styles */
+
+  /* headers */
+  /* ------------------------------------------------------------------------ */
+  :global(main h1),
+  :global(main h2),
+  :global(main h3),
+  :global(main h4),
+  :global(main h5),
+  :global(main h6) {
+    @apply scroll-mt-36; /* NOTE: this is hardcoded, but the value should be dependent on header height */
+  }
+
+  :global(main h1) {
+    @apply text-4xl;
+    @apply font-bold;
+    @apply tracking-tighter;
+    @apply mt-2;
+    @apply mb-4;
+  }
+
+  :global(main h2) {
+    @apply text-3xl;
+    @apply font-bold;
+    @apply tracking-tight;
+    @apply mb-8;
+  }
+
+  :global(main h3) {
+    @apply text-2xl;
+    @apply font-bold;
+    @apply tracking-tight;
+    @apply mb-4;
+  }
+
+  :global(main h4) {
+    @apply text-xl;
+    @apply font-bold;
+  }
+
+  :global(main h5) {
+    @apply text-lg;
+    @apply font-bold;
+  }
+
+  :global(main h6) {
+    @apply text-base;
+    @apply font-bold;
+  }
+
+  /* rehype autolink header styles */
+  /* ------------------------------------------------------------------------ */
+  :global(main span[class*="icon-link"]) {
+    @apply min-w-[1.05rem];
+    @apply min-h-[1.05rem];
+    @apply inline-block;
+    @apply mx-2;
+    @apply my-1;
+  }
+
+  :global(main h1:hover span[class*="icon-link"]),
+  :global(main h2:hover span[class*="icon-link"]),
+  :global(main h3:hover span[class*="icon-link"]),
+  :global(main h4:hover span[class*="icon-link"]),
+  :global(main h5:hover span[class*="icon-link"]),
+  :global(main h6:hover span[class*="icon-link"]) {
+    @apply bg-[url('/icon-link.png')];
+    @apply bg-cover;
+  }
+
+  /* inline text */
+  /* ------------------------------------------------------------------------ */
+  :global(main) {
+    @apply font-serif;
+  }
+
+  :global(main p), :global(main em), :global(main strong) {
+    @apply text-xl;
+    @apply font-serif;
+    @apply mb-10;
+    @apply leading-loose;
+    letter-spacing: 0.015rem;
+  }
+
+  /* inline hyperlinks */
+  /* ------------------------------------------------------------------------ */
+  :global(main a[rel]) {
+    @apply text-xl;
+    @apply text-blue-700;
+    @apply font-serif;
+    @apply underline;
+    @apply py-1;
+    @apply px-0.5;
+  }
+
+  :global(main a[rel]:after) {
+    content: '';
+
+    @apply inline-block;
+    @apply align-baseline;
+    @apply min-w-[1.03rem];
+    @apply min-h-[1.03rem];
+    @apply bg-[url('/external-link.png')];
+    @apply bg-cover;
+    @apply ml-1;
+  }
+
+  :global(main a[rel]:hover) {
+    @apply bg-slate-200;
+  }
+
+  :global(main a[rel]:active) {
+    @apply text-red-700;
+  }
+
+  :global(main a[rel]:visited) {
+    @apply text-purple-700;
+  }
+
+  /* inline list styles */
+  /* ------------------------------------------------------------------------ */
+  :global(main ul) {
+    @apply list-disc;
+  }
+
+  :global(main ol) {
+    @apply list-decimal;
+  }
+
+  :global(main ul, main ol) {
+    @apply ml-6;
+    @apply list-outside;
+    @apply mb-12;
+  }
+
+  :global(main li) {
+    @apply text-xl;
+    @apply pl-4;
+    @apply mb-2;
+    @apply font-serif;
+  }
+
+  /* images */
+  /* ------------------------------------------------------------------------ */
+  :global(main img, main p img) {
+    @apply mx-auto;
+  }
+
+  :global(main > img) {
+    @apply mb-12;
+  }
+
+  :global(main figure) {
+    @apply mb-5;
+  }
+
+  :global(main figure figcaption) {
+    @apply font-serif;
+    @apply text-lg;
+    @apply italic;
+    @apply text-center;
+  }
+
+  /* code block */
+  /* ------------------------------------------------------------------------ */
+  :global(main pre span), :global(main code span) {
+    @apply font-mono;
+  }
+
+  :global(main pre), :global(main pre[class*="language-"]) {
+    @apply bg-slate-800;
+    @apply text-slate-200;
+    @apply rounded-2xl;
+    @apply p-6;
+    @apply my-3;
+  }
+
+  :global(main code[class*="language-"]) {
+    @apply inline-block;
+  }
+</style>
