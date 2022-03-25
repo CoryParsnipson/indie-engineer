@@ -5,6 +5,7 @@
 		"dev": "svelte-kit dev",
 		"dev:host": "svelte-kit dev --host",
 		"build": "svelte-kit build",
+		"start": "node build/index.js",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
 		"prepare": "svelte-kit sync",
@@ -17,6 +18,7 @@
 	"devDependencies": {
 		"@playwright/test": "^1.20.0",
 		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-node": "^1.0.0-next.73",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/forms": "^0.4.0",
 		"@tailwindcss/typography": "^0.5.0",
@@ -44,5 +46,9 @@
 		"rehype-slug": "^5.0.1",
 		"rehype-title-figure": "^0.1.1",
 		"remark-reading-time": "^2.0.1"
-	}
+	},
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  }
 }
