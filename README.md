@@ -1,4 +1,4 @@
-# Cory's Blog
+# Indie Engineer
 
 This is a sveltekit + MDsveX blog.
 
@@ -7,8 +7,8 @@ This is a sveltekit + MDsveX blog.
 ```bash
 npm init svelte@next app
 
-mv app corys-blog
-cd corys-blog
+mv app indie-engineer
+cd indie-engineer
 
 npm install
 npm run dev # or npm run dev:host
