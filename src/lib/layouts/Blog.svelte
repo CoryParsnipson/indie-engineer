@@ -1,29 +1,33 @@
 <script>
+  import Categories from '$lib/components/Categories.svelte';
+
   import { slugify } from '$lib/util/string';
 
   // frontmatter exports
   export let title;
   export let author;
   export let date;
-  export let summary;
   export let readingTime;
   export let categories = [];
 
   let sidebar_on_left = false;
   let title_slug = slugify(title);
+  let readable_date = new Date(date).toLocaleDateString('en-us', { dateStyle: "long" });
 </script>
 
 <div class="flex justify-center gap-6" class:flex-row-reverse={sidebar_on_left}>
   <main class="flex-initial w-full lg:w-2/3 bg-green-300">
-    <h6>{date}</h6>
+    <Categories {categories} />
     <h1 id="{title_slug}">{title}
       <a aria-hidden="true" tabindex="-1" class="align-middle" href="#{title_slug}">
         <span class="icon icon-link"></span>
       </a>
     </h1>
-    <p class="font-sans leading-normal text-lg mb-4">by {author}</p>
+
+    <h6 class="text-slate-500 my-4">{#if author}by {author} &nbsp;&nbsp;&#183;&nbsp;&nbsp; {/if}
+      {#if date}{readable_date} &nbsp;&nbsp;&#183;&nbsp;&nbsp; {/if}
+      {#if readingTime?.text}{readingTime.text}{/if}</h6>
     <div class="w-1/12 mb-5 border-t-4 border-zinc-600"></div>
-    <h5 class="text-slate-500 my-4">{readingTime.text}</h5>
     <div class="mb-8"></div>
 
     <slot />

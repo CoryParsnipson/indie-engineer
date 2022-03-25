@@ -8,7 +8,7 @@
 
     <div class="nav grow">
       <div class="flex gap-3 h-full items-stretch justify-end">
-        <p><a href="#">Blog</a></p>
+        <p><a href="/">Blog</a></p>
         <p><a href="#">About</a></p>
       </div>
     </div>
