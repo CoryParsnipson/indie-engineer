@@ -72,6 +72,15 @@ Swap out the adapter in `svelte.config.js`. This needs to be a node adapter and 
 ```
 git remote add heroku <heroku git repo url>
 ```
+## Set up Environment Variables and API keys
+
+Vite uses .env and .env.\* files to load environment variables.
+
+Required variables:
+
+* VITE\_API\_SECRET - see [3]
+* VITE\_SENDGRID\_API\_KEY - see [4]
+* VITE\_EMAIL\_SENDER - set this to your email address (appears in the "from" category of emails)
 
 ## Set up automated email hook
 
@@ -91,10 +100,20 @@ VITE_API_SECRET="<secret passphrase>"
 
 Don't forget to copy this to the heroku app config vars.
 
-TBD
+1. Install sendgrid package:
+
+```
+npm install @sendgrid/mail
+```
+
+Create a sendgrid api key and put it in the .env folder (see [4]). This requires a valid sendgrid account.
+
+1. Modify tsconfig.js to allow for importing sendgrid ESM style. See [5].
 
 ## References
 
 1. <https://dev.to/nostro/deploying-to-heroku-with-sveltekit-3350>
 1. <https://devcenter.heroku.com/articles/app-webhooks>
 1. <https://www.worksighted.com/random-passphrase-generator/#passphrase-generator>
+1. <https://app.sendgrid.com/guide/integrate/langs/nodejs>
+1. <https://github.com/sendgrid/sendgrid-nodejs/issues/743>

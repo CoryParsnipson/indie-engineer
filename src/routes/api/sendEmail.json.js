@@ -1,4 +1,5 @@
 import { verify_request } from '$lib/util/auth';
+import { sendMail } from '$lib/services/sendgrid';
 
 export async function post({ request, url, params }) {
   try {
@@ -17,6 +18,11 @@ export async function post({ request, url, params }) {
     }
 
     // TODO: implement endpoint business logic
+
+    return {
+      status: 204,
+      data: "",
+    };
   } catch (error) {
     console.error(error);
   }

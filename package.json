@@ -42,6 +42,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sendgrid/mail": "^7.6.2",
 		"crypto-js": "^4.1.1",
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-slug": "^5.0.1",
