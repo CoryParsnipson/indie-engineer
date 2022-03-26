@@ -73,16 +73,28 @@ Swap out the adapter in `svelte.config.js`. This needs to be a node adapter and 
 git remote add heroku <heroku git repo url>
 ```
 
-1. Gather heroku API keys (see below section).
-
-## Generate site API keys and Heroku key access
-
-TBD
-
 ## Set up automated email hook
+
+Use heroku app web hooks [3].
+
+1. Create a new web hook using the tutorial. Use the api:build event. The payload url should use the sendEmail.json endpoint:
+
+```
+PayloadURL (https): https://indie-engineer-dev.herokuapp.com/api/sendEmail.json
+```
+
+1. Create a secret phrase to serve as the internal API key. [4] Put this in the .env file:
+
+```
+VITE_API_SECRET="<secret passphrase>"
+```
+
+Don't forget to copy this to the heroku app config vars.
 
 TBD
 
 ## References
 
 1. <https://dev.to/nostro/deploying-to-heroku-with-sveltekit-3350>
+1. <https://devcenter.heroku.com/articles/app-webhooks>
+1. <https://www.worksighted.com/random-passphrase-generator/#passphrase-generator>
