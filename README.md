@@ -78,10 +78,15 @@ Vite uses .env and .env.\* files to load environment variables.
 
 Required variables:
 
+* VITE\_INSTANCE - set this to "dev" or "prod" ("dev" will expose debug functionality. Do NOT use this in production)
 * VITE\_API\_SECRET - see [3]
 * VITE\_SENDGRID\_API\_KEY - see [4]
 * VITE\_SENDGRID\_SENDER - set this to your email address (appears in the "from" category of emails)
 * VITE\_SENDGRID\_LIST\_ID - see [6]
+
+Optional variables:
+
+* VITE\_SENDGRID\_MAX\_CONTACTS - set this to change amount of people who can go in the sendgrid 'dev' mailing list. Defaults to 10.
 
 ## Set up automated email hook
 
