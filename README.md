@@ -80,7 +80,8 @@ Required variables:
 
 * VITE\_API\_SECRET - see [3]
 * VITE\_SENDGRID\_API\_KEY - see [4]
-* VITE\_EMAIL\_SENDER - set this to your email address (appears in the "from" category of emails)
+* VITE\_SENDGRID\_SENDER - set this to your email address (appears in the "from" category of emails)
+* VITE\_SENDGRID\_LIST\_ID - see [6]
 
 ## Set up automated email hook
 
@@ -100,15 +101,18 @@ VITE_API_SECRET="<secret passphrase>"
 
 Don't forget to copy this to the heroku app config vars.
 
-1. Install sendgrid package:
+1. Install sendgrid packages:
 
 ```
 npm install @sendgrid/mail
+npm install @sendgrid/client
 ```
 
 Create a sendgrid api key and put it in the .env folder (see [4]). This requires a valid sendgrid account.
 
 1. Modify tsconfig.js to allow for importing sendgrid ESM style. See [5].
+
+1. Set the sendgrid mailing list ID for this website instance. For example, create a mailing list for the dev instance called "indie-engineer-dev". Add the ID of this list to the environment variables. Use [6] api call to get all existing list ids.
 
 ## References
 
@@ -117,3 +121,4 @@ Create a sendgrid api key and put it in the .env folder (see [4]). This requires
 1. <https://www.worksighted.com/random-passphrase-generator/#passphrase-generator>
 1. <https://app.sendgrid.com/guide/integrate/langs/nodejs>
 1. <https://github.com/sendgrid/sendgrid-nodejs/issues/743>
+1. <https://docs.sendgrid.com/api-reference/lists/get-all-lists>

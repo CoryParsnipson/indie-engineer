@@ -1,5 +1,4 @@
 import { verify_request } from '$lib/util/auth';
-import { sendMail } from '$lib/services/sendgrid';
 
 export async function post({ request, url, params }) {
   try {
