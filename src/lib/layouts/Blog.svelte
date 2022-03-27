@@ -1,5 +1,6 @@
 <script>
   import Categories from '$lib/components/Categories.svelte';
+  import MailSignupForm from '$lib/components/MailSignupForm.svelte';
 
   import { slugify } from '$lib/util/string';
 
@@ -31,6 +32,8 @@
     <div class="mb-8"></div>
 
     <slot />
+
+    <MailSignupForm />
   </main>
 
   <sidebar class="w-1/3 hidden lg:block bg-purple-300">
