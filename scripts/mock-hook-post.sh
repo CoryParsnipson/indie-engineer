@@ -10,7 +10,7 @@ cd "$parent_path"
 source ./../.env
 
 # change this to whichever oid you want; must be in heroku repo
-COMMIT=b98450368e1ff4760d9856f479d9c266afe4b200
+COMMIT=c9de32f693833c78252620f8e2c8049690569680
 
 DATA=$( jq -n -c \
   --arg commit ${COMMIT} \

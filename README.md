@@ -83,6 +83,8 @@ Required variables:
 * VITE\_SENDGRID\_API\_KEY - see [4]
 * VITE\_SENDGRID\_SENDER - set this to your email address (appears in the "from" category of emails)
 * VITE\_SENDGRID\_LIST\_ID - see [6]
+* VITE\_HEROKU\_REPO - set the heroku repo (git remote show heroku)
+* VITE\_HEROKU\_API\_TOKEN - retrieve your heroku api token (see [7])
 
 Optional variables:
 
@@ -127,3 +129,4 @@ Create a sendgrid api key and put it in the .env folder (see [4]). This requires
 1. <https://app.sendgrid.com/guide/integrate/langs/nodejs>
 1. <https://github.com/sendgrid/sendgrid-nodejs/issues/743>
 1. <https://docs.sendgrid.com/api-reference/lists/get-all-lists>
+1. <https://devcenter.heroku.com/articles/authentication>

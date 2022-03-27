@@ -1,3 +1,4 @@
+import { checkForNewBlogPost } from '$lib/util/git';
 import { verify_request } from '$lib/util/auth';
 
 export async function post({ request, url, params }) {
@@ -16,7 +17,12 @@ export async function post({ request, url, params }) {
       return { status: 200 };
     }
 
-    // TODO: implement endpoint business logic
+    let newBlogPost = await checkForNewBlogPost(data?.slug?.commit);
+    if (newBlogPost) {
+      console.log("New blog post detected: " + newBlogPost);
+
+      // TODO: implement endpoint business logic
+    }
 
     return {
       status: 204,
