@@ -44,7 +44,7 @@ export async function post({ request, url, params }) {
     }
 
     // write a new build tag so we know when to start look on the next webhook run
-    //writeBuildTagToRepo(); // UNCOMMENTME
+    writeBuildTagToRepo();
 
     return {
       status: 204,
