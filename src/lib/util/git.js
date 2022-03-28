@@ -56,6 +56,7 @@ async function getCommitOfLastBuildTag() {
   let tags = await git.listTags({ fs, dir });
   let buildTags = sortTagsByTime(tags);
 
+  let lastBuildCommit;
   if (!buildTags || buildTags.length == 0) {
     // if there are no build tags, use the first commit
     let commits = await git.log({fs, dir});
