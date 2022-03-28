@@ -17,6 +17,8 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.20.0",
+		"@sendgrid/client": "^7.6.2",
+		"@sendgrid/mail": "^7.6.2",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-node": "^1.0.0-next.73",
 		"@sveltejs/kit": "next",
@@ -46,8 +48,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sendgrid/client": "^7.6.2",
-		"@sendgrid/mail": "^7.6.2",
 		"base-64": "^1.0.0",
 		"crypto-js": "^4.1.1",
 		"isomorphic-git": "^1.17.0",
