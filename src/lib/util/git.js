@@ -64,7 +64,6 @@ async function cloneHerokuRepo() {
     ref: 'main',
     // heroku needs basic HTTP authentication with blank string for username and heroku API token as password
     headers: { 'Authorization': "Basic " + Base64.stringify(Utf8.parse(':' + env.var.VITE_HEROKU_API_TOKEN)) },
-    singleBranch: true,
   });
 }
 
@@ -79,7 +78,8 @@ async function getCommitOfLastBuildTag() {
     lastBuildCommit = commits[commits.length - 1]; // the last entry in the commit array is earliest
   } else {
     // get commit of the latest tag (the last entry in the buildtags array is latest)
-    lastBuildCommit = await git.log({ fs, dir, depth: 1, ref: buildTags[buildTags.length - 1] });
+    let commits = await git.log({ fs, dir, depth: 1, ref: buildTags[buildTags.length - 1] });
+    lastBuildCommit = commits[0];
   }
 
   return lastBuildCommit;
