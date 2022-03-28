@@ -1,10 +1,12 @@
+import fs from 'fs';
 import sendgridMail from '@sendgrid/mail';
 import sendgridClient from '@sendgrid/client';
-
 import { env } from '$lib/util/env';
 
 sendgridMail.setApiKey(env.var.VITE_SENDGRID_API_KEY);
 sendgridClient.setApiKey(env.var.VITE_SENDGRID_API_KEY);
+
+let EMAIL_TEMPLATE_DIR = 'src/lib/email_templates';
 
 // send a request to the sendgrid API using the sendgridClient
 function sendRequest({ url, method, body, headers, queryParams } = {}) {
@@ -184,4 +186,40 @@ export function sendMail({ to, from, subject, text } = {}) {
   } catch (error) {
     console.error(error);
   }
+}
+
+export function generateCampaignTitle(frontmatter) {
+  let date_suffix = new Date().toISOString().split('T')[0];
+  return "[Post Notification " + date_suffix + "] " + frontmatter.title;
+}
+
+export function generateSubjectLine(frontmatter) {
+  return "[Indie Engineer] " + frontmatter.title;
+}
+
+function generateBlogPostURL(url, filepath, frontmatter) {
+  let filename = filepath.split('/');
+  filename = filename[filename.length - 1];
+  filename = filename.split('.md')[0];
+  return url + "/blog/" + filename;
+}
+
+function replaceTokens(html, data) {
+  let merged = html;
+  for (const [key, value] of Object.entries(data)) {
+    merged = merged.replace(new RegExp(`\\\$\\\{${key}\\\}`, 'g'), value);
+  };
+  return merged;
+}
+
+export function generateHTMLContent(url, filepath, frontmatter) {
+  let tokens = { ...frontmatter };
+
+  tokens.post_url = generateBlogPostURL(url, filepath, tokens);
+  tokens.readable_date = new Date(tokens.date).toLocaleDateString('en-us', { dateStyle: 'long' });
+
+  let email_html = fs.readFileSync(EMAIL_TEMPLATE_DIR + '/new_post.html', { encoding: 'utf8' });
+  email_html = replaceTokens(email_html, tokens);
+
+  return email_html;
 }

@@ -1,5 +1,8 @@
+import { env } from '$lib/util/env';
 import { checkForNewBlogPost } from '$lib/util/git';
 import { verify_request } from '$lib/util/auth';
+import { getFrontmatterFromMarkdown } from '$lib/util/markdown';
+import { generateCampaignTitle, generateSubjectLine, generateHTMLContent, scheduleSingleSend, createSingleSend } from '$lib/services/sendgrid';
 
 export async function post({ request, url, params }) {
   try {
@@ -21,7 +24,23 @@ export async function post({ request, url, params }) {
     if (newBlogPost) {
       console.log("New blog post detected: " + newBlogPost);
 
-      // TODO: implement endpoint business logic
+      let frontmatter = getFrontmatterFromMarkdown(newBlogPost);
+
+      // send automated email with blog post info
+      let campaign = await createSingleSend({
+        name: generateCampaignTitle(frontmatter),
+        categories: ["transactional", "blog", "new blog post" ],
+        list_id: env.var.VITE_SENDGRID_LIST_ID,
+        subject: generateSubjectLine(frontmatter),
+        html_content: generateHTMLContent(url.origin, newBlogPost, frontmatter),
+        suppression_group_id: env.var.VITE_SENDGRID_UNSUBSCRIBE_GROUP,
+        sender_id: env.var.VITE_SENDGRID_SENDER_ID,
+      });
+
+      let send = await scheduleSingleSend({ id: campaign.id });
+      console.log("Automated blog post notification email sent:");
+      console.log(campaign);
+      console.log(send);
     }
 
     return {
