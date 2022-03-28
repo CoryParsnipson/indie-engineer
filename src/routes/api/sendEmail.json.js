@@ -1,5 +1,5 @@
 import { env } from '$lib/util/env';
-import { checkForNewBlogPost } from '$lib/util/git';
+import { writeBuildTagToRepo, checkForNewBlogPost } from '$lib/util/git';
 import { verify_request } from '$lib/util/auth';
 import { getFrontmatterFromMarkdown } from '$lib/util/markdown';
 import { generateCampaignTitle, generateSubjectLine, generateHTMLContent, scheduleSingleSend, createSingleSend } from '$lib/services/sendgrid';
@@ -42,6 +42,9 @@ export async function post({ request, url, params }) {
       console.log(campaign);
       console.log(send);
     }
+
+    // write a new build tag so we know when to start look on the next webhook run
+    writeBuildTagToRepo();
 
     return {
       status: 204,

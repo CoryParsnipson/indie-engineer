@@ -38,7 +38,7 @@ function sortTagsByTime(tags) {
   return buildTagsOnly.sort();
 }
 
-async function writeBuildTagToRepo() {
+export async function writeBuildTagToRepo() {
   // create new build tag
   let newBuildTag = generateTagName();
   await git.tag({ fs, object: 'HEAD', dir, ref: newBuildTag });
@@ -157,9 +157,6 @@ export async function checkForNewBlogPost(commitHash) {
 
   let diffs = await getFileStateChanges(lastBuildCommit.oid, commitHash, dir);
   let newBlogPosts = diffFilter(diffs, '/' + BLOG_POSTS_DIR, ['add'])
-
-  // write a new build tag so we know when to start look on the next webhook run
-  writeBuildTagToRepo();
 
   let newBlogPost;
   if (!newBlogPosts || newBlogPosts.length < 1) {
