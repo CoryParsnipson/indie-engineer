@@ -38,6 +38,22 @@ function sortTagsByTime(tags) {
   return buildTagsOnly.sort();
 }
 
+async function writeBuildTagToRepo() {
+  // create new build tag
+  let newBuildTag = generateTagName();
+  await git.tag({ fs, object: 'HEAD', dir, ref: newBuildTag });
+
+  // push new build tag to heroku repo
+  await git.push({
+    fs,
+    http,
+    dir,
+    ref: newBuildTag,
+    // heroku needs basic HTTP authentication with blank string for username and heroku API token as password
+    headers: { 'Authorization': "Basic " + Base64.stringify(Utf8.parse(':' + env.var.VITE_HEROKU_API_TOKEN)) },
+  });
+}
+
 async function cloneHerokuRepo() {
   return git.clone({
     fs,
@@ -141,20 +157,9 @@ export async function checkForNewBlogPost(commitHash) {
   let diffs = await getFileStateChanges(lastBuildCommit.oid, commitHash, dir);
   let newBlogPosts = diffFilter(diffs, '/' + BLOG_POSTS_DIR, ['add'])
 
-  // TODO: implement writing and pushing new build tag to heroku repo
-  // create tag
-  //await git.tag({ fs, object: 'HEAD', dir, ref: 'test-tag' });
+  // write a new build tag so we know when to start look on the next webhook run
+  writeBuildTagToRepo();
 
-  // push tag to remote
-  //await git.push({
-  //  fs,
-  //  http,
-  //  dir,
-  //  ref: tags[0],
-  //  // heroku needs basic HTTP authentication with blank string for username and heroku API token as password
-  //  headers: { 'Authorization': "Basic " + Base64.stringify(Utf8.parse(':' + env.var.VITE_HEROKU_API_TOKEN)) },
-  //});
-  
   let newBlogPost;
   if (!newBlogPosts || newBlogPosts.length < 1) {
     console.log("Did not detect any new files in '" + BLOG_POSTS_DIR + "'. Exiting with no action.");
