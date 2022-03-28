@@ -153,6 +153,7 @@ export async function checkForNewBlogPost(commitHash) {
   await cloneHerokuRepo();
 
   let lastBuildCommit = await getCommitOfLastBuildTag();
+  console.log("Starting new blog post check from " + lastBuildCommit);
 
   let diffs = await getFileStateChanges(lastBuildCommit.oid, commitHash, dir);
   let newBlogPosts = diffFilter(diffs, '/' + BLOG_POSTS_DIR, ['add'])
