@@ -93,8 +93,85 @@ export async function importContactsStatus({ id } = {}) {
   return res.body;
 }
 
+// get information about a sender identity
+export async function viewSender({ id, on_behalf_of } = {}) {
+  let res = await sendRequest({
+    url: `/v3/senders/${id}`,
+    method: 'GET',
+    headers: {
+      "on-behalf-of": on_behalf_of,
+    },
+  });
+
+  return res.body;
+}
+
+// create a campaign to send to your specified mailing list
+// NOTE: the "Create Campaign" endpoint is deprecated and not usable. The
+// new terminology is "Create a Single Send" and has a completely different API
+export async function createSingleSend({
+  name,
+  categories,
+  send_at,
+  list_id,
+  subject,
+  html_content,
+  sender_id,
+  suppression_group_id,
+} = {}) {
+  if (isNaN(parseInt(sender_id))) {
+    throw "received invalid sender_id: '" + sender_id + "'";
+  }
+
+  if (isNaN(parseInt(suppression_group_id))) {
+    throw "received invalid suppression_group_id: '" + suppression_group_id + "'";
+  }
+
+  let send_to = {
+    list_ids: [list_id],
+    all: false,
+  };
+
+  let email_config = {
+    sender_id: parseInt(sender_id),
+    subject,
+    html_content,
+    generate_plain_content: true,
+    suppression_group_id: parseInt(suppression_group_id),
+  };
+
+  let data = {
+    name: name,
+    categories: categories,
+    send_at: send_at,
+    send_to: send_to,
+    email_config: email_config,
+  };
+
+  let res = await sendRequest({
+    url: `/v3/marketing/singlesends`,
+    method: 'POST',
+    body: data,
+  });
+
+  return res.body;
+}
+
+// send an existing SingleSend email (you must use createSingleSend with send_at undefined)
+export async function scheduleSingleSend({ id, send_at = "now" }) {
+  let res = await sendRequest({
+    url: `/v3/marketing/singlesends/${id}/schedule`,
+    method: 'PUT',
+    body: {
+      send_at: send_at,
+    }
+  });
+
+  return res.body;
+}
+
 // send a single email to a single recipient
-export function sendMail({ to, from = env.var.VITE_SENDGRID_SENDER, subject, text } = {}) {
+export function sendMail({ to, from, subject, text } = {}) {
   const msg = {
     to: to,
     from: from,

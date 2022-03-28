@@ -81,8 +81,9 @@ Required variables:
 * VITE\_INSTANCE - set this to "dev" or "prod" ("dev" will expose debug functionality. Do NOT use this in production)
 * VITE\_API\_SECRET - see [3]
 * VITE\_SENDGRID\_API\_KEY - see [4]
-* VITE\_SENDGRID\_SENDER - set this to your email address (appears in the "from" category of emails)
+* VITE\_SENDGRID\_SENDER\ID - set this to the sender you used in sendgrid. To get the "from" field, use the view sender API call (see [8]).
 * VITE\_SENDGRID\_LIST\_ID - see [6]
+* VITE\_SENDGRID\_UNSUBSCRIBE\_GROUP - link to group for users to unsubscribe from the list; see [9]
 * VITE\_HEROKU\_REPO - set the heroku repo (git remote show heroku)
 * VITE\_HEROKU\_API\_TOKEN - retrieve your heroku api token (see [7])
 
@@ -121,6 +122,12 @@ Create a sendgrid api key and put it in the .env folder (see [4]). This requires
 
 1. Set the sendgrid mailing list ID for this website instance. For example, create a mailing list for the dev instance called "indie-engineer-dev". Add the ID of this list to the environment variables. Use [6] api call to get all existing list ids.
 
+1. Create Unsubscribe groups
+
+It's recommended to create 2--one for unsubscribing from automated blog post notifications and another called "All" for unsubscribing for all email. (When you do a single send, the associated suppression group you supply will filter out unsubscribed users from the provided list\_ids)
+
+Then get the suppression group ID from the sendgrid dashboard and put it in the VITE\_SENDGRID\_UNSUBSCRIBE\_GROUP environment variable.
+
 ## References
 
 1. <https://dev.to/nostro/deploying-to-heroku-with-sveltekit-3350>
@@ -130,3 +137,5 @@ Create a sendgrid api key and put it in the .env folder (see [4]). This requires
 1. <https://github.com/sendgrid/sendgrid-nodejs/issues/743>
 1. <https://docs.sendgrid.com/api-reference/lists/get-all-lists>
 1. <https://devcenter.heroku.com/articles/authentication>
+1. <https://docs.sendgrid.com/api-reference/sender-identities-api/view-a-sender-identity>
+1. <https://docs.sendgrid.com/ui/sending-email/unsubscribe-groups>
