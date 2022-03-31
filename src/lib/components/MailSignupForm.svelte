@@ -82,20 +82,20 @@
 </div>
 
 <style>
-  input[type="text"] {
+  .mail-signup-form input[type="text"] {
     border-radius: 0.2rem;
   }
 
-  p, label {
+  .mail-signup-form p, .mail-signup-form label {
     @apply font-serif;
     @apply text-xl;
   }
 
-  p.sidenote {
+  .mail-signup-form p.sidenote {
     @apply text-lg;
   }
 
-  .required {
+  .mail-signup-form .required {
     @apply text-red-600;
   }
 </style>
