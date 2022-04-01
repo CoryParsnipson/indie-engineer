@@ -18,7 +18,7 @@
 </div>
 
 <footer class="mt-12 p-3 z-50 bg-cyan-800 text-slate-100">
-  <div class="max-w-screen-lg sm:mx-auto">
+  <div class="font-title text-xl max-w-screen-lg sm:mx-auto">
     This website was made with sveltekit + tailwindcss + mdsvex.
     (And svelte, postcss, ...)
   </div>
@@ -28,10 +28,16 @@
   div.nav a {
     @apply flex;
     @apply items-center;
-    @apply px-4;
+    @apply px-8;
     @apply py-2;
     @apply border-b-4;
     @apply border-transparent;
+  }
+
+  div.nav a span {
+    @apply text-lg;
+    @apply font-title;
+    @apply uppercase;
   }
 
   div.nav a:hover {

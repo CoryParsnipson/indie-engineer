@@ -25,9 +25,9 @@
       </a>
     </h1>
 
-    <h6 class="text-slate-500 my-4">{#if author}by {author} &nbsp;&nbsp;&#183;&nbsp;&nbsp; {/if}
+    <p class="font-sans font-bold text-base text-slate-500 my-4">{#if author}by {author} &nbsp;&nbsp;&#183;&nbsp;&nbsp; {/if}
       {#if date}{readable_date} &nbsp;&nbsp;&#183;&nbsp;&nbsp; {/if}
-      {#if readingTime?.text}{readingTime.text}{/if}</h6>
+      {#if readingTime?.text}{readingTime.text}{/if}</p>
     <div class="w-1/12 mb-5 border-t-4 border-zinc-600"></div>
     <div class="mb-8"></div>
 
@@ -58,43 +58,35 @@
   :global(main h5),
   :global(main h6) {
     @apply scroll-mt-36; /* NOTE: this is hardcoded, but the value should be dependent on header height */
+    @apply font-title;
   }
 
   :global(main h1) {
-    @apply text-4xl;
-    @apply font-bold;
-    @apply tracking-tighter;
+    @apply text-5xl;
     @apply mt-2;
     @apply mb-4;
   }
 
   :global(main h2) {
-    @apply text-3xl;
-    @apply font-bold;
-    @apply tracking-tight;
+    @apply text-4xl;
     @apply mb-8;
   }
 
   :global(main h3) {
-    @apply text-2xl;
-    @apply font-bold;
-    @apply tracking-tight;
+    @apply text-3xl;
     @apply mb-4;
   }
 
   :global(main h4) {
-    @apply text-xl;
-    @apply font-bold;
+    @apply text-2xl;
   }
 
   :global(main h5) {
     @apply text-lg;
-    @apply font-bold;
   }
 
   :global(main h6) {
     @apply text-base;
-    @apply font-bold;
   }
 
   /* rehype autolink header styles */
