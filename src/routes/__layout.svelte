@@ -3,13 +3,22 @@
 </script>
 
 <header class="sticky top-0 w-full mb-12 z-50 bg-cyan-800 text-slate-100">
-  <div class="flex items-stretch gap-4 max-w-screen-lg sm:mx-auto px-5 bg-green-100">
-    <img src="/indie-engineer-logo.png" class="p-4 pl-0">
+  <div class="flex items-stretch gap-4 max-w-screen-lg sm:mx-auto pl-5 sm:px-5 bg-green-100">
+    <img src="/indie-engineer-logo.png" class="p-2 pl-0 hidden sm:block">
+    <img src="/indie-engineer-logo-sm.png" class="py-1 pr-2 pl-0 sm:hidden">
 
-    <div class="nav grow flex items-stretch justify-end bg-zinc-800">
-      <a href="/"><span>Blog</span></a>
-      <a href="#"><span>About</span></a>
+    <div class="nav dropdown grow bg-zinc-800">
+      <div class="justify-end flex items-center h-full mx-5 lg:hidden">
+        <svg width="24px" height="24px">
+          <path d="M5 6h18M5 12h18M5 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </div>
+      <div class="dropdown-content">
+        <a href="/"><span>Blog</span></a>
+        <a href="#"><span>About</span></a>
+      </div>
     </div>
+
   </div>
 </header>
 
@@ -25,22 +34,54 @@
 </footer>
 
 <style>
-  div.nav a {
-    @apply flex;
-    @apply items-center;
-    @apply px-8;
-    @apply py-2;
-    @apply border-b-4;
-    @apply border-transparent;
+  .dropdown {
+    @apply relative;
+    @apply inline-block;
+
+    @apply lg:flex;
   }
 
-  div.nav a span {
-    @apply text-lg;
+  .dropdown-content {
+    @apply hidden;
+    @apply absolute;
+    @apply right-0;
+
+    @apply lg:flex;
+    @apply lg:w-full;
+    @apply lg:relative;
+    @apply lg:justify-end;
+  }
+
+  .dropdown-content a {
+    @apply block;
+    @apply px-10;
+    @apply py-4;
+    @apply bg-zinc-800;
+
+    @apply lg:flex;
+    @apply lg:items-center;
+    @apply lg:px-8;
+    @apply lg:py-2;
+    @apply lg:border-b-4;
+    @apply lg:border-transparent;
+  }
+
+  .dropdown-content a:hover {
+    @apply bg-zinc-600;
+
+    @apply lg:border-zinc-200;
+  }
+
+  .dropdown-content a span {
+    @apply text-xl;
     @apply font-title;
     @apply uppercase;
+
+    @apply lg:text-lg;
   }
 
-  div.nav a:hover {
-    @apply border-slate-200;
+  .dropdown:hover .dropdown-content {
+    @apply block;
+    @apply lg:flex;
   }
 </style>
