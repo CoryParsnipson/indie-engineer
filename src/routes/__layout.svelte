@@ -3,14 +3,12 @@
 </script>
 
 <header class="sticky top-0 w-full mb-12 z-50 bg-cyan-800 text-slate-100">
-  <div class="flex items-stretch gap-4 max-w-screen-lg sm:mx-auto px-5">
-    <p>Cory's Blog</p>
+  <div class="flex items-stretch gap-4 max-w-screen-lg sm:mx-auto px-5 bg-green-100">
+    <img src="/indie-engineer-logo.png" class="p-4 pl-0">
 
-    <div class="nav grow">
-      <div class="flex gap-3 h-full items-stretch justify-end">
-        <p><a href="/">Blog</a></p>
-        <p><a href="#">About</a></p>
-      </div>
+    <div class="nav grow flex items-stretch justify-end bg-zinc-800">
+      <a href="/"><span>Blog</span></a>
+      <a href="#"><span>About</span></a>
     </div>
   </div>
 </header>
@@ -25,3 +23,18 @@
     (And svelte, postcss, ...)
   </div>
 </footer>
+
+<style>
+  div.nav a {
+    @apply flex;
+    @apply items-center;
+    @apply px-4;
+    @apply py-2;
+    @apply border-b-4;
+    @apply border-transparent;
+  }
+
+  div.nav a:hover {
+    @apply border-slate-200;
+  }
+</style>
