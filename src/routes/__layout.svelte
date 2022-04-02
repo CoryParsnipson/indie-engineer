@@ -8,7 +8,7 @@
     <img src="/indie-engineer-logo-sm.png" class="py-1 pr-2 pl-0 sm:hidden">
 
     <div class="nav dropdown grow bg-zinc-800">
-      <div class="justify-end flex items-center h-full mx-5 lg:hidden">
+      <div class="justify-end flex items-center h-full mx-5 md:hidden">
         <svg width="24px" height="24px">
           <path d="M5 6h18M5 12h18M5 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
@@ -38,7 +38,7 @@
     @apply relative;
     @apply inline-block;
 
-    @apply lg:flex;
+    @apply md:flex;
   }
 
   .dropdown-content {
@@ -46,10 +46,10 @@
     @apply absolute;
     @apply right-0;
 
-    @apply lg:flex;
-    @apply lg:w-full;
-    @apply lg:relative;
-    @apply lg:justify-end;
+    @apply md:flex;
+    @apply md:w-full;
+    @apply md:relative;
+    @apply md:justify-end;
   }
 
   .dropdown-content a {
@@ -58,18 +58,18 @@
     @apply py-4;
     @apply bg-zinc-800;
 
-    @apply lg:flex;
-    @apply lg:items-center;
-    @apply lg:px-8;
-    @apply lg:py-2;
-    @apply lg:border-b-4;
-    @apply lg:border-transparent;
+    @apply md:flex;
+    @apply md:items-center;
+    @apply md:px-8;
+    @apply md:py-2;
+    @apply md:border-b-4;
+    @apply md:border-transparent;
   }
 
   .dropdown-content a:hover {
     @apply bg-zinc-600;
 
-    @apply lg:border-zinc-200;
+    @apply md:border-zinc-200;
   }
 
   .dropdown-content a span {
@@ -77,11 +77,11 @@
     @apply font-title;
     @apply uppercase;
 
-    @apply lg:text-lg;
+    @apply md:text-lg;
   }
 
   .dropdown:hover .dropdown-content {
     @apply block;
-    @apply lg:flex;
+    @apply md:flex;
   }
 </style>
