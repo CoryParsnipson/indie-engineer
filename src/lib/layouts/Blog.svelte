@@ -17,7 +17,7 @@
 </script>
 
 <div class="flex justify-center gap-6" class:flex-row-reverse={sidebar_on_left}>
-  <main class="flex-initial w-full lg:w-2/3 bg-green-300">
+  <main class="flex-initial w-full md:max-w-[700px] lg:w-2/3 bg-green-300">
     <Categories {categories} />
     <h1 id="{title_slug}">{title}
       <a aria-hidden="true" tabindex="-1" class="align-middle" href="#{title_slug}">
