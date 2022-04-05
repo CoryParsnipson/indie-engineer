@@ -130,12 +130,14 @@
   /* inline hyperlinks */
   /* ------------------------------------------------------------------------ */
   :global(main a[rel]) {
-    @apply text-xl;
+    @apply text-lg;
     @apply text-blue-700;
     @apply font-serif;
     @apply underline;
     @apply py-1;
     @apply px-0.5;
+
+    @apply sm:text-xl;
   }
 
   :global(main a[rel]:after) {
