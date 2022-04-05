@@ -55,13 +55,12 @@
   .dropdown-content a {
     @apply block;
     @apply px-10;
-    @apply py-4;
+    @apply py-6;
     @apply bg-zinc-800;
 
     @apply md:flex;
     @apply md:items-center;
-    @apply md:px-8;
-    @apply md:py-2;
+    @apply md:px-5;
     @apply md:border-b-4;
     @apply md:border-transparent;
   }
@@ -70,6 +69,7 @@
     @apply bg-zinc-600;
 
     @apply md:border-zinc-200;
+    @apply md:bg-transparent;
   }
 
   .dropdown-content a span {
