@@ -116,11 +116,15 @@
   }
 
   :global(main p), :global(main em), :global(main strong) {
-    @apply text-xl;
+    @apply text-lg;
+
     @apply font-serif;
     @apply mb-10;
     @apply leading-loose;
-    letter-spacing: 0.015rem;
+    @apply tracking-markdown;
+
+    @apply sm:text-xl;
+    @apply sm:leading-loose;
   }
 
   /* inline hyperlinks */

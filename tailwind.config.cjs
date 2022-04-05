@@ -6,6 +6,10 @@ const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
+    letterSpacing: {
+      markdown: '0.015rem',
+      ...defaultTheme.letterSpacing,
+    },
 		extend: {
       fontFamily: {
         'title': ['"Oswald"', ...defaultTheme.fontFamily.sans],
