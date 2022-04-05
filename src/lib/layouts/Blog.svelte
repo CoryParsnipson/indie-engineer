@@ -57,7 +57,7 @@
   :global(main h4),
   :global(main h5),
   :global(main h6) {
-    @apply scroll-mt-36; /* NOTE: this is hardcoded, but the value should be dependent on header height */
+    @apply scroll-mt-32; /* NOTE: this is hardcoded, but the value should be dependent on header height */
     @apply font-title;
   }
 
