@@ -2,7 +2,7 @@
 	import '../app.css';
 </script>
 
-<header class="sticky top-0 w-full mb-12 z-50 bg-cyan-800 text-slate-100">
+<header class="sticky top-0 w-full z-50 bg-cyan-800 text-slate-100">
   <div class="flex items-stretch gap-4 max-w-screen-lg sm:mx-auto pl-5 sm:px-5 bg-green-100">
     <img src="/indie-engineer-logo.png" class="p-2 pl-0 hidden sm:block">
     <img src="/indie-engineer-logo-sm.png" class="py-1 pr-2 pl-0 sm:hidden">
@@ -26,7 +26,7 @@
   <slot />
 </div>
 
-<footer class="mt-12 p-3 z-50 bg-cyan-800 text-slate-100">
+<footer class="p-3 z-50 bg-cyan-800 text-slate-100">
   <div class="font-title text-xl max-w-screen-lg sm:mx-auto">
     This website was made with sveltekit + tailwindcss + mdsvex.
     (And svelte, postcss, ...)
