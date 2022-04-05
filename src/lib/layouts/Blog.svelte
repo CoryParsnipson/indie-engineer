@@ -117,14 +117,18 @@
 
   :global(main p), :global(main em), :global(main strong) {
     @apply text-lg;
-
     @apply font-serif;
     @apply mb-10;
     @apply leading-loose;
     @apply tracking-markdown;
+  }
 
-    @apply sm:text-xl;
-    @apply sm:leading-loose;
+  /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
+  @media (min-width: 640px) {
+    :global(main p), :global(main em), :global(main strong) {
+      @apply text-xl;
+      @apply leading-loose;
+    }
   }
 
   /* inline hyperlinks */
@@ -136,8 +140,13 @@
     @apply underline;
     @apply py-1;
     @apply px-0.5;
+  }
 
-    @apply sm:text-xl;
+  /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
+  @media (min-width: 640px) {
+    :global(main a[rel]) {
+      @apply text-xl;
+    }
   }
 
   :global(main a[rel]:after) {
