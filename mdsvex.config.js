@@ -3,6 +3,7 @@ import remarkReadingTime from 'remark-reading-time';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeTitleFigure from 'rehype-title-figure';
+import rehypeExternalLinks from 'rehype-external-links';
 
 import remarkDataToFrontmatter from './src/lib/remark/remarkDataToFrontmatter.js';
 
@@ -28,6 +29,10 @@ const config = defineConfig({
       behavior: "append",
     }],
     rehypeTitleFigure,
+    [rehypeExternalLinks, {
+      target: "_blank",
+      rel: ["nofollow", "noopener"],
+    }],
   ]
 });
 
