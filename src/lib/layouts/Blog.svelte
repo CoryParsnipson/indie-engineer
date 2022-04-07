@@ -74,11 +74,12 @@
 
   :global(main h3) {
     @apply text-3xl;
-    @apply mb-4;
+    @apply mb-6;
   }
 
   :global(main h4) {
     @apply text-2xl;
+    @apply mb-4;
   }
 
   :global(main h5) {
