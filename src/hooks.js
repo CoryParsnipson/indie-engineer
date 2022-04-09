@@ -4,6 +4,7 @@ export async function handle({ event, resolve }) {
 
   // redirect non https to https (ignore prerendering requests)
   if (event.url.host !== 'sveltekit-prerender' && (proto_header && proto_header !== 'https')) {
+    console.log(event.url.href);
     let https_url = event.url.href.replace(/^(http:)/, 'https:');
     return Response.redirect(https_url, 308);
   }
