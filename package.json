@@ -2,8 +2,8 @@
 	"name": "indie-engineer",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"dev:host": "svelte-kit dev --host",
+		"dev": "svelte-kit dev --host",
+		"dev:https": "svelte-kit dev --host --https",
 		"build": "svelte-kit build",
 		"start": "node build/index.js",
 		"package": "svelte-kit package",
