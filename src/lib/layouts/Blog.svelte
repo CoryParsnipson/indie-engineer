@@ -187,7 +187,7 @@
   :global(main ul, main ol) {
     @apply ml-6;
     @apply list-outside;
-    @apply mb-12;
+    @apply mb-10;
   }
 
   :global(main li) {
@@ -195,6 +195,8 @@
     @apply pl-4;
     @apply mb-2;
     @apply font-serif;
+    @apply leading-loose;
+    @apply tracking-markdown;
   }
 
   /* images */
