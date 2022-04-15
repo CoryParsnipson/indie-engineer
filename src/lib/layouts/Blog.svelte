@@ -17,7 +17,7 @@
 </script>
 
 <div class="flex justify-center gap-6" class:flex-row-reverse={sidebar_on_left}>
-  <main class="flex-initial w-full md:max-w-[700px] lg:w-2/3 bg-green-300 py-12">
+  <main class="flex-initial w-full md:max-w-[700px] lg:w-[70%] bg-green-300 py-12">
     <Categories {categories} />
     <h1 id="{title_slug}">{title}
       <a aria-hidden="true" tabindex="-1" class="align-middle" href="#{title_slug}">
@@ -36,7 +36,7 @@
     <MailSignupForm />
   </main>
 
-  <sidebar class="w-1/3 hidden lg:block bg-purple-300">
+  <sidebar class="w-[30%] hidden lg:block bg-purple-300">
     <div
       class="fixed pl-4 border-slate-400 bg-cyan-400"
       class:border-l-4={!sidebar_on_left}
