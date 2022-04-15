@@ -140,7 +140,7 @@
     @apply font-serif;
     @apply underline;
     @apply py-1;
-    @apply px-0.5;
+    @apply pr-0.5;
   }
 
   /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
