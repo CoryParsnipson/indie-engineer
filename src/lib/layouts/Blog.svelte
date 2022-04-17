@@ -203,6 +203,7 @@
   @media (min-width: 640px) {
     :global(main li) {
       @apply text-xl;
+      @apply leading-loose;
     }
   }
 
