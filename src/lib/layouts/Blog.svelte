@@ -191,12 +191,19 @@
   }
 
   :global(main li) {
-    @apply text-xl;
+    @apply text-lg;
     @apply pl-4;
     @apply mb-2;
     @apply font-serif;
     @apply leading-loose;
     @apply tracking-markdown;
+  }
+
+  /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
+  @media (min-width: 640px) {
+    :global(main li) {
+      @apply text-xl;
+    }
   }
 
   /* images */
