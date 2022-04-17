@@ -104,9 +104,9 @@ The good news is that for a lot of people, their current job could fit into the 
 
 #### The Work Diet Points you to "Follow your Passion"
 
-The original idea was to organize ideas in order of *time until income is achieved*. I needed money quickly to slow my dwindling savings but I also wanted to chase something cool. As a side effect of arranging everything like this, the chart above ends up being organized similarly to [Maslow's hierarchy of needs](https://www.simplypsychology.org/maslow.html). This is no coincidence. The jobs at the bottom meet some immediate needs and the jobs at the top are intellectually rewarding ventures. Like Maslow's hierarchy, I can move to concentrate on upper levels once the lower level things are stabilized. Sometimes setbacks occur and things on the lower levels need to be taken care of. Moving up and down the hierarchy is normal and that's what I expect I'll have to do too.
-
 ![A crossroads](/crossroads.png)
+
+The original idea was to organize ideas in order of *time until income is achieved*. I needed money quickly to slow my dwindling savings but I also wanted to chase something cool. As a side effect of arranging everything like this, the chart above ends up being organized similarly to [Maslow's hierarchy of needs](https://www.simplypsychology.org/maslow.html). This is no coincidence. The jobs at the bottom meet some immediate needs and the jobs at the top are intellectually rewarding ventures. Like Maslow's hierarchy, I can move to concentrate on upper levels once the lower level things are stabilized. Sometimes setbacks occur and things on the lower levels need to be taken care of. Moving up and down the hierarchy is normal and that's what I expect I'll have to do too.
 
 #### Diversification Provides Better Protection Against Surprises
 
@@ -154,8 +154,6 @@ The Work Diet chart also takes inspiration from the [food pyramid](https://www.h
       {item: "RPi game console", hours: 0, status: "paused"},
     ]
   ]} />
-
-[Need an infographic that annotates the different layers of the chart. Top -> "passion project (high initial setup, possibilty for passive "royalties"), Middle -> "Passive zone" top level is "skilled passive streams" lower level is "side hustles", Bottom -> survival jobs (mix of passive and non-passive)]
 
 I've annotated the Work Diet chart above to illustrate what categories of jobs go into each level and what I'm expecting in terms of "royalties" from each level. While most of what I'm saying is flexible and allows one to mix and match, the taxonomy here is quite important. I'm counting on passive income from the middle jobs to cover most of my living expenses. And yes, that is a *huge* assumption I'm making here. I hope to test this hypothesis out on the blog. If I can do this, it should free up my time to work on the top level items. More importantly, this should give me some cushion and breathing room to just relax and enjoy life.
 
