@@ -25,9 +25,12 @@
       </a>
     </h1>
 
-    <p class="font-sans font-bold text-base text-slate-500 my-4">{#if author}by {author} &nbsp;&nbsp;&#183;&nbsp;&nbsp; {/if}
-      {#if date}{readable_date} &nbsp;&nbsp;&#183;&nbsp;&nbsp; {/if}
-      {#if readingTime?.text}{readingTime.text}{/if}</p>
+    <div class="subtitle flex flex-col sm:flex-row sm:flex-wrap justify-start">
+      {#if author}<p class="font-sans font-bold text-base text-slate-500 my-2 sm:my-4">by {author}</p>{/if}
+      {#if date}<p class="font-sans font-bold text-base text-slate-500 my-2 sm:my-4">{readable_date}</p>{/if}
+      {#if readingTime?.text}<p class="font-sans font-bold text-base text-slate-500 my-2 sm:my-4">{readingTime.text}</p>{/if}
+    </div>
+
     <div class="w-1/12 mb-5 border-t-4 border-zinc-600"></div>
     <div class="mb-8"></div>
 
@@ -244,5 +247,14 @@
 
   :global(main code[class*="language-"]) {
     @apply inline-block;
+  }
+
+  /* subtitle styles */
+  /* ------------------------------------------------------------------------ */
+  /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
+  @media (min-width: 640px) {
+    :global(main div.subtitle p:not(:first-child)::before) {
+      @apply content-['·'] px-4;
+    }
   }
 </style>
