@@ -26,7 +26,7 @@
       </div>
       <div class="dropdown-content">
         <a href="/"><span>Blog</span></a>
-        <a href="#"><span>About</span></a>
+        <a href="/about"><span>About</span></a>
       </div>
     </div>
 

@@ -60,7 +60,7 @@
 </script>
 
 <main>
-  <h1 class="font-title text-4xl mt-2 mb-12">Contact me</h1>
+  <h1 class="font-title text-5xl mt-12 mb-12">Contact me</h1>
 
   <div class="flex flex-col-reverse sm:flex-row sm:items-stretch mb-12">
     <form on:submit|preventDefault={handleSubmit} action="{form_endpoint}" method="post" class="grow sm:pr-8">
