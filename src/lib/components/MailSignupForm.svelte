@@ -3,7 +3,6 @@
   import * as yup from 'yup';
 
   import { env } from '$lib/util/env';
-  import { API_HEADER_AUTH, sign_string } from '$lib/util/auth';
 
   let instance = env.var.VITE_INSTANCE;
 
@@ -26,9 +25,6 @@
 
       let result = await fetch('/api/registerEmail.json', {
         method: 'post',
-        headers: {
-          API_HEADER_AUTH: sign_string(env.var.VITE_API_SECRET, data),
-        },
         body: data,
       });
       

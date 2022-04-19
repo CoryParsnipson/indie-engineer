@@ -8,11 +8,6 @@ export async function post({ request }) {
   try {
     let data = await request.json();
 
-    if (!verify_request(data, request.headers.get(API_HEADER_AUTH))) {
-      console.log("POST to /api/registerEmail.json endpoint failed authorization!");
-      return { status: 403 };
-    }
-
     // since we don't have captcha (and this endpoint should only be used for 'dev'
     // do not add contact to list if the list is larger than VITE_SENDGRID_MAX_CONTACTS)
     let list_size = await getListContactCount({ id: env.var.VITE_SENDGRID_LIST_ID });
