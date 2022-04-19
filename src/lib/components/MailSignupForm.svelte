@@ -7,6 +7,7 @@
   let instance = env.var.VITE_INSTANCE;
 
   let formBusy = false;
+  let formEndpoint = '/api/registerEmail.json';
   let successMsg = '';
 
   const { form, errors, state, handleChange, handleSubmit } = createForm({
@@ -23,7 +24,7 @@
       formBusy = true;
       let data = JSON.stringify(values);
 
-      let result = await fetch('/api/registerEmail.json', {
+      let result = await fetch(formEndpoint, {
         method: 'post',
         body: data,
       });
@@ -58,7 +59,7 @@
   <p class="mb-4">Receive an email with a link to the latest blog post when a new one is published. No more, no less.</p>
   <p class="sidenote text-right m-0"><span class="required">*</span> indicates required</p>
 
-  <form on:submit|preventDefault={handleSubmit} class="flex flex-col gap-2">
+  <form on:submit|preventDefault={handleSubmit} action="{formEndpoint}" class="flex flex-col gap-2">
     <label for="email">Email Address <span class="required">*</span></label>
     <input id="email" name="email" type="text" class="flex-grow" on:change={handleChange} bind:value={$form.email} />
     {#if $errors.email}

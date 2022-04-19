@@ -39,17 +39,19 @@
 
 <footer class="z-50 bg-cyan-800 text-slate-100">
   <div class="flex flex-col-reverse md:flex-row items-stretch justify-center max-w-screen-lg mx-auto">
-    <div class="md:w-1/2 lg:w-3/5 p-3 flex flex-col justify-end">
+    <div class="md:w-3/5 p-3 flex flex-col justify-end">
       <p class="grow"></p>
-      <p class="font-title mb-3">This website was made with SvelteKit, TailwindCSS, and MDsveX. <a class="font-title" href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Chanut - Flaticon</a>.</p>
+      <p class="font-title mb-3">This website was made with SvelteKit, TailwindCSS, and MDsveX. <a class="font-title hover:text-slate-300 hover:cursor-pointer" href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Chanut - Flaticon</a>.</p>
       <p class="font-title">Copyright © {current_year} Cory Parsnipson. All Rights Reserved.</p>
     </div>
 
-    <div class="md:w-1/2 lg:w-2/5 bg-stone-300">
+    <div class="md:w-2/5 bg-stone-300">
       <img src="/indie-engineer-logo.png" alt="Indie Engineer logo" width="250px" class="mx-auto pt-8 pb-4" />
-      <p class="font-title text-slate-800 text-center mb-6">Contact</p>
+      <p class="font-title text-slate-800 text-center mb-6">- Links -</p>
       <div class="flex gap-5 justify-center mb-12">
-        <img src="/email.png" width="50px" alt="Click here to email the authors">
+        <a href="/contact">
+          <img src="/email.png" width="50px" alt="Click here to email the authors">
+        </a>
         <a href="https://github.com/CoryParsnipson" target="_blank" rel="nofollow noopener">
           <img src="/GitHub-Mark-120px-plus.png" width="50px" alt="Click here to go to Cory Parsnipson's GitHub page.">
         </a>

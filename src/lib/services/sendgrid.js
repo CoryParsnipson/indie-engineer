@@ -98,14 +98,15 @@ export async function importContactsStatus({ id } = {}) {
 // get information about a sender identity
 export async function viewSender({ id, on_behalf_of } = {}) {
   let res = await sendRequest({
-    url: `/v3/senders/${id}`,
+    url: `/v3/verified_senders`,
     method: 'GET',
     headers: {
       "on-behalf-of": on_behalf_of,
     },
   });
 
-  return res.body;
+  res.body.results = res.body.results.filter(sender => sender.id == id);
+  return res;
 }
 
 // create a campaign to send to your specified mailing list
@@ -173,7 +174,7 @@ export async function scheduleSingleSend({ id, send_at = "now" }) {
 }
 
 // send a single email to a single recipient
-export function sendMail({ to, from, subject, text } = {}) {
+export async function sendMail({ to, from, subject, text } = {}) {
   const msg = {
     to: to,
     from: from,
@@ -181,11 +182,8 @@ export function sendMail({ to, from, subject, text } = {}) {
     text: text,
   };
 
-  try {
-    return sendgridMail.send(msg);
-  } catch (error) {
-    console.error(error);
-  }
+  let res = await sendgridMail.send(msg);
+  return res[0];
 }
 
 export function generateCampaignTitle(frontmatter) {

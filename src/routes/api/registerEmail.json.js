@@ -1,5 +1,4 @@
 import { env } from '$lib/util/env';
-import { API_HEADER_AUTH, verify_request } from '$lib/util/auth';
 import { addContact, getListContactCount, getListById } from '$lib/services/sendgrid';
 
 let SENDGRID_MAX_CONTACTS = 10 || env.var.VITE_SENDGRID_MAX_CONTACTS;
