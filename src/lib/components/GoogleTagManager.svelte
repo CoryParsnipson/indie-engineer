@@ -55,8 +55,6 @@
 		}
 	}
 
-  console.log(enable);
-
   if (enable) {
 	  onMount(() => {
 	  	if (!timeout) scriptSrc = getScriptSrcFromInitGtm( gtmDataPoints )( gtmId );
