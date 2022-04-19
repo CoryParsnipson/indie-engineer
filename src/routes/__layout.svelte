@@ -1,6 +1,15 @@
 <script>
+  import GoogleTagManager from '$lib/components/GoogleTagManager.svelte';
+
 	import '../app.css';
+  import { env } from '$lib/util/env';
 </script>
+
+<GoogleTagManager
+  enable={env.var.VITE_GTM_ENABLE === "true"}
+  gtmId={env.var.VITE_GTM_ID}
+  dev={env.var.VITE_INSTANCE === "dev"}
+/>
 
 <header class="sticky top-0 w-full z-50 bg-cyan-800 text-slate-100">
   <div class="flex items-stretch gap-4 max-w-screen-lg sm:mx-auto pl-5 sm:px-5 bg-green-100">
