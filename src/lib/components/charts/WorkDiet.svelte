@@ -51,10 +51,10 @@
   <p class="max-w-[100px] border-b-2 border-slate-500 leading-normal font-sans text-right sm:text-center text-lg absolute top-0 right-0">Hours Worked this Week</p>
   {/if}
 
-  <div class="min-h-[20px] flex flex-col-reverse pt-20 pb-3 mb-12">
+  <div class="min-h-[20px] flex flex-col-reverse pt-20 mb-12">
   {#each metadata as row, idx}
     <div class:border-b-2={idx != 0} class:pl-24={show_layer_names}
-      class="border-slate-500 relative z-[2] px-2 {show_layer_names ? row.layer_bg : ''}">
+      class="chart-work-diet-row border-slate-500 relative z-[2] px-2 {show_layer_names ? row.layer_bg : ''}">
       {#if show_hours}
       <p class="font-sans absolute top-0 right-0 z-[2] py-4 text-sm sm:text-xl sm:pr-7">~{row.hours}</p>
       {/if}
@@ -89,3 +89,8 @@
     <path d="M0,100 L50,0 L100,100 Z" fill="#94A3B8">
   </svg>
 </div>
+
+<style>
+  /* make the bottom row taller */
+  div.chart-work-diet-row:first-child div { @apply pb-12; }
+</style>
