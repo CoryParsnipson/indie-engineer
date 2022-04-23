@@ -188,7 +188,10 @@ export async function sendMail({ to, from, subject, text } = {}) {
 
 export function generateCampaignTitle(frontmatter) {
   let date_suffix = new Date().toISOString().split('T')[0];
-  return "[Post Notification " + date_suffix + "] " + frontmatter.title;
+
+  // sendgrid campaign names have a limit of 100 characters (exceeding this will
+  // cause the API to return 400 bad request error)
+  return ("[Post Notification " + date_suffix + "] " + frontmatter.title).slice(0, 100);
 }
 
 export function generateSubjectLine(frontmatter) {

@@ -6,9 +6,9 @@ import { generateCampaignTitle, generateSubjectLine, generateHTMLContent, schedu
 
 export async function post({ request, url, params }) {
   try {
-    if (!env.var.VITE_HEROKU_WEBHOOK_ENABLE) {
+    if (!env.var.VITE_HEROKU_WEBHOOK_ENABLE || env.var.VITE_HEROKU_WEBHOOK_ENABLE !== "true") {
       console.log("Heroku webhook response is disabled. Ignoring.");
-      return;
+      return { status: 200 };
     }
 
     let data = await request.json();
