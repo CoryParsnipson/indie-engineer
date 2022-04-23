@@ -18,6 +18,7 @@
 
 <svelte:head>
   <title>Indie Engineer</title>
+  <meta name="description" content="Welcome to IndieEngineer.com! This is a blog about eschewing the safety and routine of office work and trying to survive on the merit of one's own creations. Can an Engineer/Maker earn a living off of their own creations?">
 </svelte:head>
 
 <main>

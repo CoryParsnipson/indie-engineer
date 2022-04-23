@@ -61,6 +61,7 @@
 
 <svelte:head>
   <title>Contact :: Indie Engineer</title>
+  <meta name="description" content="Want to contact Cory Parsnipson, author of IndieEngineer.com? Fill out the email form and he will get back to you.">
 </svelte:head>
 
 <main>
@@ -68,7 +69,7 @@
 
   <div class="flex flex-col-reverse sm:flex-row sm:items-stretch mb-12">
     <form on:submit|preventDefault={handleSubmit} action="{form_endpoint}" method="post" class="grow sm:pr-8">
-      <input type="text" name="honeypot" style="display:none" on:change={handleChange} bind:value={$form.honeypot} />
+      <input type="text" name="honeypot" style="display:none" on:change={handleChange} bind:value={$form.honeypot}>
 
       {#if $errors.email || $errors.message || $errors.response}
         <div class="bg-red-100 border-red-500 border rounded-lg p-4 mb-6">
@@ -86,13 +87,13 @@
 
       <div class="flex flex-col">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" on:change={handleChange} bind:value={$form.name} />
+        <input type="text" id="name" name="name" on:change={handleChange} bind:value={$form.name}>
 
         <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" on:change={handleChange} bind:value={$form.subject} />
+        <input type="text" id="subject" name="subject" on:change={handleChange} bind:value={$form.subject}>
 
         <label for="email">Reply to <span class="required">*</span></label>
-        <input type="text" id="email" name="email" placeholder="someone@somewhere.com" on:change={handleChange} bind:value={$form.email} />
+        <input type="text" id="email" name="email" placeholder="someone@somewhere.com" on:change={handleChange} bind:value={$form.email}>
 
         <label for="message">Message <span class="required">*</span></label>
         <textarea id="message" name="message" rows="4" placeholder="Hello!" class="min-h-[100px]" on:change={handleChange} bind:value={$form.message}></textarea>
@@ -100,12 +101,12 @@
         <p class="font-serif text-lg text-right mb-3"><span class="required">*</span> indicates required</p>
 
         <input type="submit" value="Submit" disabled='{form_busy || $errors.email || $errors.message}'
-          class="self-center font-title text-slate-200 rounded-lg bg-cyan-800 px-8 py-4 hover:bg-cyan-700 hover:cursor-pointer disabled:bg-slate-400" />
+          class="self-center font-title text-slate-200 rounded-lg bg-cyan-800 px-8 py-4 hover:bg-cyan-700 hover:cursor-pointer disabled:bg-slate-400">
       </div>
     </form>
 
     <div class="sm:w-2/5 py-4 px-8 mb-12 sm:mb-0 bg-slate-300">
-      <img src="/cparsnipson.png" width="150px" alt="A headshot of yours truly, Cory Parsnipson" class="m-8 mx-auto" />
+      <img src="/cparsnipson.png" width="150px" alt="A headshot of yours truly, Cory Parsnipson" class="m-8 mx-auto">
       <p class="font-serif text-lg sm:text-xl leading-loose sm:leading-loose text-center">
         Hey, it's me, Cory Parsnipson! Need to get in touch with me? Fill out the form and I'll get back to you.
       </p>

@@ -6,7 +6,9 @@
 
   // frontmatter exports
   export let title;
-  export let seo_title; // goes in title tag, if exists
+  export let seo_title; // goes in meta title tag, if defined (falls back to title)
+  export let summary;
+  export let seo_summary; // goes in meta description tag, if defined (falls back to summary)
   export let author;
   export let date;
   export let readingTime;
@@ -18,11 +20,8 @@
 </script>
 
 <svelte:head>
-  {#if seo_title}
-    <title>{seo_title} :: Indie Engineer</title>
-  {:else}
-    <title>{title} :: Indie Engineer</title>
-  {/if}
+  <title>{seo_title ? seo_title : title} :: Indie Engineer</title>
+  <meta name="description" content="{seo_summary ? seo_summary : summary}">
 </svelte:head>
 
 <div class="flex justify-center gap-6" class:flex-row-reverse={sidebar_on_left}>
