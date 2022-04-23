@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>About :: Indie Engineer</title>
+</svelte:head>
+
 <main>
   <h1 class="font-title text-5xl mt-12 mb-12">About...</h1>
   <h2 class="font-title text-4xl mb-8">The Author</h2>

@@ -13,6 +13,10 @@
   dev={env.var.VITE_INSTANCE === "dev"}
 />
 
+<svelte:head>
+  <title>Indie Engineer</title>
+</svelte:head>
+
 <header class="sticky top-0 w-full z-50 bg-cyan-800 text-slate-100">
   <div class="flex items-stretch gap-4 max-w-screen-lg sm:mx-auto pl-5 sm:px-5 bg-green-100">
     <img alt="Indie Engineer logo" src="/indie-engineer-logo.png" class="p-2 pl-0 hidden sm:block">

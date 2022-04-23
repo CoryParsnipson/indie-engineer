@@ -59,6 +59,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>Contact :: Indie Engineer</title>
+</svelte:head>
+
 <main>
   <h1 class="font-title text-5xl mt-12 mb-12">Contact me</h1>
 

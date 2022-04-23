@@ -6,6 +6,7 @@
 
   // frontmatter exports
   export let title;
+  export let seo_title; // goes in title tag, if exists
   export let author;
   export let date;
   export let readingTime;
@@ -15,6 +16,14 @@
   let title_slug = slugify(title);
   let readable_date = new Date(date).toLocaleDateString('en-us', { dateStyle: "long" });
 </script>
+
+<svelte:head>
+  {#if seo_title}
+    <title>{seo_title} :: Indie Engineer</title>
+  {:else}
+    <title>{title} :: Indie Engineer</title>
+  {/if}
+</svelte:head>
 
 <div class="flex justify-center gap-6" class:flex-row-reverse={sidebar_on_left}>
   <main class="flex-initial w-full md:max-w-[700px] lg:w-[70%] bg-green-300 py-12">
@@ -66,6 +75,7 @@
 
   :global(main h1) {
     @apply text-5xl;
+    @apply leading-relaxed;
     @apply mt-2;
     @apply mb-4;
   }

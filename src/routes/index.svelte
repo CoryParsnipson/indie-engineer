@@ -16,6 +16,10 @@
   export let posts = [];
 </script>
 
+<svelte:head>
+  <title>Indie Engineer</title>
+</svelte:head>
+
 <main>
   <h1 class="mb-6">Recent posts</h1>
 
