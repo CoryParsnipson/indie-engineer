@@ -22,7 +22,7 @@
   <title>Indie Engineer</title>
   <meta name="description" content="{meta_description}">
   <meta name="og:title" property="og:title" content="Indie Engineer">
-  <meta name="og:description" property="og:description" content="meta_description">
+  <meta name="og:description" property="og:description" content="{meta_description}">
   <meta name="og:type" property="og:type" content="website">
   <meta name="og:image" property="og:image" content="/indie-engineer-og-image.png">
   <meta name="twitter:card" property="twitter:card" content="{meta_description}">
