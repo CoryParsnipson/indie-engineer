@@ -67,7 +67,7 @@
 <main>
   <h1 class="font-title text-5xl mt-12 mb-12">Contact me</h1>
 
-  <div class="flex flex-col-reverse sm:flex-row sm:items-stretch mb-12">
+  <div class="flex flex-col-reverse sm:flex-row sm:items-start mb-12">
     <form on:submit|preventDefault={handleSubmit} action="{form_endpoint}" method="post" class="grow sm:pr-8">
       <input type="text" name="honeypot" style="display:none" on:change={handleChange} bind:value={$form.honeypot}>
 
@@ -101,11 +101,14 @@
         <p class="font-serif text-lg text-right mb-3"><span class="required">*</span> indicates required</p>
 
         <input type="submit" value="Submit" disabled='{form_busy || $errors.email || $errors.message}'
-          class="self-center font-title text-slate-200 rounded-lg bg-cyan-800 px-8 py-4 hover:bg-cyan-700 hover:cursor-pointer disabled:bg-slate-400">
+          class="self-center font-title text-xl text-zinc-800 rounded-lg px-8 py-4
+                 bg-emerald-500
+                 hover:bg-emerald-700 hover:text-zinc-300 hover:cursor-pointer
+                 disabled:bg-zinc-400 disabled:text-zinc-600 disabled:hover:text-zinc-600 disabled:hover:cursor-not-allowed">
       </div>
     </form>
 
-    <div class="sm:w-2/5 py-4 px-8 mb-12 sm:mb-0 bg-slate-300">
+    <div class="sm:w-2/5 py-4 px-8 mb-12 sm:pb-12 bg-cream-200">
       <img src="/cparsnipson.png" width="150px" alt="A headshot of yours truly, Cory Parsnipson" class="m-8 mx-auto">
       <p class="font-serif text-lg sm:text-xl leading-loose sm:leading-loose text-center">
         Hey, it's me, Cory Parsnipson! Need to get in touch with me? Fill out the form and I'll get back to you.

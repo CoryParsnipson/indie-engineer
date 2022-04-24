@@ -54,7 +54,7 @@
   class="block w-full min-h-[500px]"
 />
 {:else if instance == "dev"}
-<div class="mail-signup-form border-2 border-slate-700 bg-slate-50 p-8">
+<div class="mail-signup-form border-2 border-cream-800 bg-cream-200 p-8">
   <h2 class="mb-4">Be notified when there's a new blog post</h2>
   <p class="mb-4">Receive an email with a link to the latest blog post when a new one is published. No more, no less.</p>
   <p class="sidenote text-right m-0"><span class="required">*</span> indicates required</p>
@@ -71,8 +71,9 @@
     {/if}
 
     <button disabled='{formBusy || $errors.email}' type="submit"
-      class="btn font-sans text-lg self-center text-slate-50 bg-slate-500 disabled:bg-slate-300 hover:bg-slate-400 rounded-md mt-3 py-2 px-8"
-    >
+      class="btn font-title text-xl self-center text-zinc-800 bg-emerald-500
+             disabled:bg-zinc-400 disabled:text-zinc-600 disabled:hover:bg-zinc-400 disabled:hover:text-zinc-600 disabled:cursor-not-allowed
+             hover:bg-emerald-700 hover:text-zinc-300 rounded-md mt-3 py-2 px-8">
       Subscribe
     </button>
   </form>

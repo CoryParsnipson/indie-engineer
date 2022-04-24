@@ -9,12 +9,7 @@
 /* global style overrides */
 @layer base {
   * {
-    @apply min-w-0;
-    @apply min-h-0;
-    @apply box-border;
-
-    @apply font-sans;
-    @apply text-base;
+    @apply min-w-0 min-h-0 box-border font-sans text-base;
   }
 
   /* these styles are for making the footer stick to the bottom on short pages  */
@@ -23,11 +18,7 @@
   }
 
   body > div {
-    @apply min-h-screen;
-    @apply flex;
-    @apply flex-col;
-
-    @apply bg-pink-200;
+    @apply min-h-screen flex flex-col bg-cream-100;
   }
 
   header {
@@ -35,9 +26,7 @@
   }
 
   body div#content {
-    @apply grow;
-    @apply shrink-0;
-    @apply basis-auto;
+    @apply grow shrink-0 basis-auto;
   }
 
   footer {

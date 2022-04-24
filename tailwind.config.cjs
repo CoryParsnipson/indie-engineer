@@ -6,18 +6,33 @@ const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-    fontSize: {
-      ...defaultTheme.fontSize,
-      '4.5xl': '2.7rem',
-      '5xl': '3.1rem',
-    },
-    letterSpacing: {
-      markdown: '0.015rem',
-      ...defaultTheme.letterSpacing,
-    },
 		extend: {
+      colors: {
+        'cream': {
+          50: '#fcfbdc',
+          100: '#fff3da',
+          200: '#f8e9ca',
+          300: '#e4cf8c',
+          400: '#caa85f',
+          600: '#775711',
+          800: '#563b01',
+        },
+        'emerald': {
+          100: '',
+          500: '#6ab658',
+          700: '#38762a',
+          800: '#226514',
+        },
+      },
       fontFamily: {
         'title': ['"Oswald"', ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        '4.5xl': '2.7rem',
+        '5xl': '3.1rem',
+      },
+      letterSpacing: {
+        markdown: '0.015rem',
       },
     }
 	},

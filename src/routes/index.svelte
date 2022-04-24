@@ -42,7 +42,6 @@
 <style>
   h1 {
     @apply text-4xl;
-    @apply font-bold;
     @apply tracking-tighter;
     @apply mt-2;
     @apply mb-4;

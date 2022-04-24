@@ -4,7 +4,8 @@
 
 <div class="flex flex-wrap gap-2">
   {#each categories as category}
-    <a class="py-1 px-4 rounded-2xl hover:bg-slate-400 active:bg-slate-50 bg-slate-300 text-base">
+    <a class="py-1 px-4 rounded-lg text-lg font-serif text-cream-800 bg-cream-300
+              hover:bg-cream-400 hover:cursor-pointer active:bg-cream-200">
       {category}
     </a>
   {/each}
