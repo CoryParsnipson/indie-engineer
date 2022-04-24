@@ -9,6 +9,7 @@
   export let seo_title; // goes in meta title tag, if defined (falls back to title)
   export let summary;
   export let seo_summary; // goes in meta description tag, if defined (falls back to summary)
+  export let seo_image; // goes in meta og:image tag, if defined (no default)
   export let author;
   export let date;
   export let readingTime;
@@ -25,6 +26,9 @@
   <meta name="og:title" property="og:title" content="{seo_title ? seo_title : title} :: Indie Engineer">
   <meta name="og:description" property="og:description" content="{seo_summary ? seo_summary : summary}">
   <meta name="og:type" property="og:type" content="article">
+  {#if seo_image }
+    <meta name="og:image" property="og:image" content="{seo_image}">
+  {/if}
   <meta name="twitter:card" property="twitter:card" content="{seo_summary ? seo_summary : summary}">
 </svelte:head>
 
@@ -77,10 +81,12 @@
   }
 
   :global(main h1) {
-    @apply text-5xl;
-    @apply leading-relaxed;
-    @apply mt-2;
-    @apply mb-4;
+    @apply text-4.5xl leading-snug mt-2 mb-4;
+  }
+
+  /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
+  @media (min-width: 640px) {
+    :global(main h1) { @apply text-5xl leading-relaxed mt-2 mb-4; }
   }
 
   :global(main h2) {

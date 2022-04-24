@@ -6,6 +6,11 @@ const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
+    fontSize: {
+      ...defaultTheme.fontSize,
+      '4.5xl': '2.7rem',
+      '5xl': '3.1rem',
+    },
     letterSpacing: {
       markdown: '0.015rem',
       ...defaultTheme.letterSpacing,

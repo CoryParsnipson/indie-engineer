@@ -15,7 +15,7 @@
 
   export let posts = [];
 
-  let meta_description = "Welcome to IndieEngineer.com! This is a blog about eschewing the safety and routine of office work and trying to survive on the merit of one's own creations. Can an Engineer/Maker earn a living off of their own creations?"
+  let meta_description = "This is a blog about eschewing the safety and routine of office work and trying to survive on the merit of one's own creations. Can an Engineer/Maker earn a living off of their own creations?"
 </script>
 
 <svelte:head>
