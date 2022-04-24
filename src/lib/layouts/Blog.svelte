@@ -33,10 +33,10 @@
 </svelte:head>
 
 <div class="flex justify-center gap-6" class:flex-row-reverse={sidebar_on_left}>
-  <main class="flex-initial w-full md:max-w-[700px] lg:w-[70%] bg-green-300 py-12">
+  <main class="flex-initial w-full md:max-w-[700px] lg:w-[70%] py-12">
     <Categories {categories} />
     <h1 id="{title_slug}">{title}
-      <a aria-hidden="true" tabindex="-1" class="align-middle" href="#{title_slug}">
+      <a aria-hidden="true" tabindex="-1" href="#{title_slug}">
         <span class="icon icon-link"></span>
       </a>
     </h1>
@@ -55,7 +55,7 @@
     <MailSignupForm />
   </main>
 
-  <sidebar class="w-[30%] hidden lg:block bg-purple-300">
+  <sidebar class="w-[30%] hidden lg:block">
     <div
       class="fixed pl-4 border-slate-400 bg-cyan-400"
       class:border-l-4={!sidebar_on_left}
@@ -77,7 +77,7 @@
   :global(main h5),
   :global(main h6) {
     @apply scroll-mt-28; /* NOTE: this is hardcoded, but the value should be dependent on header height */
-    @apply font-title;
+    @apply relative font-title;
   }
 
   :global(main h1) {
@@ -114,12 +114,12 @@
 
   /* rehype autolink header styles */
   /* ------------------------------------------------------------------------ */
+  :global(main a[href^="#"]) {
+    @apply inline-block absolute bottom-[10%] min-w-[1.05rem] min-h-[1.05rem] mx-2 my-2;
+  }
+
   :global(main span[class*="icon-link"]) {
-    @apply min-w-[1.05rem];
-    @apply min-h-[1.05rem];
-    @apply inline-block;
-    @apply mx-2;
-    @apply my-1;
+    @apply w-full h-full inline-block absolute top-0;
   }
 
   :global(main h1:hover span[class*="icon-link"]),
