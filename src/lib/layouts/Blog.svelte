@@ -22,6 +22,10 @@
 <svelte:head>
   <title>{seo_title ? seo_title : title} :: Indie Engineer</title>
   <meta name="description" content="{seo_summary ? seo_summary : summary}">
+  <meta name="og:title" property="og:title" content="{seo_title ? seo_title : title} :: Indie Engineer">
+  <meta name="og:description" property="og:description" content="{seo_summary ? seo_summary : summary}">
+  <meta name="og:type" property="og:type" content="article">
+  <meta name="twitter:card" property="twitter:card" content="{seo_summary ? seo_summary : summary}">
 </svelte:head>
 
 <div class="flex justify-center gap-6" class:flex-row-reverse={sidebar_on_left}>
