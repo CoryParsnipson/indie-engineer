@@ -65,7 +65,9 @@
   
       <div class="flex flex-wrap items-start justify-center gap-2 mx-auto mx-6 sm:mx-12 py-5">
       {#each row.items as item}
-        <p class="m-0 py-2 px-4 z-10
+        <p
+          class:bg-orange-600={item.status === "active"}
+          class="m-0 py-2 px-4 z-10
           text-zinc-50 bg-zinc-700 rounded-lg
           font-sans leading-normal text-center
           text-xs min-w-[2rem] max-w-[7rem]
