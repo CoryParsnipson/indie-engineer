@@ -12,6 +12,7 @@
 
 <script>
   import PostPreview from '$lib/components/PostPreview.svelte';
+  import Pagination from '$lib/components/Pagination.svelte';
 
   export let posts = [];
 
@@ -37,4 +38,6 @@
       />
    {/each}
   </div>
+
+  <Pagination />
 </main>
