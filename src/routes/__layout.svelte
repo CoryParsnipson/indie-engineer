@@ -14,9 +14,9 @@
 />
 
 <header class="sticky top-0 w-full z-50 bg-emerald-500 text-zinc-900">
-  <div class="flex items-stretch gap-4 max-w-screen-lg sm:mx-auto pl-5 md:px-5 lg:pl-5">
-    <img alt="Indie Engineer logo" src="/indie-engineer-logo.png" class="px-2 py-4 pl-0 hidden sm:block">
-    <img alt="Indie Engineer logo" src="/indie-engineer-logo-sm.png" class="py-1 pr-2 pl-0 sm:hidden">
+  <div class="flex items-stretch gap-4 max-w-screen-lg sm:mx-auto">
+    <img alt="Indie Engineer logo" src="/indie-engineer-logo.png" class="px-2 py-4 hidden sm:block">
+    <img alt="Indie Engineer logo" src="/indie-engineer-logo-sm.png" class="px-2 py-1 sm:hidden">
 
     <div class="nav dropdown grow">
       <div class="justify-end flex items-center h-full mx-5 md:hidden">
@@ -33,7 +33,7 @@
   </div>
 </header>
 
-<div id="content" class="w-full max-w-screen-lg mx-auto px-5">
+<div id="content" class="w-full max-w-screen-lg mx-auto">
   <slot />
 </div>
 

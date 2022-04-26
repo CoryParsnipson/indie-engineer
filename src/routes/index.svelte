@@ -28,22 +28,13 @@
   <meta name="twitter:card" property="twitter:card" content="{meta_description}">
 </svelte:head>
 
-<main>
-  <h1 class="mb-6">Recent posts</h1>
-
-  {#each posts as post}
-    <PostPreview
-      metadata = {post.meta}
-      path = {post.path}
-    />
-  {/each}
+<main class="mx-5 py-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {#each posts as post}
+      <PostPreview
+        metadata = {post.meta}
+        path = {post.path}
+      />
+   {/each}
+  </div>
 </main>
-
-<style>
-  h1 {
-    @apply text-4xl;
-    @apply tracking-tighter;
-    @apply mt-2;
-    @apply mb-4;
-  }
-</style>

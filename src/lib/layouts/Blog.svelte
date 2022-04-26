@@ -32,8 +32,8 @@
   <meta name="twitter:card" property="twitter:card" content="{seo_summary ? seo_summary : summary}">
 </svelte:head>
 
-<div class="flex justify-center gap-6" class:flex-row-reverse={sidebar_on_left}>
-  <main class="flex-initial w-full md:max-w-[700px] lg:w-[70%] py-12">
+<div class="flex justify-center" class:flex-row-reverse={sidebar_on_left}>
+  <main class="bg-white flex-initial w-full md:max-w-[700px] lg:w-[70%] px-4 sm:px-8 sm:ml-0 py-12">
     <Categories {categories} />
     <h1 id="{title_slug}">{title}
       <a aria-hidden="true" tabindex="-1" href="#{title_slug}">
@@ -42,9 +42,9 @@
     </h1>
 
     <div class="subtitle flex flex-col sm:flex-row sm:flex-wrap justify-start">
-      {#if author}<p class="font-serif text-xl text-zinc-600 my-2 sm:my-4">by {author}</p>{/if}
-      {#if date}<p class="font-serif text-xl text-zinc-600 my-2 sm:my-4">{readable_date}</p>{/if}
-      {#if readingTime?.text}<p class="font-serif text-emerald-800 text-xl my-2 sm:my-4">{readingTime.text}</p>{/if}
+      {#if author}<p class="font-serif text-xl text-zinc-600 my-2 sm:my-0">by {author}</p>{/if}
+      {#if date}<p class="font-serif text-xl text-zinc-600 my-2 sm:my-0">{readable_date}</p>{/if}
+      {#if readingTime?.text}<p class="font-serif text-emerald-800 text-xl my-2 sm:my-0">{readingTime.text}</p>{/if}
     </div>
 
     <div class="w-2/12 sm:w-1/12 mt-5 mb-5 border-t-4 border-emerald-700"></div>
@@ -55,7 +55,7 @@
     <MailSignupForm />
   </main>
 
-  <sidebar class="w-[30%] hidden lg:block">
+  <sidebar class="w-[30%] hidden lg:block ml-5 py-12">
     <div
       class="fixed pl-4 border-cream-800"
       class:border-l-4={!sidebar_on_left}
@@ -81,7 +81,7 @@
   }
 
   :global(main h1) {
-    @apply text-4.5xl leading-snug mt-2 mb-4;
+    @apply text-4.5xl tracking-tight leading-snug mt-2 mb-4;
   }
 
   /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */

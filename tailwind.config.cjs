@@ -9,9 +9,9 @@ const config = {
 		extend: {
       colors: {
         'cream': {
-          50: '#fcfbdc',
+          50:  '#fff9ec',
           100: '#fff3da',
-          200: '#f8e9ca',
+          200: '#f6ebcf',
           300: '#e4cf8c',
           400: '#caa85f',
           600: '#775711',

@@ -54,7 +54,7 @@
   class="block w-full min-h-[500px]"
 />
 {:else if instance == "dev"}
-<div class="mail-signup-form border-2 border-cream-800 bg-cream-200 p-8">
+<div class="mail-signup-form border-2 border-cream-800 bg-cream-50 p-8">
   <h2 class="mb-4">Be notified when there's a new blog post</h2>
   <p class="mb-4">Receive an email with a link to the latest blog post when a new one is published. No more, no less.</p>
   <p class="sidenote text-right m-0"><span class="required">*</span> indicates required</p>
