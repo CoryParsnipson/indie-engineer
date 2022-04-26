@@ -2,8 +2,8 @@
 title: I Left my Office Job and Now I'm Trying to Make it as an Independent Engineer
 seo_title: I Left my Office Job and Now I'm Trying to Make it as an Independent Engineer
 author: Cory Parsnipson
-summary: This is my first post on Indie Engineer! Thanks for reading. In this post, I talk about my motivations in starting this blog. I also give a bit of my background. I'm trying to set up a work routine for myself that does not rely on being part of a company. This may mean being a freelancer, or independent maker, or a whole bunch of things at the same time. To solve this issue, I've come up with something called a 'Work Diet'. This is a tool for helping myself stay organized. I talk in detail about what it is and how it works.
-seo_image: /work-healthy.png
+summary: This is my first post on Indie Engineer! In this post, I talk about my motivations in starting this blog. I also give a bit of my background. I'm trying to set up a work routine for myself that does not rely on being part of a company. This may mean being a freelancer, or independent maker, or a whole bunch of things at the same time. To solve this issue, I've come up with something called a 'Work Diet'.
+seo_image: /indie-engineer-og-image.png
 date: Thu Feb 24 11:22:13 PM PST 2022
 categories:
   - meta
