@@ -42,9 +42,9 @@
     </h1>
 
     <div class="subtitle flex flex-col sm:flex-row sm:flex-wrap justify-start">
-      {#if author}<p class="font-serif text-xl text-zinc-600 my-2 sm:my-0">by {author}</p>{/if}
-      {#if date}<p class="font-serif text-xl text-zinc-600 my-2 sm:my-0">{readable_date}</p>{/if}
-      {#if readingTime?.text}<p class="font-serif text-emerald-800 text-xl my-2 sm:my-0">{readingTime.text}</p>{/if}
+      {#if author}<p class="font-serif text-lg sm:text-xl text-zinc-600 my-2 sm:my-0">by {author}</p>{/if}
+      {#if date}<p class="font-serif text-lg sm:text-xl text-zinc-600 my-2 sm:my-0">{readable_date}</p>{/if}
+      {#if readingTime?.text}<p class="font-serif text-emerald-800 text-lg sm:text-xl my-2 sm:my-0">{readingTime.text}</p>{/if}
     </div>
 
     <div class="w-2/12 sm:w-1/12 mt-5 mb-5 border-t-4 border-emerald-700"></div>
