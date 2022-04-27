@@ -7,7 +7,7 @@
   let date = new Date(metadata.date).toLocaleDateString('en-us', { dateStyle: "long" });
 </script>
 
-<div class="post-card bg-white hover:bg-cream-100 hover:drop-shadow-md rounded-2xl">
+<div class="post-card bg-cream-50 hover:drop-shadow-md rounded-2xl">
   <a href="{path}" class="post-container block w-full h-full py-4">
     {#if metadata.date}
       <p class="font-serif text-lg text-zinc-700 mb-0">{date}</p>

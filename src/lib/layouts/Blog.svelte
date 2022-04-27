@@ -33,7 +33,7 @@
 </svelte:head>
 
 <div class="flex justify-center" class:flex-row-reverse={sidebar_on_left}>
-  <main class="bg-white flex-initial w-full md:max-w-[700px] lg:w-[70%] px-4 sm:px-8 sm:ml-0 py-12">
+  <main class="bg-cream-50 flex-initial w-full md:max-w-[700px] lg:w-[70%] px-4 sm:px-8 sm:ml-0 py-12">
     <Categories {categories} />
     <h1 id="{title_slug}">{title}
       <a aria-hidden="true" tabindex="-1" href="#{title_slug}">
