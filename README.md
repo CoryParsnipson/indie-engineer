@@ -2,6 +2,22 @@
 
 This is a sveltekit + MDsveX blog.
 
+## TODO
+
+* implement pagination
+* tag search pages
+* about page contents
+* share links
+* table of contents in blog layout
+* pick default fonts
+* progress bar and pie chart widgets
+
+* csrf tokens for forms and api calls
+* rate limiting api endpoints
+* google recaptcha on forms
+* remark/rehype image attribution?
+* iframe autoresize? (for sendgrid sign up form)
+
 ## Creating a svelte kit project
 
 ```bash
