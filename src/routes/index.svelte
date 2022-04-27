@@ -29,7 +29,7 @@
   <meta name="twitter:card" property="twitter:card" content="{meta_description}">
 </svelte:head>
 
-<main class="mx-5 py-12">
+<main class="py-12">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {#each posts as post}
       <PostPreview

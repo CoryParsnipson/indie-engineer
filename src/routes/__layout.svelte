@@ -33,7 +33,7 @@
   </div>
 </header>
 
-<div id="content" class="w-full max-w-screen-lg mx-auto">
+<div id="content" class="w-full max-w-screen-lg mx-auto px-5">
   <slot />
 </div>
 
