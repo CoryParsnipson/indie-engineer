@@ -21,7 +21,7 @@ export const get = async ({ url }) => {
 
   // handle pagination
   const page = parseInt(url.searchParams.get('p')) || 1;
-  const page_size = parseInt(url.searchParams.get('size')) || env.var.VITE_INDEX_PAGINATION_SIZE || 1;
+  const page_size = parseInt(url.searchParams.get('size')) || env.var.VITE_INDEX_PAGINATION_SIZE || 10;
   const num_pages = Math.ceil(posts.length / page_size);
 
   const results = posts.slice((page - 1) * page_size, page * page_size);
