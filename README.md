@@ -99,12 +99,16 @@ Required variables:
 * VITE\_SENDGRID\_SENDER\ID - set this to the sender you used in sendgrid. To get the "from" field, use the view sender API call (see [8]).
 * VITE\_SENDGRID\_LIST\_ID - see [6]
 * VITE\_SENDGRID\_UNSUBSCRIBE\_GROUP - link to group for users to unsubscribe from the list; see [9]
+* VITE\_HEROKU\_WEBHOOK\_ENABLE - if not "true", exit the webhook function without doing anything (not even authentication)
 * VITE\_HEROKU\_REPO - set the heroku repo (git remote show heroku)
 * VITE\_HEROKU\_API\_TOKEN - retrieve your heroku api token (see [7])
 
 Optional variables:
 
 * VITE\_SENDGRID\_MAX\_CONTACTS - set this to change amount of people who can go in the sendgrid 'dev' mailing list. Defaults to 10.
+* VITE\_GTM\_ENABLE - set this to true to enable the Google Tag Manager widget
+* VITE\_GTM\_ID - if Google Tag Manager is enabled, this must be set to properly send data to the account
+* VITE\_INDEX\_PAGINATION\_SIZE - set the page size for index blog post pagination (defaults to 10 if not present)
 
 ## Set up automated email hook
 
