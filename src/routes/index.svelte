@@ -2,23 +2,12 @@
   import { env } from '$lib/util/env';
 
   export const load = async ({ url, fetch }) => {
-    const postsResp = await fetch(`/api/posts.json`);
+    const postsResp = await fetch(`/api/posts.json?${url.searchParams.toString()}`);
     const posts = await postsResp.json();
-
-    // do client side pagination for now (this may need to change
-    // if there are a lot of posts)
-    const PAGE_SIZE = env.var.VITE_INDEX_PAGE_SIZE || 1;
-    const NUM_PAGES = Math.ceil(posts.length / PAGE_SIZE);
-
-    const page = parseInt(url.searchParams.get('p')) || 1;
-    const results = posts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
     return {
       props: {
-        posts: results,
-        current_page: page,
-        page_size: PAGE_SIZE,
-        num_pages: NUM_PAGES,
+        ...posts
       },
     };
   };
