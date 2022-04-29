@@ -1,4 +1,4 @@
-export const get = async () => {
+export const get = async ({ url }) => {
   const postFiles = Object.entries(import.meta.glob('../blog/*.md'));
 
   const posts = await Promise.all(

@@ -1,20 +1,39 @@
 <script context="module">
-  export const load = async ({ fetch }) => {
+  import { env } from '$lib/util/env';
+
+  export const load = async ({ url, fetch }) => {
     const postsResp = await fetch(`/api/posts.json`);
     const posts = await postsResp.json();
+
+    // do client side pagination for now (this may need to change
+    // if there are a lot of posts)
+    const PAGE_SIZE = env.var.VITE_INDEX_PAGE_SIZE || 1;
+    const NUM_PAGES = Math.ceil(posts.length / PAGE_SIZE);
+
+    const page = parseInt(url.searchParams.get('p')) || 1;
+    const results = posts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
     return {
       props: {
-        posts: posts,
+        posts: results,
+        current_page: page,
+        page_size: PAGE_SIZE,
+        num_pages: NUM_PAGES,
       },
     };
   };
 </script>
 
 <script>
+  import { page } from '$app/stores';
+
   import PostPreview from '$lib/components/PostPreview.svelte';
   import Pagination from '$lib/components/Pagination.svelte';
 
   export let posts = [];
+  export let num_pages;
+  export let page_size;
+  export let current_page;
 
   let meta_description = "This is a blog about eschewing the safety and routine of office work and trying to survive on the merit of one's own creations. Can an Engineer/Maker earn a living off of their own creations?"
 </script>
@@ -39,5 +58,10 @@
    {/each}
   </div>
 
-  <Pagination />
+  <Pagination
+    currentPage={parseInt($page.url.searchParams.get('p')) || current_page}
+    pageSize={parseInt($page.url.searchParams.get('size')) || page_size}
+    minPage={1}
+    maxPage={num_pages}
+  />
 </main>

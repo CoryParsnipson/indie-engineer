@@ -4,7 +4,6 @@ This is a sveltekit + MDsveX blog.
 
 ## TODO
 
-* implement pagination
 * tag search pages
 * about page contents
 * share links

@@ -4,7 +4,7 @@
   export let metadata;
   export let path;
 
-  let date = new Date(metadata.date).toLocaleDateString('en-us', { dateStyle: "long" });
+  $: date = new Date(metadata.date).toLocaleDateString('en-us', { dateStyle: "long" });
 </script>
 
 <div class="post-card bg-cream-50 hover:drop-shadow-md rounded-2xl">
