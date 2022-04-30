@@ -3,7 +3,7 @@ import { env } from '$lib/util/env';
 export const get = async ({ url }) => {
   const postFiles = Object.entries(import.meta.glob('../blog/*.md'));
 
-  const posts = await Promise.all(
+  let posts = await Promise.all(
     postFiles.map(async ([path, resolver]) => {
       const { metadata } = await resolver();
       const filepath = path.slice(2, -3);
@@ -14,6 +14,12 @@ export const get = async ({ url }) => {
       };
     })
   );
+
+  // handle tag filtering
+  const tag_filter = url.searchParams.get('tag');
+  if (tag_filter) {
+    posts = posts.filter(post => post.meta.categories?.includes(tag_filter));
+  }
 
   const sorted = posts.sort((a,  b) => {
     return new Date(b.meta.date) - new Date(a.meta.date);
