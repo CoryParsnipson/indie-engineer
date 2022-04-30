@@ -4,7 +4,6 @@ This is a sveltekit + MDsveX blog.
 
 ## TODO
 
-* tag search pages
 * about page contents
 * share links
 * table of contents in blog layout
