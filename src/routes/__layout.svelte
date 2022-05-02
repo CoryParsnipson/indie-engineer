@@ -35,6 +35,17 @@
 
 <div id="content" class="w-full max-w-screen-lg mx-auto px-5">
   <slot />
+
+  <a href="#top">
+    <div style="filter: drop-shadow(0 2px 5px rgb(0, 0, 0, 0.3))"
+      class="w-fit fixed right-4 bottom-8 2xl:right-[20%]
+      bg-emerald-500 rounded-full
+      z-[100] p-3 sm:p-4 opacity-75 sm:opacity-100 hover:cursor-pointer hover:bg-emerald-700">
+        <svg width="1rem" height="1rem" class="text-cream-100">
+          <path d="M2,10 L7,5 L12,10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+    </div>
+  </a>
 </div>
 
 <footer class="z-50 bg-emerald-500 text-zinc-900">

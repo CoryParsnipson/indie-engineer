@@ -9,7 +9,7 @@
 /* global style overrides */
 @layer base {
   * {
-    @apply min-w-0 min-h-0 box-border font-sans text-base;
+    @apply min-w-0 min-h-0 box-border font-sans text-base scroll-smooth;
   }
 
   /* these styles are for making the footer stick to the bottom on short pages  */
