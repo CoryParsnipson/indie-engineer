@@ -5,7 +5,6 @@ This is a sveltekit + MDsveX blog.
 ## TODO
 
 * about page contents
-* table of contents in blog layout
 * progress bar and pie chart widgets
 
 * csrf tokens for forms and api calls
@@ -13,6 +12,7 @@ This is a sveltekit + MDsveX blog.
 * google recaptcha on forms
 * remark/rehype image attribution?
 * iframe autoresize? (for sendgrid sign up form)
+* add in tag manager events for share button clicks + subscribe clicks
 
 ## Creating a svelte kit project
 

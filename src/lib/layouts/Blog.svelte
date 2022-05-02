@@ -1,7 +1,10 @@
 <script>
+  import { onMount } from 'svelte';
+
   import Categories from '$lib/components/Categories.svelte';
   import MailSignupForm from '$lib/components/MailSignupForm.svelte';
   import ShareLinks from '$lib/components/ShareLinks.svelte';
+  import TableOfContents from '$lib/components/TableOfContents.svelte';
 
   import { slugify } from '$lib/util/string';
 
@@ -19,6 +22,25 @@
   let sidebar_on_left = false;
   let title_slug = slugify(title);
   let readable_date = new Date(date).toLocaleDateString('en-us', { dateStyle: "long" });
+
+  let toc_data = [];
+
+  onMount(async () => {
+    // gather data for table of contents
+    let headings = document.getElementsByTagName('main')[0].querySelectorAll('h1,h2,h3,h4,h5,h6');
+    headings.forEach(heading => {
+      if (!heading.lastChild.hash) {
+        return;
+      }
+
+      toc_data.push({
+        tag: heading.tagName.toLowerCase(),
+        text: heading.innerText,
+        link: heading.lastChild.hash,
+      });
+      toc_data = toc_data; // assign here for reactive updates
+    });
+  });
 </script>
 
 <svelte:head>
@@ -62,12 +84,14 @@
     <ShareLinks />
   </main>
 
-  <sidebar class="w-[30%] hidden lg:block ml-5 py-12">
+  <sidebar class="w-[30%] relative hidden lg:block ml-5 py-6">
+    <!-- top-32 spacing here on the sticky div is arbitrary, but must be bigger than py-6 to prevent jitter -->
     <div
-      class="fixed pl-4 border-cream-800"
+      class="sticky top-32 pl-2 border-cream-500"
       class:border-l-4={!sidebar_on_left}
       class:border-r-4={sidebar_on_left}
     >
+      <TableOfContents headings={toc_data} />
     </div>
   </sidebar>
 </div>
