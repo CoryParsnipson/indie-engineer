@@ -6,5 +6,5 @@ export function slugify(s) {
   slug = slug.replace(/\s+?/g, SEPARATOR);
   slug = slug.replace(new RegExp(`[^0-9a-z${SEPARATOR} ]+?`, "g"), '');
 
-  return slug.substring(0, MAX_LEN);
+  return slug.substring(0, MAX_LEN).replace(/-$/g, '');
 }
