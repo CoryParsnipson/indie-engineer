@@ -36,7 +36,7 @@
 <div id="content" class="w-full max-w-screen-lg mx-auto px-5">
   <slot />
 
-  <a href="#top" alt="Scroll to Top">
+  <a href="#top" alt="Scroll to Top" title="Scroll to Top">
     <div style="filter: drop-shadow(0 2px 5px rgb(0, 0, 0, 0.3))"
       class="w-fit fixed right-4 bottom-8 2xl:right-[20%]
       bg-emerald-500 rounded-full
