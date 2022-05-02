@@ -13,6 +13,7 @@ This is a sveltekit + MDsveX blog.
 * remark/rehype image attribution?
 * iframe autoresize? (for sendgrid sign up form)
 * add in tag manager events for share button clicks + subscribe clicks
+* next gen images - (low res placeholder, multiple res, etc)
 
 ## Creating a svelte kit project
 
