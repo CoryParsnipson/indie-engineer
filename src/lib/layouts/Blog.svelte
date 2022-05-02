@@ -144,27 +144,13 @@
   }
 
   :global(main p), :global(main em), :global(main strong) {
-    @apply text-lg font-serif mb-10 leading-loose tracking-markdown;
-  }
-
-  /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
-  @media (min-width: 640px) {
-    :global(main p), :global(main em), :global(main strong) {
-      @apply text-xl leading-loose;
-    }
+    @apply text-xl font-serif mb-10 leading-loose tracking-markdown;
   }
 
   /* inline hyperlinks */
   /* ------------------------------------------------------------------------ */
   :global(main a[rel]) {
-    @apply text-lg text-emerald-700 font-serif underline py-1 pr-0.5;
-  }
-
-  /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
-  @media (min-width: 640px) {
-    :global(main a[rel]) {
-      @apply text-xl;
-    }
+    @apply text-xl text-emerald-700 font-serif underline py-1 pr-0.5;
   }
 
   :global(main a[rel]:after) {
@@ -199,14 +185,7 @@
   }
 
   :global(main li) {
-    @apply text-lg font-serif leading-loose tracking-markdown pl-4 mb-2;
-  }
-
-  /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
-  @media (min-width: 640px) {
-    :global(main li) {
-      @apply text-xl leading-loose;
-    }
+    @apply text-xl font-serif leading-loose tracking-markdown pl-4 mb-2;
   }
 
   /* images */

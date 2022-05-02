@@ -25,7 +25,8 @@ const config = {
         },
       },
       fontFamily: {
-        'title': ['"Oswald"', ...defaultTheme.fontFamily.sans],
+        'title': ['"Oswald"', 'Trebuchet MS', 'Helvetica', ...defaultTheme.fontFamily.sans],
+        'serif': ['"Slabo 27px"', 'Garamond', ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
         '4.5xl': '2.7rem',

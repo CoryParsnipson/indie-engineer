@@ -5,9 +5,7 @@ This is a sveltekit + MDsveX blog.
 ## TODO
 
 * about page contents
-* share links
 * table of contents in blog layout
-* pick default fonts
 * progress bar and pie chart widgets
 
 * csrf tokens for forms and api calls
