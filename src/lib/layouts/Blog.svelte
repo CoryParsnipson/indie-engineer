@@ -159,7 +159,7 @@
   }
 
   :global(main a[rel]:hover) {
-    @apply bg-cream-300;
+    @apply bg-cream-100;
   }
 
   :global(main a[rel]:active) {
