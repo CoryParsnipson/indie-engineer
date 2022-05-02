@@ -50,13 +50,13 @@
       <p class="font-title text-zinc-900 text-center mb-6">- Links -</p>
       <div class="flex gap-5 justify-center mb-12">
         <a href="/contact">
-          <img src="/email.png" width="50px" alt="Click here to email the authors">
+          <img src="/email.png" width="50px" alt="Click here to email the authors" class="hover:opacity-75">
         </a>
         <a href="https://github.com/CoryParsnipson" target="_blank" rel="nofollow noopener">
-          <img src="/GitHub-Mark-120px-plus.png" width="50px" alt="Click here to go to Cory Parsnipson's GitHub page.">
+          <img src="/GitHub-Mark-120px-plus.png" width="50px" alt="Click here to go to Cory Parsnipson's GitHub page." class="hover:opacity-75">
         </a>
         <a href="https://twitter.com/CoryParsnipson" target="_blank" rel="nofollow noopener">
-          <img src="/twitter-icon.png" width="50px" alt="Click here to visit Cory Parsnipson's twitter.">
+          <img src="/twitter-icon.png" width="50px" alt="Click here to visit Cory Parsnipson's twitter." class="hover:opacity-75">
         </a>
       </div>
     </div>

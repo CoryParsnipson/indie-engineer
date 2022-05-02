@@ -1,15 +1,16 @@
 <script>
   import Categories from '$lib/components/Categories.svelte';
   import MailSignupForm from '$lib/components/MailSignupForm.svelte';
+  import ShareLinks from '$lib/components/ShareLinks.svelte';
 
   import { slugify } from '$lib/util/string';
 
   // frontmatter exports
   export let title;
-  export let seo_title; // goes in meta title tag, if defined (falls back to title)
+  export let seo_title = undefined; // goes in meta title tag, if defined (falls back to title)
   export let summary;
-  export let seo_summary; // goes in meta description tag, if defined (falls back to summary)
-  export let seo_image; // goes in meta og:image tag, if defined (no default)
+  export let seo_summary = undefined; // goes in meta description tag, if defined (falls back to summary)
+  export let seo_image = undefined; // goes in meta og:image tag, if defined (no default)
   export let author;
   export let date;
   export let readingTime;
@@ -50,9 +51,15 @@
     <div class="w-2/12 sm:w-1/12 mt-5 mb-5 border-t-4 border-emerald-700"></div>
     <div class="mb-8"></div>
 
+    <div class="mb-12">
+      <ShareLinks show_title={false} />
+    </div>
+
     <slot />
 
     <MailSignupForm />
+
+    <ShareLinks />
   </main>
 
   <sidebar class="w-[30%] hidden lg:block ml-5 py-12">
