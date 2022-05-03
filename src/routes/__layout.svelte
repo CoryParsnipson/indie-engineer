@@ -42,7 +42,7 @@
       bg-emerald-500 rounded-full
       z-[100] p-3 sm:p-4 opacity-75 sm:opacity-100 hover:cursor-pointer hover:bg-emerald-700">
         <svg width="1rem" height="1rem" class="text-cream-100">
-          <path d="M2,10 L7,5 L12,10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M3,10 L8,5 L13,10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
     </div>
   </a>
