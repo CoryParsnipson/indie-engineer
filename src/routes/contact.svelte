@@ -1,12 +1,23 @@
 <script>
+  import { page } from '$app/stores';
   import { createForm } from 'svelte-forms-lib';
   import * as yup from 'yup';
 
   import { env } from '$lib/util/env';
 
+  const SUCCESS_MSG = "Message sent successfully.";
+
   let form_busy = false;
   let form_endpoint = '/api/contact.json';
-  let form_success_msg = '';
+  let form_success_msg = $page.url.searchParams.has('success') ? SUCCESS_MSG : '';
+  let query_errors = [];
+
+  for (let pair of $page.url.searchParams.entries()) {
+    if (pair[0] == "success") {
+      continue;
+    }
+    query_errors.push(pair[1]);
+  }
 
   const { form, errors, state, handleChange, handleSubmit } = createForm({
     initialValues: {
@@ -46,7 +57,7 @@
         $form.email = '';
         $form.message = '';
 
-        form_success_msg = "Message sent successfully."
+        form_success_msg = SUCCESS_MSG;
         form_busy = false;
       } else {
         if (env.var.VITE_INSTANCE === "dev" && response.error) {
@@ -68,20 +79,24 @@
   <h1 class="font-title text-5xl mt-12 mb-12">Contact me</h1>
 
   <div class="flex flex-col-reverse sm:flex-row sm:items-start mb-12">
-    <form on:submit|preventDefault={handleSubmit} action="{form_endpoint}" method="post" class="grow sm:pr-8">
+    <form id="contactform" on:submit|preventDefault={handleSubmit} action="{form_endpoint}" method="post" class="grow scroll-mt-28 sm:pr-8">
       <input type="text" name="honeypot" style="display:none" on:change={handleChange} bind:value={$form.honeypot}>
 
-      {#if $errors.email || $errors.message || $errors.response}
+      {#if $errors.email || $errors.message || $errors.response || query_errors.length > 0}
         <div class="bg-red-100 border-red-500 border rounded-lg p-4 mb-6">
           {#each Object.entries($errors) as [error_type, message]}
-            <p class="text-red-500 font-serif">{message}</p>
+            <p class="text-red-500 font-serif mb-0">{message}</p>
+          {/each}
+
+          {#each query_errors as message}
+            <p class="text-red-500 font-serif mb-0">{message}</p>
           {/each}
         </div>
       {/if}
 
       {#if form_success_msg}
         <div class="bg-lime-200 border-lime-600 border rounded-lg p-4 mb-6">
-          <p class="text-lime-600 font-serif">{form_success_msg}</p>
+          <p class="text-lime-600 font-serif mb-0">{form_success_msg}</p>
         </div>
       {/if}
 
