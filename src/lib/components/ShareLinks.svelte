@@ -21,16 +21,16 @@
   {#if show_title}<p class="font-title m-0">Share this Article:</p>{/if}
   <div class="flex flex-wrap items-center gap-3" class:mt-6={show_title}>
     <a href="https://www.facebook.com/sharer/sharer.php?u={encodeURI($page.url)}" target="_blank">
-      <img src="/share-facebook.png" title="Share on Facebook" alt="Share on Facebook">
+      <img src="/site/share-facebook.png" title="Share on Facebook" alt="Share on Facebook">
     </a>
     <a href="https://twitter.com/intent/tweet?via=CoryParsnipson&text={encodeURI(tweet_default_msg)}" target="_blank">
-      <img src="/share-twitter.png" title="Share on Twitter" alt="Share on Twitter">
+      <img src="/site/share-twitter.png" title="Share on Twitter" alt="Share on Twitter">
     </a>
     <a href="https://reddit.com/submit?url={encodeURI($page.url)}&title={encodeURI(article_title)}" target="_blank">
-      <img src="/share-reddit.png" title="Share on Reddit" alt="Share on Reddit">
+      <img src="/site/share-reddit.png" title="Share on Reddit" alt="Share on Reddit">
     </a>
     <a href="mailto:?subject={encodeURI(article_title)}&body={encodeURI(email_msg)}" target="_blank">
-      <img src="/share-email.png" title="Share via email" alt="Share via email">
+      <img src="/site/share-email.png" title="Share via email" alt="Share via email">
     </a>
   </div>
 </div>

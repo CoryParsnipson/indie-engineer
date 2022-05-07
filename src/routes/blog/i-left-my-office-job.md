@@ -3,7 +3,7 @@ title: I Left my Office Job and Now I'm Trying to Make it as an Independent Engi
 seo_title: I Left my Office Job and Now I'm Trying to Make it as an Independent Engineer
 author: Cory Parsnipson
 summary: This is my first post on Indie Engineer! In this post, I talk about my motivations in starting this blog. I also give a bit of my background. I'm trying to set up a work routine for myself that does not rely on being part of a company. This may mean being a freelancer, or independent maker, or a whole bunch of things at the same time. To solve this issue, I've come up with something called a 'Work Diet'.
-seo_image: /indie-engineer-og-image.png
+seo_image: /site/indie-engineer-og-image.png
 date: Thu Feb 24 11:22:13 PM PST 2022
 categories:
   - meta
@@ -18,7 +18,7 @@ categories:
 
 It's no secret that working a corporate job really sucks sometimes. Maybe you've heard someone complain about unnecessary meetings, cancelled projects, lay-offs, tedious small talk, or navigating office politics. There's a lot of downsides to well-paying stability, and if you feel like the cons outweight the pros, the good news is that you're not alone. I feel this way too. :) But what can we do about it?
 
-![Dilbert Strip from Sept. 30, 2015. 'Were having a meeting to discuss employee retention'](/dilbert_the_one_thing-20150930152826.gif "Photo: Scott Adams")
+![Dilbert Strip from Sept. 30, 2015. 'Were having a meeting to discuss employee retention'](/articles/dilbert_the_one_thing-20150930152826.gif "Photo: Scott Adams")
 
 The success stories are abundant--people make millions writing apps. Others hit it big doing YouTube or streaming. Many more tell stories about having a flash of inspiration and growing it into a thriving business. And then there's me.
 
@@ -30,13 +30,13 @@ How do you go from square one to front page success story? Is it possible to do 
 
 Hi, I'm Cory Parsnipson. I spent almost a decade between a handful of tech jobs in a couple industries, including cloud infrastructure and computer chip design. Some of these jobs were extremely laid back and others were chaotic and subject to tight deadlines. No matter where I went, the work didn't feel meaningful. Whether or not I was bored out of my mind or having a 24/7 stress-induced stomach-ache, something was missing. I always felt like I should be doing something else instead of being distracted by the work in front of me. 
 
-![Burnt out office worker](/burnout.png "That feeling when...")
+![Burnt out office worker](/articles/burnout.png "That feeling when...")
 
 I quit my last job at the end of 2020 with no plan. I was burnt out from office work and web development. True story--it was literally 9 months before I could open an IDE without feeling nauseous. Repeatedly cancelled projects led to months or years of work just vanishing in a poof of smoke. I watched myself miss out on many opportunites, while getting below market-rate pay most of the time. I realized that programming, web development, and computer hardware design was fun, but the PR footwork of selling my accomplishments to the manager who needs to hear it was not. I simply wasn't cutting it in the corporate world.
 
 ## Fixing my Work Diet
 
-![Vegetables with the words 'Eat Healthy' between them. 'Eat' is crossed out in red and replaced with 'Work'](/work-healthy.png)
+![Vegetables with the words 'Eat Healthy' between them. 'Eat' is crossed out in red and replaced with 'Work'](/articles/work-healthy.png)
 
 I'm going to try something different so, for now, getting a salaried office job is a last resort. But getting started is proving to be a daunting task. Finding a tech job replacement that has none of the drawbacks is a tall order. Fortunately, I realized that I don't have to come up with a full-blown replacement in one giant leap--I can find a bunch of part-time side hustles to do this instead. This is something I've been thinking about a lot lately, and I've recently decided to call it a "Work Diet". Take a look at this chart I made:
 
@@ -77,7 +77,7 @@ On the right side of the chart is a list of approximate hours worked per week fo
 
 At the very top is something called "RPi game console", which might need some explanation. I spent most of last year trying to make a portable "Nintendo Switch" knock-off using a Raspberry Pi portable computer. I'm documenting the process in an [internet forum thread](https://forums.somethingawful.com/showthread.php?threadid=3947328).
 
-![Raspberry Pi Game Console Prototype](/rpi-prototype.jpg "Here's a picture of the working prototype I made")
+![Raspberry Pi Game Console Prototype](/articles/rpi-prototype.jpg "Here's a picture of the working prototype I made")
 
 Digging into circuit designs, working with sensors, and learning how to use a 3D printer was new and exciting to me. The prototype eventually came together, but I realized at the end of the year that there's still so much more work to do and not a sliver of a guarantee that I can support myself with it. As a career goal, this is a totally valid pursuit, but I need something to support myself in the meantime. That's what the rest of this chart is for.
 
@@ -94,7 +94,7 @@ This has a lot of overlap with what I'm trying to do. High risk, high reward job
 
 Picking safe jobs is trickier than it looks. *"I could be a streamer! Or maybe I could be a skydiving instructor! Or..."* I had to resist my impulse to just spit-ball ideas and take genuine, blunt assessment of my marketable skills. Everything is harder and takes longer than you'd think. Only jobs where you can confidently say that you'd be making money within weeks are allowed in this level. The answers here will be surprising.
 
-![Streaming desk setup](/streamer.png)
+![Streaming desk setup](/articles/streamer.png)
 
 Do I know I can make money streaming? I have no idea which means the answer is probably no. At this point, it's a hobby. Does skydiving instructor fit? Nope. Unless I was already one, it would take time to learn how and get certified before I could make money. And that's time and energy I could be spending on top level items. I had to greatly lower my expectations when picking at this level.
 
@@ -106,7 +106,7 @@ The good news is that for a lot of people, their current job could fit into the 
 
 #### The Work Diet Points you to "Follow your Passion"
 
-![A crossroads](/crossroads.png)
+![A crossroads](/articles/crossroads.png)
 
 The original idea was to organize ideas in order of *time until income is achieved*. I needed money quickly to slow my dwindling savings but I also wanted to chase something cool. As a side effect of arranging everything like this, the chart above ends up being organized similarly to [Maslow's hierarchy of needs](https://www.simplypsychology.org/maslow.html). This is no coincidence. The jobs at the bottom meet some immediate needs and the jobs at the top are intellectually rewarding ventures. Like Maslow's hierarchy, I can move to concentrate on upper levels once the lower level things are stabilized. Sometimes setbacks occur and things on the lower levels need to be taken care of. Moving up and down the hierarchy is normal and that's what I expect I'll have to do too.
 
@@ -120,7 +120,7 @@ This could be a once-in-a-lifetime chance to explore new things. The Work Diet l
 
 #### Everything Doubles as a Self-Support Toolbox
 
-![A red toolbox with tools in it](/toolbox.png)
+![A red toolbox with tools in it](/articles/toolbox.png)
 
 This becomes a (employment) survival toolbox. Jobs that I stop doing in favor of better ones can always be revisited as needed. For instance, once I stop driving for Uber, I can always pick it up every once in a while if I'm going on a long trip and need a few bucks to pay for gas. Perhaps I will gather many tips and tricks for landing on my feet in a wide range of situations?
 

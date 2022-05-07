@@ -158,7 +158,7 @@
   :global(main h4:hover span[class*="icon-link"]),
   :global(main h5:hover span[class*="icon-link"]),
   :global(main h6:hover span[class*="icon-link"]) {
-    @apply bg-[url('/icon-link.png')] bg-cover;
+    @apply bg-[url('/site/icon-link.png')] bg-cover;
   }
 
   /* inline text */
@@ -179,7 +179,7 @@
 
   :global(main blockquote::before) {
     content: '';
-    background-image: url('/blockquote-bg.png');
+    background-image: url('/icon-blockquote.png');
     background-size: 3rem;
     @apply opacity-50 w-[3rem] h-[3rem] absolute top-2 left-2;
   }
@@ -196,7 +196,7 @@
 
   :global(main a[rel]:after) {
     content: '';
-    @apply inline-block align-baseline min-w-[1.03rem] min-h-[1.03rem] bg-[url('/external-link.png')] bg-cover ml-1;
+    @apply inline-block align-baseline min-w-[1.03rem] min-h-[1.03rem] bg-[url('/site/icon-external-link.png')] bg-cover ml-1;
   }
 
   :global(main a[rel]:hover) {

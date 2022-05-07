@@ -15,8 +15,8 @@
 
 <header class="sticky top-0 w-full z-50 bg-emerald-500 text-zinc-900">
   <div class="flex items-stretch gap-4 max-w-screen-lg sm:mx-auto">
-    <img alt="Indie Engineer logo" src="/indie-engineer-logo.png" class="px-2 py-4 hidden sm:block">
-    <img alt="Indie Engineer logo" src="/indie-engineer-logo-sm.png" class="px-2 py-1 sm:hidden">
+    <img alt="Indie Engineer logo" src="/site/indie-engineer-logo.png" class="px-2 py-4 hidden sm:block">
+    <img alt="Indie Engineer logo" src="/site/indie-engineer-logo-sm.png" class="px-2 py-1 sm:hidden">
 
     <div class="nav dropdown grow">
       <div class="justify-end flex items-center h-full mx-5 md:hidden">
@@ -57,17 +57,17 @@
     </div>
 
     <div class="md:w-2/5 bg-cream-200">
-      <img src="/indie-engineer-logo.png" alt="Indie Engineer logo" width="250px" class="mx-auto pt-8 pb-4" />
+      <img src="/site/indie-engineer-logo.png" alt="Indie Engineer logo" width="250px" class="mx-auto pt-8 pb-4" />
       <p class="font-title text-zinc-900 text-center mb-6">- Links -</p>
       <div class="flex gap-5 justify-center mb-12">
         <a href="/contact">
-          <img src="/email.png" width="50px" alt="Click here to email the authors" class="hover:opacity-75">
+          <img src="/site/link-email.png" width="50px" alt="Click here to email the authors" class="hover:opacity-75">
         </a>
         <a href="https://github.com/CoryParsnipson" target="_blank" rel="nofollow noopener">
-          <img src="/GitHub-Mark-120px-plus.png" width="50px" alt="Click here to go to Cory Parsnipson's GitHub page." class="hover:opacity-75">
+          <img src="/site/link-github.png" width="50px" alt="Click here to go to Cory Parsnipson's GitHub page." class="hover:opacity-75">
         </a>
         <a href="https://twitter.com/CoryParsnipson" target="_blank" rel="nofollow noopener">
-          <img src="/twitter-icon.png" width="50px" alt="Click here to visit Cory Parsnipson's twitter." class="hover:opacity-75">
+          <img src="/site/link-twitter.png" width="50px" alt="Click here to visit Cory Parsnipson's twitter." class="hover:opacity-75">
         </a>
       </div>
     </div>
