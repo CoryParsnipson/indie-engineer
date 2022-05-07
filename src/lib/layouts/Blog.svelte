@@ -171,6 +171,21 @@
     @apply text-xl font-serif mb-10 leading-loose tracking-markdown;
   }
 
+  /* block quote */
+  /* ------------------------------------------------------------------------ */
+  :global(main blockquote) {
+    @apply text-zinc-700 bg-cream-100 rounded-xl relative italic py-6 pl-16 pr-4 ml-4 mr-6 mb-12;
+  }
+
+  :global(main blockquote::before) {
+    content: '';
+    @apply bg-[url('/blockquote-bg.png')] bg-[length:3rem] opacity-50 w-[3rem] h-[3rem] absolute top-2 left-2;
+  }
+
+  :global(main blockquote p) {
+    @apply mb-0;
+  }
+
   /* inline hyperlinks */
   /* ------------------------------------------------------------------------ */
   :global(main a[rel]) {
