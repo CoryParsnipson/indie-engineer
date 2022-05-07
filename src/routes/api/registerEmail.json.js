@@ -5,7 +5,23 @@ let SENDGRID_MAX_CONTACTS = 10 || env.var.VITE_SENDGRID_MAX_CONTACTS;
 
 export async function post({ request }) {
   try {
-    let data = await request.json();
+    let javascript_enabled = true;
+    let request2 = request.clone();
+    let data = {};
+    try {
+      data = await request.json();
+    } catch (error) {
+      if (error instanceof SyntaxError) {
+        let fd = await request2.formData();
+        for (let pair of fd.entries()) {
+          data[pair[0]] = pair[1];
+        }
+
+        javascript_enabled = false;
+      } else {
+        throw error;
+      }
+    }
 
     // since we don't have captcha (and this endpoint should only be used for 'dev'
     // do not add contact to list if the list is larger than VITE_SENDGRID_MAX_CONTACTS)
@@ -26,6 +42,28 @@ export async function post({ request }) {
       contacts: [{ email: data.email }],
       list_ids: [env.var.VITE_SENDGRID_LIST_ID.toString()]
     });
+
+    if (!javascript_enabled) {
+      let referer = request.headers.get('referer').split('?')[0];
+
+      let sp = new URLSearchParams();
+      if (result.response.statusCode == 202) {
+        sp.append('success', 'true');
+      } else {
+        result.response.body.errors.forEach(e => {
+          let key_tokens = e.field.split('.');
+          let key = key_tokens[key_tokens.length - 1];
+
+          sp.append(key, e.message);
+        });
+      }
+
+      return {
+        headers: { Location: referer + "?" + sp.toString() + "#mailform" },
+        status: 302,
+        body: result.body,
+      }
+    }
 
     return {
       status: result.response.statusCode,

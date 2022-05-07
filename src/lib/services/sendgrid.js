@@ -23,7 +23,7 @@ function sendRequest({ url, method, body, headers, queryParams } = {}) {
       return { response, body };
     })
     .catch(error => {
-      console.error(JSON.stringify(error, null, 4));
+      return { ...error };
     });
 }
 
@@ -61,28 +61,24 @@ export async function getListContactCount({ id } = {}) {
 
 // add contacts to a list (if the contact already exists, it will be updated)
 export async function addContact({ contacts = [], list_ids = [] } = {}) {
-  try {
-    let res = await sendRequest({
-      url: `/v3/marketing/contacts`,
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: {
-        contacts: contacts,
-        list_ids: list_ids,
-      },
-    });
+  let res = await sendRequest({
+    url: `/v3/marketing/contacts`,
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: {
+      contacts: contacts,
+      list_ids: list_ids,
+    },
+  });
 
-    // note: add contact is asynchronous. If it returns status code 202, that means
-    // the contacts were successfully queued, but aren't successfully added to the list yet.
-    // You can check the status with importContactsStatus() but it takes a really long time
-    // to complete (on the order of minutes). Looks like sendgrid doesn't want you to make
-    // your own sign up forms.
-    return res;
-  } catch (error) {
-    console.error(error);
-  }
+  // note: add contact is asynchronous. If it returns status code 202, that means
+  // the contacts were successfully queued, but aren't successfully added to the list yet.
+  // You can check the status with importContactsStatus() but it takes a really long time
+  // to complete (on the order of minutes). Looks like sendgrid doesn't want you to make
+  // your own sign up forms.
+  return res;
 }
 
 // check on the status of a contact add or import
