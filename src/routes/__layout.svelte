@@ -88,7 +88,7 @@
   }
 
   .dropdown-content a:hover {
-    @apply md:border-emerald-700 md:bg-transparent;
+    @apply bg-emerald-600 text-zinc-100 sm:text-current sm:bg-transparent md:border-emerald-700 md:bg-transparent;
   }
 
   .dropdown-content a span {
