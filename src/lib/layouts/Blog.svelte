@@ -86,11 +86,7 @@
 
   <sidebar class="w-[30%] relative hidden lg:block ml-5 py-6">
     <!-- top-32 spacing here on the sticky div is arbitrary, but must be bigger than py-6 to prevent jitter -->
-    <div
-      class="sticky top-32 pl-2 border-cream-500"
-      class:border-l-4={!sidebar_on_left}
-      class:border-r-4={sidebar_on_left}
-    >
+    <div class="sticky top-32 border-cream-500">
       <TableOfContents headings={toc_data} />
     </div>
   </sidebar>
