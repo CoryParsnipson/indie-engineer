@@ -63,12 +63,13 @@
       <p class="max-w-[30%] font-sans absolute top-0 left-[1rem] z-[2] py-4 text-sm sm:text-lg sm:pr-7">{@html row.layer_name}</p>
       {/if}
   
-      <div class="flex flex-wrap items-start justify-center gap-2 mx-auto mx-6 sm:mx-12 py-5">
+      <div class="flex flex-wrap items-start justify-center gap-2 mx-auto mx-6 sm:mx-14 py-5">
       {#each row.items as item}
         <p
-          class:bg-orange-600={item.status === "active"}
+          class:bg-green-600={item.status === "active"}
+          class:bg-zinc-700={item.status !== "active"}
           class="m-0 py-2 px-4 z-10
-          text-zinc-50 bg-zinc-700 rounded-lg
+          text-zinc-50 rounded-lg
           font-sans leading-normal text-center
           text-xs min-w-[2rem] max-w-[7rem]
           sm:text-lg sm:min-w-[5rem] sm:max-w-[10rem]">

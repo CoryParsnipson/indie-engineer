@@ -127,7 +127,7 @@
   }
 
   :global(main h3) {
-    @apply text-3xl mb-6;
+    @apply text-3xl text-zinc-700 mb-6;
   }
 
   :global(main h4) {
