@@ -109,7 +109,7 @@
     </form>
 
     <div class="sm:w-2/5 py-4 px-8 mb-12 sm:pb-12 bg-cream-200">
-      <img src="/cparsnipson.png" width="150px" alt="A headshot of yours truly, Cory Parsnipson" class="m-8 mx-auto">
+      <img src="/site/headshot-cparsnipson.png" width="150px" alt="A headshot of yours truly, Cory Parsnipson" class="m-8 mx-auto">
       <p class="font-serif text-lg sm:text-xl leading-loose sm:leading-loose text-center">
         Hey, it's me, Cory Parsnipson! Need to get in touch with me? Fill out the form and I'll get back to you.
       </p>
