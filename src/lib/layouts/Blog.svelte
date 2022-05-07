@@ -179,7 +179,7 @@
 
   :global(main blockquote::before) {
     content: '';
-    background-image: url('/icon-blockquote.png');
+    background-image: url('/site/icon-blockquote.png');
     background-size: 3rem;
     @apply opacity-50 w-[3rem] h-[3rem] absolute top-2 left-2;
   }
