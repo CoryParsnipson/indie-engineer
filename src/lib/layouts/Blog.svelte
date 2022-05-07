@@ -188,6 +188,14 @@
     @apply mb-0;
   }
 
+  :global(main blockquote a) {
+    @apply border border-dashed border-transparent;
+  }
+
+  :global(main blockquote a:hover) {
+    @apply border border-dashed border-cream-500;
+  }
+
   /* inline hyperlinks */
   /* ------------------------------------------------------------------------ */
   :global(main a[rel]) {
