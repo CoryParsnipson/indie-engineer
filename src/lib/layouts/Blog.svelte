@@ -179,7 +179,9 @@
 
   :global(main blockquote::before) {
     content: '';
-    @apply bg-[url('/blockquote-bg.png')] bg-[length:3rem] opacity-50 w-[3rem] h-[3rem] absolute top-2 left-2;
+    background-image: url('/blockquote-bg.png');
+    background-size: 3rem;
+    @apply opacity-50 w-[3rem] h-[3rem] absolute top-2 left-2;
   }
 
   :global(main blockquote p) {
