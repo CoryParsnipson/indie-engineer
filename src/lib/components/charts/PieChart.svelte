@@ -122,8 +122,8 @@
     let mouse_pos_global = { x: e.pageX, y: e.pageY };
 
     // move tooltip to be next to cursor
-    tooltip.style.left = mouse_pos_global.x + 10 + 'px';
-    tooltip.style.top = mouse_pos_global.y + 10 + 'px';
+    tooltip.style.left = mouse_pos_global.x + 15 + 'px';
+    tooltip.style.top = mouse_pos_global.y + 15 + 'px';
 
     // use trig to figure out which component the mouse cursor is over
     // we can't use mouseover events because the SVG componenets have an
