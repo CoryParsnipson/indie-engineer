@@ -4,15 +4,13 @@
   export let data = [{
     name: 'Item 1',
     amount: 2, // not a percentage, put in any number and all entries will be normalized
-    color: 'green', // if not set, will be assigned a random color
+    color: undefined, // if not set, will be assigned a random color
   }, {
     name: 'Item 2',
     amount: 13,
-    color: 'cornflowerblue',
   }, {
     name: 'Pineapple',
     amount: 1,
-    color: 'purple',
   }];
 
   let raw_total = 0;
@@ -23,11 +21,13 @@
     item.dash_array = calculateDashArray(item.percent);
 
     if (!item.color) {
-      item.color = undefined;
+      item.color = getRandomColor((index - 2) % data.length, index);
     }
 
     return item;
   });
+
+  $: cssColors = processed.map((item, index) => `--color${index}:${item.color}`).join(';');
 
   function calculateDashArray(percent) {
     let half_circumference = Math.PI * radius;
@@ -44,10 +44,15 @@
 
     return `-${acc_percent / 100 * 360}deg`
   }
+
+  function getRandomColor(seed, offset = 0) {
+    const hue = seed * 137.508 + offset; // golden angle approximation
+    return `hsl(${hue}, 65%, 61%)`;
+  }
 </script>
 
-<div class="flex flex-col">
-  <p class="text-3xl text-center m-0">{title}</p>
+<div class="flex flex-col" style="{cssColors}">
+  <p class="text-2xl text-center m-0">{title}</p>
   <div class="flex gap-5 p-4">
     <svg width={"100%"} viewBox="0 0 100 100" class="basis-3/5 p-4">
       {#each processed as item, idx}
@@ -56,11 +61,10 @@
           cx={radius}
           cy={radius}
           fill={'transparent'}
-          stroke={item.color}
           stroke-width={radius}
           stroke-dasharray={item.dash_array}
           class="origin-center"
-          style="transform: rotate({calculateRotation(idx)})"
+          style="transform: rotate({calculateRotation(idx)}); stroke: var(--color{idx}, lightgray)"
         />
       {/each}
     </svg>
