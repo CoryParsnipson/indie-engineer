@@ -68,7 +68,6 @@
   function isInsideCircle(pos, origin) {
     let delta = { x: origin.x - pos.x, y: origin.y - pos.y };
     let displacement = Math.sqrt(delta.x ** 2 + delta.y ** 2);
-
     let effective_radius = chart.getBoundingClientRect().width / 2;
     return displacement <= effective_radius;
   }
@@ -77,7 +76,7 @@
     let r = chart.getBoundingClientRect();
     return {
       x: r.left + r.width / 2,
-      y: r.top + r.height, // i don't know why this is
+      y: r.top + r.height / 2,
     };
   }
 
@@ -114,7 +113,7 @@
   }
 
   function showInfo(e) {
-    let mouse_pos = { x: e.screenX, y: e.screenY };
+    let mouse_pos = { x: e.clientX, y: e.clientY};
     let chart_origin = getChartOrigin();
     if (!isInsideCircle(mouse_pos, chart_origin)) {
       return;
