@@ -1,4 +1,6 @@
 <script>
+  import newUniqueId from 'locally-unique-id-generator';
+
   export let title = "Pie Chart";
   export let legend = "Legend";
   export let radius = 50;
@@ -13,16 +15,21 @@
 
   let tooltip; // hovers next to cursor on mouse over
   let chart; // reference to pie chart
+  let prev_component = undefined;
 
   let raw_total = 0;
   $: data.forEach(item => raw_total += item.amount);
 
   $: processed = data.map((item, index) => {
+    item.index = index;
+    item.id_class = `item-${newUniqueId()}`;
+
     item.percent = Math.ceil(item.amount / raw_total * 100);
     item.dash_array = calculateDashArray(item.percent);
 
     if (!item.color) {
       item.color = getRandomColor((index - 2) % data.length, index);
+      item.color_hover = getRandomColor((index - 2) % data.length, index, 75, 55);
     }
 
     item.amount_format = amount_format;
@@ -53,7 +60,7 @@
     return `${processed[index].rotation}deg`
   }
 
-  function getRandomColor(seed, offset = 0, saturation = 65, lightness = 61) {
+  function getRandomColor(seed, offset = 0, saturation = 63, lightness = 60) {
     const hue = seed * 137.508 + offset; // golden angle approximation
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   }
@@ -61,6 +68,7 @@
   function isInsideCircle(pos, origin) {
     let delta = { x: origin.x - pos.x, y: origin.y - pos.y };
     let displacement = Math.sqrt(delta.x ** 2 + delta.y ** 2);
+
     let effective_radius = chart.getBoundingClientRect().width / 2;
     return displacement <= effective_radius;
   }
@@ -137,11 +145,33 @@
       tooltip_data[0].innerText = component.amount_format;
     }
 
+    // change component hover color (and return previous component hover color, if necessary)
+    if (prev_component && prev_component.id_class != component.id_class) {
+      let prev_component_el = document.getElementsByClassName(prev_component.id_class);
+      if (prev_component_el.length) {
+        prev_component_el[0].style.stroke = prev_component.color;
+      }
+    }
+
+    let component_el = document.getElementsByClassName(component.id_class);
+    if (component_el.length) {
+      component_el[0].style.stroke = component.color_hover;
+    }
+
+    prev_component = component;
+
     // show tooltip
     tooltip.classList.remove('hidden');
   }
 
   function hideInfo(e) {
+    if (prev_component) {
+      let prev_component_el = document.getElementsByClassName(prev_component.id_class);
+      if (prev_component_el.length) {
+        prev_component_el[0].style.stroke = prev_component.color;
+      }
+    }
+
     tooltip.classList.add('hidden');
   }
 </script>
@@ -168,7 +198,7 @@
           fill={'transparent'}
           stroke-width={radius}
           stroke-dasharray={item.dash_array}
-          class="item{idx} origin-center"
+          class="{item.id_class} origin-center"
           style="transform: rotate({calculateRotation(idx)}); stroke: var(--color{idx}, lightgray)"
         />
       {/each}

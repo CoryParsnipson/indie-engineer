@@ -52,6 +52,7 @@
 		"base-64": "^1.0.0",
 		"crypto-js": "^4.1.1",
 		"isomorphic-git": "^1.17.0",
+		"locally-unique-id-generator": "^0.1.5",
 		"parser-front-matter": "^1.6.4",
 		"svelte-forms-lib": "^2.0.1",
 		"yup": "^0.32.11"
