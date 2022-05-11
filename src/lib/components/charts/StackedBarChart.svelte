@@ -1,0 +1,105 @@
+<script>
+  import { LayerCake, Svg, flatten } from 'layercake';
+  import { stack } from 'd3-shape';
+  import { scaleBand, scaleOrdinal } from 'd3-scale';
+  import { format, precisionFixed } from 'd3-format';
+
+  import BarStacked from '$lib/components/charts/layercake/BarStacked.svelte';
+  import AxisX from '$lib/components/charts/layercake/AxisX.svelte';
+  import AxisY from '$lib/components/charts/layercake/AxisY.svelte';
+
+  export let title = "Bar Chart";
+
+  export let xKey = [0, 1];
+  export let yKey = 'month';
+
+  export let data = [
+    { month: 'Feb', apples: 240, bananas: 12, cherries: 142, strawberries: 177 },
+    { month: 'March', apples: 332, bananas: 46, cherries: 2, strawberries: 180 },
+  ];
+
+  const series_names = Object.keys(data[0]).filter(d => d != yKey);
+  const bars_names = data.map(d => d[yKey]);
+  const series_colors = series_names.map((name, idx) => getRandomColor((idx - 2) % series_names.length, idx));
+
+  data.forEach(d => {
+    series_names.forEach(name => {
+      d[name] = +d[name]; // force convert every entry to number, discards invalid conversions
+    });
+  });
+  const stack_data = stack().keys(series_names);
+  const series = stack_data(data);
+  const formatTickX = d => format(`.${precisionFixed(d)}s`)(d);
+
+  // https://stackoverflow.com/questions/36721830/convert-hsl-to-rgb-and-hex
+  function hslToHex(h, s, l) {
+    h /= 360;
+    s /= 100;
+    l /= 100;
+    let r, g, b;
+    if (s === 0) {
+      r = g = b = l; // achromatic
+    } else {
+      const hue2rgb = (p, q, t) => {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1 / 6) return p + (q - p) * 6 * t;
+        if (t < 1 / 2) return q;
+        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+        return p;
+      };
+      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+      const p = 2 * l - q;
+      r = hue2rgb(p, q, h + 1 / 3);
+      g = hue2rgb(p, q, h);
+      b = hue2rgb(p, q, h - 1 / 3);
+    }
+    const toHex = x => {
+      const hex = Math.round(x * 255).toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    };
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+  }
+
+  function getRandomColor(seed, offset = 0, saturation = 63, lightness = 60) {
+    const hue = seed * 137.508 + offset; // golden angle approximation
+    return hslToHex(hue % 360, saturation, lightness);
+  }
+</script>
+
+<div class="chart flex flex-col gap-5">
+  <p class="text-center text-2xl mb-0">{title}</p>
+  <div class="w-full h-[300px] pl-16 pr-4 pb-4 mb-12">
+    <LayerCake
+      x={xKey}
+      y={d => d.data[yKey]}
+      z={'key'}
+      yScale={scaleBand().paddingInner([0.05]).round(true)}
+      yDomain={bars_names}
+      zScale={scaleOrdinal()}
+      zDomain={series_names}
+      zRange={series_colors}
+      flatData={flatten(series)}
+      data={series}
+    >
+      <Svg>
+        <AxisX
+          baseline={true}
+          snapTicks={true}
+          formatTick={formatTickX}
+        />
+        <AxisY
+          gridlines={false}
+        />
+        <BarStacked />
+      </Svg>
+    </LayerCake>
+  </div>
+</div>
+
+<style>
+  :global(.chart .tick text) {
+    @apply font-serif text-xl;
+  }
+
+</style>
