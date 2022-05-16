@@ -14,6 +14,7 @@
   export let yKey = 'month';
 
   export let showY = false;
+  export let xDomain = [0, 2400];
 
   export let data = [
     { month: 'Feb', apples: 240, bananas: 12, cherries: 142, strawberries: 177 },
@@ -25,6 +26,14 @@
     series_names.forEach(name => {
       d[name] = +d[name]; // force convert every entry to number, discards invalid conversions
     });
+
+    let total = 0;
+    for (const [k, v] of Object.entries(d)) {
+      if (!isNaN(v)) {
+        total += v;
+      }
+    }
+    xDomain[1] = Math.max(xDomain[1], total);
   });
 
   const bars_names = data.map(d => d[yKey]);
@@ -75,6 +84,7 @@
       x={xKey}
       y={d => d.data[yKey]}
       z={'key'}
+      xDomain={xDomain}
       yScale={scaleBand().paddingInner([0.25]).round(true)}
       yDomain={bars_names}
       zScale={scaleOrdinal()}
