@@ -66,6 +66,8 @@
         y='{yTick}'
         dx=''
         dy=''
+        class="labels"
+        style="transform-box: fill-box; transform-origin: left;"
         text-anchor='{textAnchor(i)}'>{formatTick(tick)}</text>
     </g>
   {/each}
@@ -96,5 +98,14 @@
   }
   .axis.snapTicks .tick.tick-0 text {
     transform: translateX(-3px);
+  }
+
+  .labels {
+    transform: rotate(75deg) translate(0%, -65%);
+  }
+  @media (min-width: 640px) {
+    .labels {
+      transform: rotate(60deg) translate(15%, -50%);
+    }
   }
 </style>

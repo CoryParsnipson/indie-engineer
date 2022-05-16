@@ -13,23 +13,24 @@
   export let xKey = [0, 1];
   export let yKey = 'month';
 
+  export let showY = false;
+
   export let data = [
     { month: 'Feb', apples: 240, bananas: 12, cherries: 142, strawberries: 177 },
     { month: 'March', apples: 332, bananas: 46, cherries: 2, strawberries: 180 },
   ];
 
   const series_names = Object.keys(data[0]).filter(d => d != yKey);
-  const bars_names = data.map(d => d[yKey]);
-  const series_colors = series_names.map((name, idx) => getRandomColor((idx - 2) % series_names.length, idx));
-
   data.forEach(d => {
     series_names.forEach(name => {
       d[name] = +d[name]; // force convert every entry to number, discards invalid conversions
     });
   });
-  const stack_data = stack().keys(series_names);
-  const series = stack_data(data);
-  const formatTickX = d => format(`.${precisionFixed(d)}s`)(d);
+
+  const bars_names = data.map(d => d[yKey]);
+  const series_colors = series_names.map((name, idx) => getRandomColor((idx - 2) % series_names.length, idx));
+  const series = (stack().keys(series_names))(data);
+  const formatTickX = d => d;
 
   // https://stackoverflow.com/questions/36721830/convert-hsl-to-rgb-and-hex
   function hslToHex(h, s, l) {
@@ -69,12 +70,12 @@
 
 <div class="chart flex flex-col gap-5">
   <p class="text-center text-2xl mb-0">{title}</p>
-  <div class="w-full h-[300px] pl-16 pr-4 pb-4 mb-12">
+  <div class="w-full h-[100px] pb-4 mb-12" class:pl-16={showY}>
     <LayerCake
       x={xKey}
       y={d => d.data[yKey]}
       z={'key'}
-      yScale={scaleBand().paddingInner([0.05]).round(true)}
+      yScale={scaleBand().paddingInner([0.25]).round(true)}
       yDomain={bars_names}
       zScale={scaleOrdinal()}
       zDomain={series_names}
@@ -90,6 +91,7 @@
         />
         <AxisY
           gridlines={false}
+          formatTick={showY ? d => d : d => ''}
         />
         <BarStacked />
       </Svg>
