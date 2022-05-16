@@ -5,7 +5,6 @@ This is a sveltekit + MDsveX blog.
 ## TODO
 
 * about page contents
-* progress bar and pie chart widgets
 
 * csrf tokens for forms and api calls
 * rate limiting api endpoints

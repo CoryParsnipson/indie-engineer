@@ -9,6 +9,7 @@
   import AxisY from '$lib/components/charts/layercake/AxisY.svelte';
 
   export let title = "Bar Chart";
+  export let legend = "Legend";
 
   export let xKey = [0, 1];
   export let yKey = 'month';
@@ -77,9 +78,9 @@
   }
 </script>
 
-<div class="chart flex flex-col gap-5">
+<div class="chart flex flex-col gap-5 mb-12">
   <p class="text-center text-2xl mb-0">{title}</p>
-  <div class="w-full h-[100px] pb-4 mb-12" class:pl-16={showY}>
+  <div class="w-full h-[100px] pb-4 mb-6" class:pl-16={showY}>
     <LayerCake
       x={xKey}
       y={d => d.data[yKey]}
@@ -107,11 +108,26 @@
       </Svg>
     </LayerCake>
   </div>
+
+  <div class="flex flex-col items-stretch w-full border-dashed border-cream-200 p-2"
+    class:border-2={legend}
+  >
+    {#if legend}<p class="text-center bg-cream-100 mb-4">{legend}</p>{/if}
+    <div class="flex flex-wrap gap-x-12">
+      {#each series_names as item, index}
+        <div class="flex gap-2 items-center">
+          <svg width="10px" height="10px" viewBox="0 0 100 100">
+            <rect width="100%" height="100%" fill="{series_colors[index]}" />
+          </svg>
+          <p class="text-lg m-0">{item}</p>
+        </div>
+      {/each}
+    </div>
+  </div>
 </div>
 
 <style>
   :global(.chart .tick text) {
     @apply font-serif text-xl;
   }
-
 </style>
