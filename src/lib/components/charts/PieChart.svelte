@@ -28,8 +28,8 @@
     item.dash_array = calculateDashArray(item.percent);
 
     if (!item.color) {
-      item.color = getRandomColor((index - 2) % data.length, index);
-      item.color_hover = getRandomColor((index - 2) % data.length, index, 75, 55);
+      item.color = getRandomColor(index - 2, index % data.length);
+      item.color_hover = getRandomColor(index - 2, index % data.length, 75, 55);
     }
 
     item.amount_format = amount_format;

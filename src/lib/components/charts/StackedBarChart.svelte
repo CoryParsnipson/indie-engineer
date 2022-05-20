@@ -38,8 +38,8 @@
   });
 
   const bars_names = data.map(d => d[yKey]);
-  const series_colors = series_names.map((name, idx) => getRandomColor((idx - 2) % series_names.length, idx));
   const series = (stack().keys(series_names))(data);
+  const series_colors = series_names.map((name, idx) => getRandomColor(idx - 2, idx % series_names.length));
   const formatTickX = d => d;
 
   // https://stackoverflow.com/questions/36721830/convert-hsl-to-rgb-and-hex
@@ -94,7 +94,7 @@
       flatData={flatten(series)}
       data={series}
     >
-      <Svg>
+     <Svg>
         <AxisX
           baseline={true}
           snapTicks={true}
