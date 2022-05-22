@@ -38,7 +38,7 @@
 </svelte:head>
 
 <main class="py-12">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
     {#each posts as post}
       <PostPreview
         metadata = {post.meta}
