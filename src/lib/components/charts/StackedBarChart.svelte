@@ -109,9 +109,7 @@
     </LayerCake>
   </div>
 
-  <div class="flex flex-col items-stretch w-full border-dashed border-cream-200 p-2"
-    class:border-2={legend}
-  >
+  <div class="flex flex-col items-stretch w-full border-dashed border-cream-200 p-2" class:border-2={legend}>
     {#if legend}<p class="text-center bg-cream-100 mb-4">{legend}</p>{/if}
     <div class="flex flex-wrap gap-x-12">
       {#each series_names as item, index}

@@ -20,7 +20,7 @@ categories:
 
 I've been learning about and trading stocks for a long time. Up until now I've thought of it as "maintenance task", like cleaning your room or execising. But then I realized that this could count as a hobby and a potential source of passive income. Let's take a look at the entry on the bottom row labeled "stocks".
 
-<WorkDiet show_hours={false} data=
+<WorkDiet show_hours={false} legend={true} data=
   {[
     [
       { item: "Uber driving", hours: 0, status: "inactive" },

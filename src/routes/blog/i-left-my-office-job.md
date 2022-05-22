@@ -40,7 +40,7 @@ I quit my last job at the end of 2020 with no plan. I was burnt out from office 
 
 I'm going to try something different so, for now, getting a salaried office job is a last resort. But getting started is proving to be a daunting task. Finding a tech job replacement that has none of the drawbacks is a tall order. Fortunately, I realized that I don't have to come up with a full-blown replacement in one giant leap--I can find a bunch of part-time side hustles to do this instead. This is something I've been thinking about a lot lately, and I've recently decided to call it a "Work Diet". Take a look at this chart I made:
 
-<WorkDiet data=
+<WorkDiet legend={true} data=
   {[
     [
       { item: "Uber driving", hours: 14, status: "active" },
