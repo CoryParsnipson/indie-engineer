@@ -64,11 +64,11 @@
       case "discarded":
         return "bg-zinc-300";
       case "passive":
-        return "bg-lime-300";
-      case "active":
         return "bg-lime-400";
+      case "active":
+        return "bg-lime-700";
       default:
-        return "bg-zinc-700";
+        return "bg-zinc-500";
     }
   }
 
@@ -79,9 +79,7 @@
       case "discarded":
         return "text-zinc-400";
       case "passive":
-        return "text-lime-600";
-      case "active":
-        return "text-lime-900";
+        return "text-lime-800";
       default:
         return "text-zinc-50";
     }
@@ -142,7 +140,7 @@
       {#each status_list as item, index}
         <div class="flex gap-2 items-center">
           <div class="block w-[10px] h-[10px] {getItemColor(item)}"></div>
-          <p class="text-lg m-0">{item}</p>
+          <p class="font-serif text-lg m-0">{item}</p>
         </div>
       {/each}
     </div>
