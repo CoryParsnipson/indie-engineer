@@ -131,7 +131,7 @@
       class="absolute top-0 left-0"
       class:pl-24={show_layer_names}
     >
-      <path d="M0,100 L50,0 L100,100 Z" fill="#94A3B8">
+      <path d="M0,100 L50,0 L100,100 Z" fill="#A1A1AA">
     </svg>
   </div>
   
