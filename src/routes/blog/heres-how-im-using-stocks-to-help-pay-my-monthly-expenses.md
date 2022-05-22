@@ -26,7 +26,7 @@ I've been learning about and trading stocks for a long time. Up until now I've t
       { item: "Uber driving", hours: 0, status: "inactive" },
       { item: "freelancing", hours: 0, status: "inactive" },
       { item: "tutoring", hours: 0, status: "inactive" },
-      { item: "stocks", hours: 0.25, status: "active" },
+      { item: "stocks", hours: 0.25, status: "passive" },
     ],
     [
       { item: "blogging", hours: 0, status: "inactive" },
@@ -37,7 +37,7 @@ I've been learning about and trading stocks for a long time. Up until now I've t
     [
       { item: "websites", hours: 0, status: "inactive" },
       { item: "apps", hours: 0, status: "inactive" },
-      { item: "APIs", hours: 0, status: "inactvie" },
+      { item: "APIs", hours: 0, status: "inactive" },
     ],
     [
       { item: "art", hours: 0, status: "inactive" },

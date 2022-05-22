@@ -44,25 +44,25 @@ I'm going to try something different so, for now, getting a salaried office job 
   {[
     [
       { item: "Uber driving", hours: 14, status: "active" },
-      { item: "freelancing", hours: 6, status: "active" },
+      { item: "freelancing", hours: 6, status: "discarded" },
       { item: "tutoring", hours: 0, status: "paused" },
-      { item: "stocks", hours: 0, status: "active" },
+      { item: "stocks", hours: 0, status: "passive" },
     ],
     [
-      { item: "blogging", hours: 12, status: "active" },
+      { item: "blogging", hours: 12, status: "passive" },
       { item: "Etsy / Redbubble / Zazzle", hours: 5, status: "paused" },
-      { item: "real estate investing", hours: 3, status: "active" },
+      { item: "real estate investing", hours: 3, status: "blocked" },
       { item: "streaming", hours: 0, status: "inactive"},
     ],
     [
-      { item: "websites", hours: 5, status: "paused" },
+      { item: "websites", hours: 5, status: "active" },
       { item: "apps", hours: 5, status: "paused" },
-      { item: "APIs", hours: 5, status: "paused" },
+      { item: "APIs", hours: 5, status: "inactive" },
     ],
     [
       { item: "art", hours: 0, status: "inactive" },
       { item: "making videogames", hours: 0, status: "inactive"},
-      { item: "3D modeling", hours: 0, status: "inactive" },
+      { item: "3D modeling", hours: 0, status: "blocked" },
     ],
     [
       {item: "RPi game console", hours: 0, status: "paused"},
@@ -132,25 +132,25 @@ The Work Diet chart also takes inspiration from the [food pyramid](https://www.h
   {[
     [
       { item: "Uber driving", hours: 14, status: "active" },
-      { item: "freelancing", hours: 6, status: "active" },
+      { item: "freelancing", hours: 6, status: "discarded" },
       { item: "tutoring", hours: 0, status: "paused" },
-      { item: "stocks", hours: 0, status: "active" },
+      { item: "stocks", hours: 0, status: "passive" },
     ],
     [
-      { item: "blogging", hours: 12, status: "active" },
+      { item: "blogging", hours: 12, status: "passive" },
       { item: "Etsy / Redbubble / Zazzle", hours: 5, status: "paused" },
-      { item: "real estate investing", hours: 3, status: "active" },
+      { item: "real estate investing", hours: 3, status: "blocked" },
       { item: "streaming", hours: 0, status: "inactive"},
     ],
     [
-      { item: "websites", hours: 5, status: "paused" },
+      { item: "websites", hours: 5, status: "active" },
       { item: "apps", hours: 5, status: "paused" },
-      { item: "APIs", hours: 5, status: "paused" },
+      { item: "APIs", hours: 5, status: "inactive" },
     ],
     [
       { item: "art", hours: 0, status: "inactive" },
       { item: "making videogames", hours: 0, status: "inactive"},
-      { item: "3D modeling", hours: 0, status: "inactive" },
+      { item: "3D modeling", hours: 0, status: "blocked" },
     ],
     [
       {item: "RPi game console", hours: 0, status: "paused"},

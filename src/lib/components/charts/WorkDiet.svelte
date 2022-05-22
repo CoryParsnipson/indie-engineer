@@ -44,6 +44,38 @@
   metadata[2].layer_bg = "bg-orange-400/40";
   metadata[1].layer_bg = "bg-rose-400/40";
   metadata[0].layer_bg = "bg-purple-400/40";
+
+  function getItemColor(status) {
+    switch (status) {
+      case "paused":
+        return "bg-amber-400";
+      case "blocked":
+        return "bg-red-500";
+      case "discarded":
+        return "bg-zinc-300";
+      case "passive":
+        return "bg-lime-300";
+      case "active":
+        return "bg-lime-400";
+      default:
+        return "bg-zinc-700";
+    }
+  }
+
+  function getTextColor(status) {
+    switch (status) {
+      case "paused":
+        return "text-amber-800";
+      case "discarded":
+        return "text-zinc-400";
+      case "passive":
+        return "text-lime-600";
+      case "active":
+        return "text-lime-900";
+      default:
+        return "text-zinc-50";
+    }
+  }
 </script>
 
 <div class="chart-work-diet relative">
@@ -66,10 +98,11 @@
       <div class="flex flex-wrap items-start justify-center gap-2 mx-auto mx-6 sm:mx-14 py-5">
       {#each row.items as item}
         <p
-          class:bg-green-600={item.status === "active"}
-          class:bg-zinc-700={item.status !== "active"}
+          title="{item.status}"
           class="m-0 py-2 px-4 z-10
-          text-zinc-50 rounded-lg
+          {getItemColor(item.status)}
+          {getTextColor(item.status)}
+          rounded-lg
           font-sans leading-normal text-center
           text-xs min-w-[2rem] max-w-[7rem]
           sm:text-lg sm:min-w-[5rem] sm:max-w-[10rem]">
