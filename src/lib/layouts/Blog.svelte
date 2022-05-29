@@ -53,6 +53,10 @@
     <meta name="og:image" property="og:image" content="{seo_image}">
   {/if}
   <meta name="twitter:card" property="twitter:card" content="{seo_summary ? seo_summary : summary}">
+  <meta name="twitter:site" property="twitter:site" content="@CoryParsnipson">
+  <meta name="twitter:title" property="twitter:title" content="{seo_title ? seo_title : title}">
+  <meta name="twitter:description" property="twitter:description" content="{seo_summary ? seo_summary : summary}">
+  <meta name="twitter:image" property="twitter:image" content="{seo_image}">
 </svelte:head>
 
 <div class="flex justify-center" class:flex-row-reverse={sidebar_on_left}>
