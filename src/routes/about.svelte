@@ -1,6 +1,21 @@
+<script>
+  let meta_description = "Learn more about being an Indie Engineer. What even is a Work Diet??? Who even is this Cory Parsnipson guy???";
+</script>
+
 <svelte:head>
   <title>About :: Indie Engineer</title>
-  <meta name="description" content="Learn more about being an Indie Engineer. What even is a Work Diet??? Who even is this Cory Parsnipson guy???">
+  <meta name="description" content="{meta_description}">
+  <meta name="og:title" property="og:title" content="Indie Engineer :: About">
+  <meta name="og:description" property="og:description" content="{meta_description}">
+  <meta name="og:type" property="og:type" content="website">
+  <meta name="og:image" property="og:image" content="/site/indie-engineer-og-image.png">
+
+  <meta name="twitter:card" property="twitter:card" content="summary">
+  <meta name="twitter:site" property="twitter:site" content="@CoryParsnipson">
+  <meta name="twitter:title" property="twitter:title" content="Indie Engineer :: About">
+  <meta name="twitter:description" property="twitter:description" content="{meta_description}">
+  <meta name="twitter:creator" property="twitter:creator" content="@CoryParsnipson">
+  <meta name="twitter:image" property="twitter:image" content="/site/indie-engineer-og-image.png">
 </svelte:head>
 
 <main>
