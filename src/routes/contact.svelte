@@ -7,6 +7,8 @@
 
   const SUCCESS_MSG = "Message sent successfully.";
 
+  const meta_description = "Want to contact Cory Parsnipson, author of IndieEngineer.com? Fill out the email form and he will get back to you.";
+
   let form_busy = false;
   let form_endpoint = '/api/contact.json';
   let form_success_msg = $page.url.searchParams.has('success') ? SUCCESS_MSG : '';
@@ -72,7 +74,18 @@
 
 <svelte:head>
   <title>Contact :: Indie Engineer</title>
-  <meta name="description" content="Want to contact Cory Parsnipson, author of IndieEngineer.com? Fill out the email form and he will get back to you.">
+  <meta name="description" content="{meta_description}">
+  <meta name="og:title" property="og:title" content="Indie Engineer :: Contact">
+  <meta name="og:description" property="og:description" content="{meta_description}">
+  <meta name="og:type" property="og:type" content="website">
+  <meta name="og:image" property="og:image" content="/site/indie-engineer-og-image.png">
+
+  <meta name="twitter:card" property="twitter:card" content="summary">
+  <meta name="twitter:site" property="twitter:site" content="@CoryParsnipson">
+  <meta name="twitter:title" property="twitter:title" content="Indie Engineer :: Contact">
+  <meta name="twitter:description" property="twitter:description" content="{meta_description}">
+  <meta name="twitter:creator" property="twitter:creator" content="@CoryParsnipson">
+  <meta name="twitter:image" property="twitter:image" content="/site/indie-engineer-og-image.png">
 </svelte:head>
 
 <main>
