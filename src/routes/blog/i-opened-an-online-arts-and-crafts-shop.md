@@ -2,7 +2,7 @@
 title: I Opened an Online Arts and Crafts Shop and Here's What Happened
 seo_title: 6 Lessons I Learned from Opening an E-Commerce Shop
 author: Cory Parsnipson
-summary: Do you knit, paint, or craft? You've probably thought of opening an online shop and selling some of your creations at some point. Me too! In this post, I pick a couple popular e-commerce platforms, do some research, and then go ahead making witty slogans for mugs and t-shirts. I learn a couple basic lessons in entrepreneurship here and find out more about myself. Find out what happened to my store!
+summary: Do you knit, paint, or craft? You've probably thought of opening an online shop and selling some of your creations at some point. Me too! In this post, I pick a couple popular e-commerce platforms, do some research, and then go ahead making witty slogans for mugs and t-shirts. I learn a couple basic lessons in entrepreneurship here. Find out what happened to my store!
 seo_image: /articles/gamer-mug.png
 date: Sun May 29 06:41:15 PM PDT 2022
 categories:
@@ -19,11 +19,11 @@ categories:
   import StackedBarChart from '$lib/components/charts/StackedBarChart.svelte';
 </script>
 
-People selling [colorful anime keychains](https://www.etsy.com/listing/1056007535/cute-anime-keychain) and [other trinkets](https://www.etsy.com/listing/986220160/printable-toddler-worksheets-or-toddler) looks like a fun business.
+People selling [colorful anime keychains](https://www.etsy.com/listing/1056007535/cute-anime-keychain) and [other trinkets](https://www.etsy.com/listing/986220160/printable-toddler-worksheets-or-toddler) looks like a fun business. See this?
 
 ![Handcrafted 3D Printed Pokeballs for Sale](/articles/etsy-pokeballs.jpg "Photo: DMFabricating via. Etsy")
 
-See this? Who wouldn't want to sell [lovingly crafted, legally-ambiguous merchandise](https://www.etsy.com/listing/1196065093/fully-functional-3d-printed-pokeball)? I mean, it's definitely more fun than preparing a powerpoint presentation trying to impress a room full of suits.
+Who wouldn't want to sell [lovingly crafted, legally-ambiguous merchandise](https://www.etsy.com/listing/1196065093/fully-functional-3d-printed-pokeball)? I mean, it's definitely more fun than preparing a powerpoint presentation trying to impress a room full of suits.
 
 I personally like buying webcomic merch, like [quirky graphic t-shirts](https://topatoco.com/collections/drhastings/products/rb-highfive), so maybe I have some idea of what makes a good product. However, I've never done anything like it before. Here's what my [Work Diet](/blog/i-left-my-office-job) currently looks like:
 
@@ -108,7 +108,7 @@ Behold! My Zazzle Store, [Parsnip Designs](https://www.zazzle.com/store/parsnipd
 
 ## I Made a Mug!
 
-I randomly decided to go with making a mug design. The surface area is small, and the nature of the object makes it perfect for a short, whitty slogan and/or image.
+I arbitrarily decided to go with making a mug design. The surface area is small, and the nature of the object makes it perfect for a short, whitty slogan and/or image.
 
 ### A Spider-man Eyes Mug
 
