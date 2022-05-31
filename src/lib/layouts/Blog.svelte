@@ -83,7 +83,9 @@
       <ShareLinks show_title={false} />
     </div>
 
-    <slot />
+    <div class="contents">
+      <slot />
+    </div>
 
     <MailSignupForm />
 
@@ -200,24 +202,25 @@
 
   /* inline hyperlinks */
   /* ------------------------------------------------------------------------ */
-  :global(main a[rel]) {
+  :global(main .contents a) {
     @apply text-xl text-emerald-700 font-serif underline py-1 pr-0.5;
   }
 
-  :global(main a[rel]:after) {
+  /* no external link icon for internal hyperlinks */
+  :global(main .contents a[rel]:after) {
     content: '';
     @apply inline-block align-baseline min-w-[1.03rem] min-h-[1.03rem] bg-[url('/site/icon-external-link.png')] bg-cover ml-1;
   }
 
-  :global(main a[rel]:hover) {
+  :global(main .contents a:hover) {
     @apply bg-cream-100;
   }
 
-  :global(main a[rel]:active) {
+  :global(main .contents main a:active) {
     @apply text-red-700;
   }
 
-  :global(main a[rel]:visited) {
+  :global(main .contents main a:visited) {
     @apply text-emerald-700;
   }
 
@@ -245,7 +248,7 @@
     @apply mx-auto;
   }
 
-  :global(main > img) {
+  :global(main .contents > img) {
     @apply mb-12;
   }
 
