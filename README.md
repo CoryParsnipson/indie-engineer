@@ -4,8 +4,6 @@ This is a sveltekit + MDsveX blog.
 
 ## TODO
 
-* about page contents
-
 * csrf tokens for forms and api calls
 * rate limiting api endpoints
 * google recaptcha on forms
