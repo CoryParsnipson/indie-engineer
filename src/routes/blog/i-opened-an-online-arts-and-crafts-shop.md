@@ -3,7 +3,7 @@ title: I Opened an Online Arts and Crafts Shop and Here's What Happened
 seo_title: 6 Lessons I Learned from Opening an E-Commerce Shop
 author: Cory Parsnipson
 summary: Do you knit, paint, or craft? You've probably thought of opening an online shop and selling some of your creations at some point. Me too! In this post, I pick a couple popular e-commerce platforms, do some research, and then go ahead making witty slogans for mugs and t-shirts. I learn a couple basic lessons in entrepreneurship here and find out more about myself. Find out what happened to my store!
-seo_image: /static/articles/gamer-mug.png
+seo_image: /articles/gamer-mug.png
 date: Sun May 29 06:41:15 PM PDT 2022
 categories:
   - etsy
@@ -21,7 +21,7 @@ categories:
 
 People selling [colorful anime keychains](https://www.etsy.com/listing/1056007535/cute-anime-keychain) and [other trinkets](https://www.etsy.com/listing/986220160/printable-toddler-worksheets-or-toddler) looks like a fun business.
 
-![Handcrafted 3D Printed Pokeballs for Sale](/static/articles/etsy-pokeballs.jpg "Photo: DMFabricating via. Etsy")
+![Handcrafted 3D Printed Pokeballs for Sale](/articles/etsy-pokeballs.jpg "Photo: DMFabricating via. Etsy")
 
 See this? Who wouldn't want to sell [lovingly crafted, legally-ambiguous merchandise](https://www.etsy.com/listing/1196065093/fully-functional-3d-printed-pokeball)? I mean, it's definitely more fun than preparing a powerpoint presentation trying to impress a room full of suits.
 
@@ -72,19 +72,19 @@ I don't think this choice is too important when you're starting out, though I wa
 
 ### Etsy
 
-![Etsy's Current Front Page](/static/articles/shop-etsy.png "Etsy.com")
+![Etsy's Current Front Page](/articles/shop-etsy.png "Etsy.com")
 
 It looks like [Etsy](https://www.etsy.com) is the most popular, but takes the biggest cut as a result of their strong market position. That last thing is a source of recent controversy and many shop owners are unhappy about it. Etsy's terms of service also explicitly states that they only allow handmade crafts to be sold, but that definition apparently can be stretched very far (they allow 3d prints and printed t-shirts and printed stuff) as long as there is some aspect of the product that has to be "handmade" (read: "customized") by the shop owner. I've never bought anything from Etsy before.
 
 ### Redbubble
 
-![Redbubble's Current Front Page](/static/articles/shop-redbubble.png "Redbubble.com")
+![Redbubble's Current Front Page](/articles/shop-redbubble.png "Redbubble.com")
 
 [Redbubble](https://www.redbubble.com) is a wilderness of copyright infringement; a wild-west of cheap knock-off merchandise. Some of their users complain that sending designs to Redbubble just makes it easier for shameless clones to spring up in a matter of days. I've bought from Redbubble once and it's really good for getting crappy merchandise for unimportant one-off gifts (e.g. a pokemon themed notebook for a work-related event). Otherwise, this sounds like something to avoid...
 
 ### Zazzle
 
-![Zazzle's Current Front Page](/static/articles/shop-zazzle.png "Zazzle.com")
+![Zazzle's Current Front Page](/articles/shop-zazzle.png "Zazzle.com")
 
 [Zazzle](https://www.zazzle.com) is a less well known competitor but internet denizens seem to really like this one. It's not as well known so the cut they take is *sliiightly* less than Etsy. It's also not as bad as Redbubble when it comes to knock-offs and is also more lax about handmade items. I bought a t-shirt off of Zazzle once and it was a nice shirt.
 
@@ -94,15 +94,15 @@ In the end I decided to go with Zazzle and began making an account.
 
 I got sidetracked into making some store graphics for a couple hours:
 
-![Parsnip Designs Logo](/static/articles/parsnip-designs-no-text-logo.png "Parsnip Designs Official Store Logo")
+![Parsnip Designs Logo](/articles/parsnip-designs-no-text-logo.png "Parsnip Designs Official Store Logo")
 
 I slapped together a logo in a few hours using GIMP. I chose a controller silhouette because I wanted to focus my shop on making fun gamer/nerd reference related merchandise. I'm not super happy with it, but I think it's good enough for now.
 
-![Parsnip Designs Store Banner](/static/articles/parsnip-designs-logo.png "Parsnip Designs Store Banner")
+![Parsnip Designs Store Banner](/articles/parsnip-designs-logo.png "Parsnip Designs Store Banner")
 
 I also made a store banner.
 
-![Parsnip Designs Storefront](/static/articles/zazzle-storefront.png)
+![Parsnip Designs Storefront](/articles/zazzle-storefront.png)
 
 Behold! My Zazzle Store, [Parsnip Designs](https://www.zazzle.com/store/parsnipdesigns).
 
@@ -114,7 +114,7 @@ I randomly decided to go with making a mug design. The surface area is small, an
 
 Originally, I wanted to make a close-up of Spider-man eyes on a mug.
 
-![Close-up of Miles Morales in Spiderverse](/static/articles/miles-morales-spiderverse.jpg "Photo: Sony")
+![Close-up of Miles Morales in Spiderverse](/articles/miles-morales-spiderverse.jpg "Photo: Sony")
 
 Something like the eyeholes on this mask on a mug I thought would look really cool. Unfortunately, in the process of mocking it up I found that it wasn't as cool as I thought it would be. Another thing to watch out for is that designs you make with the built-in product maker can't wrap all the way around the mug.
 
@@ -122,19 +122,19 @@ Something like the eyeholes on this mask on a mug I thought would look really co
 
 My second, less ambitious idea was to make a mug that says "I could be GAMING right now".
 
-![Gamer mug](/static/articles/gamer-mug.png)
+![Gamer mug](/articles/gamer-mug.png)
 
 I feel like this is good for a moderate chuckle, but it doesn't have the "I have to buy it" factor. Also I recall not having enough graphical design skill to make this text as fancy as it could have been.
 
-![Gamer mug variant](/static/articles/gamer-mug2.png "I also made a second variant that I didn't use")
+![Gamer mug variant](/articles/gamer-mug2.png "I also made a second variant that I didn't use")
 
 Seeing the Zazzle tool superimpose the image on a mug was pretty cool.
 
-![Gamer mug product preview](/static/articles/i-could-be-gaming-mug.png)
+![Gamer mug product preview](/articles/i-could-be-gaming-mug.png)
 
 I finally hit submit and then sat back and waited for the moolah to roll in. But...
 
-![Mug Store Page With Analytics](/static/articles/zazzle-mug-store.png "Wow... a whole 14 views...")
+![Mug Store Page With Analytics](/articles/zazzle-mug-store.png "Wow... a whole 14 views...")
 
 Nothing happened.
 
@@ -142,7 +142,7 @@ Nothing happened.
 
 You might be wondering why the mug is so expensive. Or at least yelling at your computer screen about how I made the price too high! Using the platform leaves me no choice but to be complicit in creating overpriced merch.
 
-![Zazzle Royalties Breakdown](/static/articles/zazzle-mug-royalties.png "Royalty you will make: $1.24 -- Price for product: $15.45 (!!)")
+![Zazzle Royalties Breakdown](/articles/zazzle-mug-royalties.png "Royalty you will make: $1.24 -- Price for product: $15.45 (!!)")
 
 As you can see in the royalty breakdown, I'm making slightly more than a dollar per mug! (Or I would be, if I was able to sell one) Going any cheaper would mean I'd not make anything from selling mugs. If I try to change the royalty to something like 12-15%, the price jumps up to $20! That means whatever I design has to be unbelievabily desirable for someone to buy it at this price...
 
