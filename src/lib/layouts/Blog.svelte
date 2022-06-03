@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { page } from '$app/stores';
 
   import Categories from '$lib/components/Categories.svelte';
   import MailSignupForm from '$lib/components/MailSignupForm.svelte';
@@ -58,7 +59,7 @@
   <meta name="twitter:title" property="twitter:title" content="{seo_title ? seo_title : title}">
   <meta name="twitter:description" property="twitter:description" content="{seo_summary ? seo_summary : summary}">
   <meta name="twitter:creator" property="twitter:creator" content="@CoryParsnipson">
-  <meta name="twitter:image" property="twitter:image" content="{seo_image}">
+  <meta name="twitter:image" property="twitter:image" content="{$page.url.origin}{seo_image}">
 </svelte:head>
 
 <div class="flex justify-center" class:flex-row-reverse={sidebar_on_left}>
