@@ -85,7 +85,7 @@
   <meta name="twitter:title" property="twitter:title" content="Indie Engineer :: Contact">
   <meta name="twitter:description" property="twitter:description" content="{meta_description}">
   <meta name="twitter:creator" property="twitter:creator" content="@CoryParsnipson">
-  <meta name="twitter:image" property="twitter:image" content="/site/indie-engineer-og-image.png">
+  <meta name="twitter:image" property="twitter:image" content="{$page.url.origin}/site/indie-engineer-og-image.png">
 </svelte:head>
 
 <main>
