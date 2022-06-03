@@ -12,7 +12,7 @@
   <meta name="og:type" property="og:type" content="website">
   <meta name="og:image" property="og:image" content="/site/indie-engineer-og-image.png">
 
-  <meta name="twitter:card" property="twitter:card" content="summary">
+  <meta name="twitter:card" property="twitter:card" content="summary_large_image">
   <meta name="twitter:site" property="twitter:site" content="@CoryParsnipson">
   <meta name="twitter:title" property="twitter:title" content="Indie Engineer :: About">
   <meta name="twitter:description" property="twitter:description" content="{meta_description}">

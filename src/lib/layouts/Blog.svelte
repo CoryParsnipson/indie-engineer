@@ -53,7 +53,7 @@
     <meta name="og:image" property="og:image" content="{seo_image}">
   {/if}
 
-  <meta name="twitter:card" property="twitter:card" content="summary">
+  <meta name="twitter:card" property="twitter:card" content="summary_large_image">
   <meta name="twitter:site" property="twitter:site" content="@CoryParsnipson">
   <meta name="twitter:title" property="twitter:title" content="{seo_title ? seo_title : title}">
   <meta name="twitter:description" property="twitter:description" content="{seo_summary ? seo_summary : summary}">
