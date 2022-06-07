@@ -48,6 +48,7 @@
 
   const status_list = [
     'inactive',
+    'wip',
     'active',
     'passive',
     'paused',
@@ -55,10 +56,20 @@
     'discarded',
   ];
 
+  const status_readable = {
+    inactive: "Inactive",
+    wip: "Work in Progress",
+    active: "Actively Working",
+    passive: "Passively Working",
+    paused: "On Hold",
+    blocked: "Problem Encountered",
+    discarded: "Discarded",
+  };
+
   function getItemColor(status) {
     switch (status) {
       case "paused":
-        return "bg-amber-400";
+        return "bg-amber-500";
       case "blocked":
         return "bg-red-500";
       case "discarded":
@@ -67,6 +78,8 @@
         return "bg-lime-400";
       case "active":
         return "bg-lime-700";
+      case "wip":
+        return "bg-yellow-300";
       default:
         return "bg-zinc-500";
     }
@@ -75,11 +88,13 @@
   function getTextColor(status) {
     switch (status) {
       case "paused":
-        return "text-amber-800";
+        return "text-red-900";
       case "discarded":
         return "text-zinc-400";
       case "passive":
         return "text-lime-800";
+      case "wip":
+        return "text-yellow-800";
       default:
         return "text-zinc-50";
     }
@@ -140,7 +155,7 @@
       {#each status_list as item, index}
         <div class="flex gap-2 items-center">
           <div class="block w-[10px] h-[10px] {getItemColor(item)}"></div>
-          <p class="font-serif text-lg m-0">{item}</p>
+          <p class="font-serif text-lg m-0">{status_readable[item]}</p>
         </div>
       {/each}
     </div>
