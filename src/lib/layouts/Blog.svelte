@@ -106,44 +106,44 @@
 
   /* headers */
   /* ------------------------------------------------------------------------ */
-  :global(main h1),
-  :global(main h2),
-  :global(main h3),
-  :global(main h4),
-  :global(main h5),
-  :global(main h6) {
+  :global(main h1, main h1 :is(em, strong)),
+  :global(main h2, main h2 :is(em, strong)),
+  :global(main h3, main h3 :is(em, strong)),
+  :global(main h4, main h4 :is(em, strong)),
+  :global(main h5, main h5 :is(em, strong)),
+  :global(main h6, main h6 :is(em, strong)) {
     /* NOTE: scroll-mt is hardcoded, but the value should be dependent on header height */
     @apply relative font-title scroll-mt-28;
   }
 
-  :global(main h1) {
+  :global(main h1, main h1 :is(em, strong)) {
     @apply text-4.5xl tracking-tight leading-snug mt-2 mb-4;
   }
 
   /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
   @media (min-width: 640px) {
-    :global(main h1) {
+    :global(main h1, main h1 :is(em, strong)) {
       @apply text-5xl leading-relaxed mt-2 mb-4;
     }
   }
 
-  :global(main h2) {
+  :global(main h2, main h2 :is(em, strong)) {
     @apply text-4xl mb-8;
   }
 
-  :global(main h3) {
+  :global(main h3, main h3 :is(em, strong)) {
     @apply text-3xl text-zinc-700 mb-6;
   }
 
-  :global(main h4) {
+  :global(main h4, main h4 :is(em, strong)) {
     @apply text-2xl text-emerald-800 mb-4;
   }
 
-  :global(main h5) {
+  :global(main h5, main h5 :is(em, strong)) {
     @apply text-lg text-emerald-800;
   }
 
-  :global(main h6) {
+  :global(main h6, main h6 :is(em, strong)) {
     @apply text-base text-emerald-800;
   }
 
