@@ -28,7 +28,7 @@
 
   onMount(async () => {
     // gather data for table of contents
-    let headings = document.getElementsByTagName('main')[0].querySelectorAll('h1,h2,h3,h4,h5,h6');
+    let headings = document.getElementsByTagName('main')[0].querySelectorAll('h1,h2,h3,h4');
     headings.forEach(heading => {
       if (!heading.lastChild.hash) {
         return;
@@ -117,22 +117,22 @@
   }
 
   :global(main h1, main h1 :is(em, strong)) {
-    @apply text-4.5xl tracking-tight leading-snug mt-2 mb-4;
+    @apply text-4xl tracking-tight leading-snug mt-2 mb-4;
   }
 
   /* need to use vanilla media query because complex class ('sm:') causes compilation issue (svelte bug?) */
   @media (min-width: 640px) {
     :global(main h1, main h1 :is(em, strong)) {
-      @apply text-5xl leading-relaxed mt-2 mb-4;
+      @apply text-4.5xl leading-relaxed mt-2 mb-4;
     }
   }
 
   :global(main h2, main h2 :is(em, strong)) {
-    @apply text-4xl mb-8;
+    @apply text-3xl mb-8;
   }
 
   :global(main h3, main h3 :is(em, strong)) {
-    @apply text-3xl text-zinc-700 mb-6;
+    @apply text-2xl text-zinc-700 mb-6;
   }
 
   :global(main h4, main h4 :is(em, strong)) {
@@ -140,7 +140,7 @@
   }
 
   :global(main h5, main h5 :is(em, strong)) {
-    @apply text-lg text-emerald-800;
+    @apply text-2xl text-emerald-800 mb-4;
   }
 
   :global(main h6, main h6 :is(em, strong)) {
@@ -173,7 +173,11 @@
   }
 
   :global(main p), :global(main em), :global(main strong) {
-    @apply text-xl font-serif mb-10 leading-loose tracking-markdown;
+    @apply text-lg font-serif mb-10 leading-loose tracking-markdown;
+  }
+
+  :global(main p code) {
+    @apply text-base;
   }
 
   /* block quote */
@@ -204,7 +208,7 @@
   /* inline hyperlinks */
   /* ------------------------------------------------------------------------ */
   :global(main .contents a) {
-    @apply text-xl text-emerald-700 font-serif underline py-1 pr-0.5;
+    @apply text-lg text-emerald-700 font-serif underline py-1 pr-0.5;
   }
 
   /* no external link icon for internal hyperlinks */
@@ -240,7 +244,7 @@
   }
 
   :global(main li) {
-    @apply text-xl font-serif leading-loose tracking-markdown pl-4 mb-2;
+    @apply text-lg font-serif leading-loose tracking-markdown pl-4 mb-2;
   }
 
   /* images */

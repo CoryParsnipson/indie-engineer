@@ -26,13 +26,13 @@
     {/if}
 
     {#if metadata.summary}
-      <p class="font-serif text-lg sm:text-xl leading-relaxed sm:leading-relaxed tracking-markdown mb-0">
+      <p class="font-serif text-lg leading-relaxed sm:leading-relaxed tracking-markdown mb-0">
         {metadata.summary}
       </p>
     {/if}
 
     <p class="
-      font-serif text-lg sm:text-xl text-center leading-relaxed sm:leading-relaxed tracking-markdown
+      font-serif text-lg text-center leading-relaxed sm:leading-relaxed tracking-markdown
       text-emerald-700
       mt-4 mb-2">
       &raquo; Read more &laquo;
