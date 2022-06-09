@@ -5,10 +5,10 @@ summary: Starting a blog is next on the list. Should I use Wordpress and have so
 seo_image: /articles/ssg-cover.png
 date: Tue Jun  7 09:51:04 PM PDT 2022
 categories:
-  - coding
   - programming
   - web development
   - work diet
+  - blog
 ---
 
 <script>
