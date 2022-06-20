@@ -2,11 +2,13 @@
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
 
+  import Ad from '$lib/components/Ad.svelte';
   import Categories from '$lib/components/Categories.svelte';
   import MailSignupForm from '$lib/components/MailSignupForm.svelte';
   import ShareLinks from '$lib/components/ShareLinks.svelte';
   import TableOfContents from '$lib/components/TableOfContents.svelte';
 
+  import { env } from '$lib/util/env';
   import { slugify } from '$lib/util/string';
 
   // frontmatter exports
@@ -27,6 +29,13 @@
   let toc_data = [];
 
   onMount(async () => {
+    let ad_top = document.getElementById("ad-top");
+    let contents = document.getElementsByClassName("contents")[0];
+    let paragraphs = contents?.getElementsByTagName("p");
+    if (ad_top && paragraphs && paragraphs.length >= 2) {
+      paragraphs[0].parentNode.insertBefore(ad_top, paragraphs[0].nextSibling);
+    }
+
     // gather data for table of contents
     let headings = document.getElementsByTagName('main')[0].querySelectorAll('h1,h2,h3,h4');
     headings.forEach(heading => {
@@ -84,6 +93,8 @@
       <ShareLinks show_title={false} />
     </div>
 
+    <Ad id={"ad-top"} width={"100%"} max_width={"600px"} height={"100px"} show={env.var.VITE_SHOW_ADS} />
+
     <div class="contents">
       <slot />
     </div>
@@ -91,12 +102,15 @@
     <MailSignupForm />
 
     <ShareLinks />
+
+    <Ad width={"100%"} max_width={"600px"} height={"250px"} show={env.var.VITE_SHOW_ADS} />
   </main>
 
   <sidebar class="w-[30%] relative hidden lg:block ml-5 py-6">
     <!-- top-32 spacing here on the sticky div is arbitrary, but must be bigger than py-6 to prevent jitter -->
     <div class="sticky top-32 border-cream-500">
       <TableOfContents headings={toc_data} />
+      <Ad width={"250px"} height={"250px"} show={env.var.VITE_SHOW_ADS} />
     </div>
   </sidebar>
 </div>
