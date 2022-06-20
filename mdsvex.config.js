@@ -31,7 +31,7 @@ const config = defineConfig({
     rehypeTitleFigure,
     [rehypeExternalLinks, {
       target: "_blank",
-      rel: ["nofollow", "noopener"],
+      rel: ["noopener"],
     }],
   ]
 });
