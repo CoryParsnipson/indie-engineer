@@ -4,13 +4,19 @@ This is a sveltekit + MDsveX blog.
 
 ## TODO
 
-* csrf tokens for forms and api calls
-* rate limiting api endpoints
 * google recaptcha on forms
-* remark/rehype image attribution?
-* iframe autoresize? (for sendgrid sign up form)
-* add in tag manager events for share button clicks + subscribe clicks
+* csrf tokens for forms and api calls
+
 * next gen images - (low res placeholder, multiple res, etc)
+* add in tag manager events for share button clicks + subscribe clicks
+* iframe autoresize? (for sendgrid sign up form)
+* remark/rehype image attribution?
+* rate limiting api endpoints
+
+* set up redirect email from namecheap, use for contact and automatic new post notifications
+  * verify this domain with sendgrid
+
+* fix all high priority issues in SEO site checkup: https://seositecheckup.com
 
 ## Creating a svelte kit project
 
