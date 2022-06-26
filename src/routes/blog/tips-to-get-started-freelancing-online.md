@@ -108,7 +108,7 @@ The next day I gave it some thought and signed up for [Thumbtack](https://www.th
 
 Thumbtack requires you to pay to get your name in front of "leads", their name for clients who will see your job postings. There is no guarantee that they will hire you and you have to pay this price regardless of outcome. I think the price is different for everyone, but for me it cost $200 a week to do this.
 
-This, sadly, gave me pause. I can't really afford paying this much money and, being a complete beginner, I was no confident that I could build a pipeline before I ran out of money.
+This, sadly, gave me pause. I can't really afford paying this much money and, being a complete beginner, I was not confident that I could build a pipeline before I ran out of money.
 
 ## Lessons Learned
 
