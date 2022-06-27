@@ -264,7 +264,13 @@
   }
 
   :global(main li) {
-    @apply text-lg font-serif leading-loose tracking-markdown pl-4 mb-2;
+    @apply text-lg font-serif leading-relaxed tracking-markdown pl-4 mb-2;
+  }
+
+  @media (min-width: 640px) {
+    :global(main li) {
+      @apply text-lg font-serif leading-loose tracking-markdown pl-4 mb-2;
+    }
   }
 
   /* images */
