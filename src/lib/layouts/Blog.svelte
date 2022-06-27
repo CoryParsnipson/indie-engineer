@@ -187,7 +187,7 @@
   }
 
   :global(main p), :global(main em), :global(main strong) {
-    @apply text-lg font-serif mb-10 leading-normal tracking-markdown;
+    @apply text-lg font-serif mb-10 leading-relaxed tracking-markdown;
   }
 
   @media (min-width: 640px) {
