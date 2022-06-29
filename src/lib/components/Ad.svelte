@@ -8,7 +8,7 @@
   export let placeholder = "";
 
   export let show = true;
-  export let id;
+  export let id = undefined; 
 
   let self;
   let ef_placeholder = "";
