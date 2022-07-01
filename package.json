@@ -24,7 +24,7 @@
 		"@tailwindcss/typography": "^0.5.0",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
 		"@typescript-eslint/parser": "^5.10.1",
-		"autoprefixer": "^10.4.2",
+		"autoprefixer": "10.4.5",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",
@@ -52,6 +52,7 @@
 		"@sendgrid/mail": "^7.6.2",
 		"base-64": "^1.0.0",
 		"crypto-js": "^4.1.1",
+		"d3-quadtree": "^3.0.1",
 		"d3-shape": "^3.1.0",
 		"isomorphic-git": "^1.17.0",
 		"locally-unique-id-generator": "^0.1.5",
@@ -60,7 +61,7 @@
 		"yup": "^0.32.11"
 	},
 	"engines": {
-		"node": "16.x",
+		"node": "18.x",
 		"npm": "8.x"
 	}
 }
