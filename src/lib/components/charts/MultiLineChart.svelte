@@ -1,20 +1,23 @@
 <script>
-  import { LayerCake, Svg } from 'layercake';
+  import { Html, LayerCake, Svg } from 'layercake';
 
   import AxisX from '$lib/components/charts/layercake/AxisX.svelte';
   import AxisY from '$lib/components/charts/layercake/AxisY.svelte';
-  import Line from '$lib/components/charts/layercake/Line.svelte';
+  import MultiLine from '$lib/components/charts/layercake/MultiLine.svelte';
+  import Labels from '$lib/components/charts/layercake/GroupLabels.html.svelte';
+  import SharedTooltip from '$lib/components/charts/layercake/SharedTooltip.html.svelte';
 
   // data is expected to be in this shape:
   // [ { '<xKey>': x0, '<yKey>': y0 }, { '<xKey>': x1, '<yKey>': y1 } ... ]
   export let data;
+  export let flatData;
 
   export let width = "100%";
   export let height = "300px";
 
-  export let title = "Line Chart";
+  export let title = "MultiLine Chart";
 
-  export let lineColor = 'cornflowerblue';
+  export let lineColor = ['cornflowerblue'];
 
   export let xLabel = "";
   export let xKey = 'x';
@@ -27,6 +30,11 @@
   export let yDomain = undefined;
   export let yFormat = d => d;
   export let yTicks = undefined;
+
+  export let zKey = 'z';
+
+  export let tooltipData;
+  export let tooltipFormat;
 </script>
 
 <p class="text-lg sm:text-xl text-center mb-3">{title}</p>
@@ -36,15 +44,25 @@
     padding={{ bottom: 20, left: 40 }}
     x={xKey}
     y={yKey}
+    z={zKey}
     xDomain={xDomain}
     yDomain={yDomain}
+    flatData={flatData}
     data={data}
   >
     <Svg>
       <AxisX formatTick={xFormat} ticks={xTicks} />
       <AxisY formatTick={yFormat} ticks={yTicks} />
-      <Line stroke={lineColor} />
+      <MultiLine colors={lineColor} />
     </Svg>
+
+    <Html>
+      <Labels />
+      <SharedTooltip
+        formatTitle={tooltipFormat}
+        dataset={tooltipData}
+      />
+    </Html>
   </LayerCake>
   <p class="text-lg sm:text-xl text-center my-3">{xLabel}</p>
 </div>

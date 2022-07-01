@@ -1,9 +1,9 @@
 <script>
-  import LineChart from '$lib/components/charts/LineChart.svelte';
+  import MultiLineChart from '$lib/components/charts/MultiLineChart.svelte';
 
   import gridwise from '$lib/data/uber-gridwise.json';
 
-  let { data, xlabels } = parseGridwiseData();
+  let { data, data_long, xlabels, tooltiplabels } = parseGridwiseData();
 
   function parseGridwiseData() {
     let vals = {};
@@ -16,7 +16,9 @@
         vals[key] = {
           dollars: 0,
           hours: 0,
-          month_string: num2month(d.getMonth()) + ' ' + (d.getFullYear() - 2000),
+          expense: 0,
+          month_string: num2month(d.getMonth()) + " '" + (d.getFullYear() - 2000),
+          week_string: num2month(d.getMonth()) + ' Week ' + e.week + " '" + (d.getFullYear() - 2000),
         };
       }
 
@@ -27,27 +29,52 @@
 
       vals[key].dollars += e.revenue;
       vals[key].hours += e.hours;
+      vals[key].expense += expenses;
     });
 
-    // { x: dollars per hour, y: week number? }
+    // { x: dollars per hour, revenue: one series, minus_gas: second series }
     let data = [];
     let xlabels = [];
+    let tooltiplabels = [];
     let idx = 0;
     for (const [key, d] of Object.entries(vals)) {
       data.push({
         x: idx,
-        y: Math.round(d.dollars / d.hours),
+        '$/hr': Math.round(d.dollars / d.hours),
+        '$/hr minus gas': Math.round((d.dollars - d.expense) / d.hours),
       });
 
       xlabels.push(d.month_string);
+      tooltiplabels.push(d.week_string);
 
       idx++;
     }
 
+    // split data into list of x, y with one series per item
+    let seriesNames = ['$/hr', '$/hr minus gas'];
+    let data_long = [];
+    data_long = seriesNames.map(key => {
+      return {
+        z: key,
+        values: data.map(d => {
+          return {
+            x: d.x,
+            y: d[key],
+          }
+        }),
+      };
+    });
+
     return {
       data: data,
+      data_long: data_long,
       xlabels: xlabels,
+      tooltiplabels: tooltiplabels,
     };
+  }
+
+  function flatten(data_long) {
+    return data_long.reduce((memo, group) => { return memo.concat(group.values); }, []);
   }
 
   function getMonthFromDate(d) {
@@ -73,13 +100,21 @@
     }
     return "";
   }
+
+  function tooltipFormat(d) {
+    return tooltiplabels[d];
+  }
 </script>
 
-<LineChart
-  data={data}
+<MultiLineChart
+  data={data_long}
+  flatData={flatten(data_long)}
   title={"Dollars Per Hour"}
+  lineColor={['cornflowerblue', 'orange']}
   xFormat={formatX}
   xTicks={data.length}
   yLabel={'$USD / hr'}
   yDomain={[0, 40]}
+  tooltipData={data}
+  tooltipFormat={tooltipFormat}
 />
