@@ -4,7 +4,7 @@
  -->
 <script>
   import { getContext } from 'svelte';
-  import { max } from 'd3-array';
+  import { max, min } from 'd3-array';
 
   const { data, x, y, xScale, yScale, xRange, yRange, z } = getContext('LayerCake');
 
@@ -14,10 +14,10 @@
   const cap = val => val.replace(/^\w/, d => d.toUpperCase());
 
   /* --------------------------------------------
-   * Put the label on the highest value
+   * Put the label on the leftmost value
    */
   $: left = values => $xScale(max(values, $x)) /  Math.max(...$xRange);
-  $: top = values => $yScale(max(values, $y)) / Math.max(...$yRange);
+  $: top = values => $yScale(max([values[values.length - 1]], $y)) / Math.max(...$yRange);
 </script>
 
 {#each $data as group}
@@ -33,7 +33,7 @@
 <style>
   .label {
     position: absolute;
-    transform: translate(-100%, -100%)translateY(10px);
+    transform: translate(-100%, -100%)translateY(1px);
     font-size: 13px;
     white-space: nowrap;
   }

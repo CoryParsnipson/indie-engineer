@@ -30,8 +30,8 @@
 </script>
 
 <p class="text-lg sm:text-xl text-center mb-3">{title}</p>
-<div class:pl-14={yLabel} class="relative mb-14 pl-14" style="width: {width}; height: {height}">
-  <p class="absolute top-1/2 -left-8 origin-top -rotate-90">{yLabel}</p>
+<div class:pl-14={yLabel} class="relative mb-14 pl-7 sm:pl-14" style="width: {width}; height: {height}">
+  <p class="absolute top-1/2 -left-8 text-base sm:text-lg origin-center -rotate-90">{yLabel}</p>
   <LayerCake
     padding={{ bottom: 20, left: 40 }}
     x={xKey}
