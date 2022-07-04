@@ -60,7 +60,7 @@
   <meta name="og:description" property="og:description" content="{seo_summary ? seo_summary : summary}">
   <meta name="og:type" property="og:type" content="article">
   {#if seo_image }
-    <meta name="og:image" property="og:image" content="{seo_image}">
+    <meta name="og:image" property="og:image" content="{$page.url.origin}{seo_image}">
   {/if}
 
   <meta name="twitter:card" property="twitter:card" content="summary_large_image">
