@@ -24,9 +24,9 @@ categories:
   import DollarsPerMonth from '$lib/components/charts/uber/DollarsPerMonth.svelte';
 </script>
 
-The last time I was unemployed was in 2014. During that time, Uber exploded into the collective consciousness as the latest hip tech startup to come out of Silicon Valley. Driving for Uber was mysterious and cool. *AND* you got paid for it.
+The last time I was unemployed was in 2014. During that time Uber was exploding into the collective consciousness as the latest hip tech startup to come out of Silicon Valley. Driving for Uber was mysterious and cool *and* you got paid for it.
 
-Things have changed a lot since then. People have realized that Uber drivers are just exploited taxi drivers with even lower profit margins. But being unemployed once again, I turned to Uber as a familiar side hustle to guarantee some quick cash. After about two weeks of background checks, inspections, and gathering documents, I was all set to start driving.
+Things have changed a lot since then. People have realized that Uber drivers are glorified taxi drivers with even lower profit margins. But, being unemployed once again, I turned to Uber as a familiar side-hustle to guarantee some quick cash. After about two weeks of background checks, inspections, and gathering documents I was all set to start driving.
 
 ![Screencap of Parasite Movie](/articles/parasite-driver.png "Me, driving to fulfill my greatest passion in life.")
 
@@ -34,15 +34,17 @@ One winter evening, I sighed deeply and let a stranger into my car.
 
 ## How Much I Make as an Uber Driver
 
-Ok, first things first, how much do I make as an Uber driver? I make between $30 and $35 per hour, before tax, gas, and car maintenance cost. This is in the San Francisco Bay Area, so I imagine that it pays less almost everywhere else.
+Ok, first things first, how much do I make as an Uber driver? It's between $30 and $35 per hour, before tax, gas, and car maintenance cost. This is in the San Francisco Bay Area, so I imagine that it pays less almost everywhere else.
+
+<DollarsPerHour />
 
 ### You Make What?! That's Actually a Lot!
 
-Well hold your horses. It's not exactly an *simple* $35 an hour to make when you account for the many, many caveats:
+Well hold your horses. It's not exactly a simple $35 an hour to make when you account for the many, many caveats:
 
-##### It is Hard to Schedule Around Shifts
+##### Scheduling Around an Uber Shift is Really Hard
 
-Scheduling around an Uber shift is really hard. If I accept an hour+ trip going 50 miles somewhere, that'll take a while to come back from unless I eat the cost of gas on the return trip, passenger-less, just to be on time.
+If I accept an hour+ trip going 50 miles somewhere, that'll take a while to come back from unless I eat the cost of gas on the return trip, passenger-less, just to be on time.
 
 For that reason, I usually just consider driving to be an all day thing. The "true" dollars per hour is maybe much lower if you take the opportunity cost of that wasted time into account.
 
@@ -54,17 +56,17 @@ It's a real drag on one's mental energy. Ever met an angry driver? This is proba
 
 ##### You Have to Pay All Your Own Expenses
 
-This has been highly publicized, because it's a deal breaker for most people (and it would be for me too, but I'm doing this temporarily). The thought of car expenses on a driver's income is scary. A single accident or breakdown can cost thousands, basically invalidating the past couple months of earnings. Not cool at all.
+This has been highly publicized, because it should be a deal breaker for almost everybody. The thought of car expenses on a driver's income is scary. A single accident or breakdown can cost thousands, basically invalidating the past couple months of earnings. Not cool at all.
 
 Also the increase in gas price directly translates to hours of more work per week to earn the same amount of money as before. This *really* sucks.
 
 ![Insane gas prices](/articles/gas-prices.jpg "California in a nutshell")
 
-It's still better than most minimum wage jobs, I guess. Maybe I still prefer typing code and sitting in an air-conditined room after all...
+It's still better than most minimum wage jobs, I guess. Maybe I still prefer typing code and sitting in an air-conditioned room after all...
 
 ## A Closer Look at Earnings Data
 
-I was surpised to find out that there's a lot of interesting stuff here, so I prepared a bunch of charts.
+I ended up gathering a lot of interesting data, so I prepared a bunch of charts.
 
 ### Dollars, Miles, and Hours are Tightly Correlated
 
@@ -74,13 +76,13 @@ This is a really good thing, because now I can estimate how long it will take to
 
 ### Dollars Per Hour
 
-Let's see what the data has to say...
+Let's take another look at this chart.
 
 <DollarsPerHour />
 
-The first thing is that you'll see a slow upward trend. This can be explained by me learning more tips and tricks to save gas and be more efficient at the job. I max out sometime mid-April where I remain steadily around the $30 - $35 range I mentioned before.
+Notice that there is a slow upward trend. This can be explained by me learning more tips and tricks to save gas and be more efficient at the job. I max out sometime mid-April where I remain steadily around the $30 - $35 range I mentioned before.
 
-The second thing that I'm noticing is exactly how shafted I'm getting with respect to gas expenses here...
+The second thing that I'm noticing is exactly how shafted I'm getting with respect to gas expense...
 
 ### Dollars Per Month
 
@@ -92,11 +94,11 @@ Initially I drove two days a week and stopped only after I earned $100 (or $120-
 
 #### Deciding on a Schedule
 
-Almost halving my burn rate was good, but after February I got a little more ambitious. If I drove for a little more, I could probably make $2,400 a month.
+Almost halving my burn rate was good, but after February I got more ambitious. If I drove for a little longer, I could probably make $2,400 a month.
 
-I tried different things in March and April, like driving to and from a cafe to sit and work and spending a few hours each way driving people around. This wasn't so good, mainly because shorter shifts are less lucrative and driving almost every day felt like I was working all the time.
+I tried different things in March and April. Sometimes I'd only Uber on the way to and from places I already needed to go. Other times I tried driving a few hours early in the morning or late at night. None of these things were that great. This is because shorter shifts are less lucrative and driving almost every day makes it feel like I'm working all the time.
 
-Eventually I settled on driving three days a week, making $200 a day ($240 before gas), or I driving 2 days a week, making $300 a day ($360 before gas). Improvements to efficiency and taking longer shifts made this achievable. That's roughly what I do now. Driving 2 days a week gives me a good break in between shifts, but the long days are pretty grueling. I either have to wake up early (6AM-ish), take a couple hours break midday, and work into the evening around 7-8PM, or start at 2-3PM and end at midnight.
+Improvements to efficiency and taking longer shifts make it possible to achieve my goal driving 3 days a week making $200 a day ($240 before gas), or 2 days a week, making $300 a day ($360 before gas). Driving 2 days a week gives me a good break in between shifts, but the long days are pretty grueling. I either have to wake up early (6AM-ish), take a couple hours break midday, and work into the evening around 7-8PM, or start at 2-3PM and end at midnight.
 
 ### Dollars Per Mile
 
@@ -120,9 +122,9 @@ This metric doesn't mean much, but I was curious to see what it looked like. I w
 
 <TripsPerHour />
 
-Trips per hour can go down if you're spending too much time sitting there waiting for trips. Thankfully, I've only experienced that once in May. Interesting to see how that those two bad weeks are visible in the graph. Maybe it was just bad luck. On the other hand the Omicron rate peaked during that time, so maybe people were just staying inside?
+Trips per hour can go down if you're spending too much time sitting around waiting for trips. Thankfully, I've only experienced that once in May. Interesting to see how that those two bad weeks are visible in the graph. Maybe it was just bad luck. On the other hand Omicron peaked during that time, so maybe people were just staying inside?
 
-Trips per hour can also be influced depending on how many short trips or long trips you accept. In general, it is more efficient and higher paying to only take long trips (i.e. lower trips per hour) to busy areas, but it is not possible to consistently get only long trips.
+Trips per hour can also be influenced by how many short or long trips you accept. In general, it is more efficient and higher paying to only take long trips (i.e. lower trips per hour) to busy areas like the airport, but it is not possible to consistently do this.
 
 ### Uber is Probably Rate Limiting Uber Drivers
 
@@ -175,4 +177,4 @@ I hope I won't need to drive people around for much longer. The longer this goes
 
 <StackedBarChart title={"Monthly Total"} legend={''} data={[{ month: 'June', stocks: 200, uber: 2400}]} />
 
-It's not glamorous, but I finally got some money coming in. I wouldn't think anyone would consider this a successful indie-engineering career, but I technically am now self-sufficient. Now that I have my expenses under control, I can concentrate on diversifying my income with something less menial and more tech related.
+It's not glamorous, but I finally got some money coming in. I don't think anyone would consider this a successful career move, but I technically am now self-sufficient. Now that I have my expenses under control, I can concentrate on diversifying my income with something less laborious and more tech related.
