@@ -5,6 +5,7 @@
   import Ad from '$lib/components/Ad.svelte';
   import Categories from '$lib/components/Categories.svelte';
   import MailSignupForm from '$lib/components/MailSignupForm.svelte';
+  import MetaData from '$lib/components/MetaData.svelte';
   import ShareLinks from '$lib/components/ShareLinks.svelte';
   import TableOfContents from '$lib/components/TableOfContents.svelte';
 
@@ -21,6 +22,13 @@
   export let date;
   export let readingTime;
   export let categories = [];
+
+  const meta = {
+    title: (seo_title ? seo_title : title) + " :: Indie Engineer",
+    description: (seo_summary ? seo_summary : summary),
+    image: seo_image,
+    twitter_user: "@CoryParsnipson",
+  };
 
   let sidebar_on_left = false;
   let title_slug = slugify(title);
@@ -53,23 +61,7 @@
   });
 </script>
 
-<svelte:head>
-  <title>{seo_title ? seo_title : title} :: Indie Engineer</title>
-  <meta name="description" content="{seo_summary ? seo_summary : summary}">
-  <meta name="og:title" property="og:title" content="{seo_title ? seo_title : title} :: Indie Engineer">
-  <meta name="og:description" property="og:description" content="{seo_summary ? seo_summary : summary}">
-  <meta name="og:type" property="og:type" content="article">
-  {#if seo_image }
-    <meta name="og:image" property="og:image" content="{$page.url.origin}{seo_image}">
-  {/if}
-
-  <meta name="twitter:card" property="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" property="twitter:site" content="@CoryParsnipson">
-  <meta name="twitter:title" property="twitter:title" content="{seo_title ? seo_title : title}">
-  <meta name="twitter:description" property="twitter:description" content="{seo_summary ? seo_summary : summary}">
-  <meta name="twitter:creator" property="twitter:creator" content="@CoryParsnipson">
-  <meta name="twitter:image" property="twitter:image" content="{$page.url.origin}{seo_image}">
-</svelte:head>
+<MetaData meta={meta} />
 
 <div class="flex justify-center" class:flex-row-reverse={sidebar_on_left}>
   <main class="bg-cream-50 flex-initial w-[100% + 2.5rem] md:max-w-[700px] lg:w-[70%] px-4 sm:px-8 overflow-hidden -ml-5 -mr-5 sm:mx-0 py-12">

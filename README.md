@@ -10,7 +10,6 @@ This is a sveltekit + MDsveX blog.
 * next gen images - (low res placeholder, multiple res, etc)
 * add in tag manager events for share button clicks + subscribe clicks
 * iframe autoresize? (for sendgrid sign up form)
-* remark/rehype image attribution?
 * rate limiting api endpoints
 
 * add links to next and prev posts. Also section for "posts you may also like"?

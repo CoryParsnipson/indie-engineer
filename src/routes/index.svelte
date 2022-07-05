@@ -16,6 +16,7 @@
 <script>
   import { page } from '$app/stores';
 
+  import MetaData from '$lib/components/MetaData.svelte';
   import PostPreview from '$lib/components/PostPreview.svelte';
   import Pagination from '$lib/components/Pagination.svelte';
 
@@ -24,24 +25,15 @@
   export let page_size;
   export let current_page;
 
-  let meta_description = "This is a blog about eschewing the safety and routine of office work and trying to survive on the merit of one's own creations. Can an Engineer/Maker earn a living off of their own creations?"
+  const meta = {
+    title: "Indie Engineer",
+    description: "This is a blog about eschewing the safety and routine of office work and trying to survive on the merit of one's own creations. Can an Engineer/Maker earn a living off of their own creations?",
+    image: "/site/indie-engineer-og-image.png",
+    twitter_user: "@CoryParsnipson",
+  };
 </script>
 
-<svelte:head>
-  <title>Indie Engineer</title>
-  <meta name="description" content="{meta_description}">
-  <meta name="og:title" property="og:title" content="Indie Engineer">
-  <meta name="og:description" property="og:description" content="{meta_description}">
-  <meta name="og:type" property="og:type" content="website">
-  <meta name="og:image" property="og:image" content="/site/indie-engineer-og-image.png">
-
-  <meta name="twitter:card" property="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" property="twitter:site" content="@CoryParsnipson">
-  <meta name="twitter:title" property="twitter:title" content="Indie Engineer">
-  <meta name="twitter:description" property="twitter:description" content="{meta_description}">
-  <meta name="twitter:creator" property="twitter:creator" content="@CoryParsnipson">
-  <meta name="twitter:image" property="twitter:image" content="{$page.url.origin}/site/indie-engineer-og-image.png">
-</svelte:head>
+<MetaData meta={meta} />
 
 <main class="py-12">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">

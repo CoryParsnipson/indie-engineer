@@ -1,4 +1,6 @@
 <script>
+  import MetaData from '$lib/components/MetaData.svelte';
+
   import { page } from '$app/stores';
   import { createForm } from 'svelte-forms-lib';
   import * as yup from 'yup';
@@ -7,7 +9,12 @@
 
   const SUCCESS_MSG = "Message sent successfully.";
 
-  const meta_description = "Want to contact Cory Parsnipson, author of IndieEngineer.com? Fill out the email form and he will get back to you.";
+  const meta = {
+    title: "Contact :: Indie Engineer",
+    description: "Want to contact Cory Parsnipson, author of IndieEngineer.com? Fill out the email form and he will get back to you.",
+    image: "/site/indie-engineer-og-image.png",
+    twitter_user: "@CoryParsnipson",
+  };
 
   let form_busy = false;
   let form_endpoint = '/api/contact.json';
@@ -72,21 +79,7 @@
   });
 </script>
 
-<svelte:head>
-  <title>Contact :: Indie Engineer</title>
-  <meta name="description" content="{meta_description}">
-  <meta name="og:title" property="og:title" content="Indie Engineer :: Contact">
-  <meta name="og:description" property="og:description" content="{meta_description}">
-  <meta name="og:type" property="og:type" content="website">
-  <meta name="og:image" property="og:image" content="/site/indie-engineer-og-image.png">
-
-  <meta name="twitter:card" property="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" property="twitter:site" content="@CoryParsnipson">
-  <meta name="twitter:title" property="twitter:title" content="Indie Engineer :: Contact">
-  <meta name="twitter:description" property="twitter:description" content="{meta_description}">
-  <meta name="twitter:creator" property="twitter:creator" content="@CoryParsnipson">
-  <meta name="twitter:image" property="twitter:image" content="{$page.url.origin}/site/indie-engineer-og-image.png">
-</svelte:head>
+<MetaData meta={meta} />
 
 <main>
   <h1 class="font-title text-5xl mt-12 mb-12">Contact me</h1>

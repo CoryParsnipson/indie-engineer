@@ -16,6 +16,7 @@
 <script>
   import { page } from '$app/stores';
 
+  import MetaData from '$lib/components/MetaData.svelte';
   import PostPreview from '$lib/components/PostPreview.svelte';
   import Pagination from '$lib/components/Pagination.svelte';
 
@@ -25,24 +26,15 @@
   export let current_page;
 
   $: tag = $page.url.searchParams.get('tag');
-  $: meta_description = `Results for posts containing the tag '${tag}'`;
+  $: meta = {
+    title: `Posts tagged with '${tag}' :: Indie Engineer`,
+    description: `Results for posts containing the tag '${tag}'`,
+    image: "/site/indie-engineer-og-image.png",
+    twitter_user: "@CoryParsnipson",
+  };
 </script>
 
-<svelte:head>
-  <title>Posts tagged with '{tag}' :: Indie Engineer</title>
-  <meta name="description" content="{meta_description}">
-  <meta name="og:title" property="og:title" content="Indie Engineer">
-  <meta name="og:description" property="og:description" content="{meta_description}">
-  <meta name="og:type" property="og:type" content="website">
-  <meta name="og:image" property="og:image" content="/site/indie-engineer-og-image.png">
-
-  <meta name="twitter:card" property="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" property="twitter:site" content="@CoryParsnipson">
-  <meta name="twitter:title" property="twitter:title" content="Indie Engineer :: Posts tagged with '{tag}'">
-  <meta name="twitter:description" property="twitter:description" content="{meta_description}">
-  <meta name="twitter:creator" property="twitter:creator" content="@CoryParsnipson">
-  <meta name="twitter:image" property="twitter:image" content="{$page.url.origin}/site/indie-engineer-og-image.png">
-</svelte:head>
+<MetaData meta={meta} />
 
 <main class="py-12">
   <h1 class="font-title leading-relaxed text-4.5xl mb-12">Posts Tagged with "<span class="font-title leading-relaxed text-4.5xl text-emerald-800">{tag}</span>":</h1>
