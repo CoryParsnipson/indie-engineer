@@ -3,7 +3,7 @@ title: Analyzing my First Five Months Earnings as an Uber Driver
 author: Cory Parsnipson
 summary: I gave Uber driving a try to support myself while I get other things up and running. I wasn't sure if being a driver would pay enough money as I've heard a lot of stories about Uber. I give my initial experience and impression of whether or not this is a viable income stream.
 seo_image: /articles/uber-earning-chart.png
-date: Sun Jul  3 03:31:53 AM PDT 2022
+date: Tue Jul  5 01:18:11 PM PDT 2022
 categories:
   - uber
   - uber driving
