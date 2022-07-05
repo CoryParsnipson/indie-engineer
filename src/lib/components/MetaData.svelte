@@ -1,7 +1,13 @@
 <script>
   import { page } from '$app/stores';
 
-  export let meta;
+  export let meta = {
+    title: "Default title",
+    description: "Default description",
+    type: "website",
+    image: "",
+    twitter_user: "",
+  };
 </script>
 
 <svelte:head>
@@ -10,7 +16,7 @@
 
   <meta name="og:title" property="og:title" content="{meta.title}">
   <meta name="og:description" property="og:description" content="{meta.description}">
-  <meta name="og:type" property="og:type" content="website">
+  <meta name="og:type" property="og:type" content="{meta.type}">
   <meta name="og:image" property="og:image" content="{$page.url.origin}{meta.image}">
 
   <meta name="twitter:card" property="twitter:card" content="summary_large_image">

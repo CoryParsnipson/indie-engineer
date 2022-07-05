@@ -26,6 +26,7 @@
   const meta = {
     title: (seo_title ? seo_title : title) + " :: Indie Engineer",
     description: (seo_summary ? seo_summary : summary),
+    type: "article",
     image: seo_image,
     twitter_user: "@CoryParsnipson",
   };
