@@ -24,7 +24,7 @@ categories:
   import DollarsPerMonth from '$lib/components/charts/uber/DollarsPerMonth.svelte';
 </script>
 
-The last time I was unemployed was in 2014. During that time Uber was exploding into the collective consciousness as the latest hip tech startup to come out of Silicon Valley. Driving for Uber was mysterious and cool *and* you got paid for it.
+The last time I was unemployed was in 2014. During that time Uber was exploding into the collective consciousness as the latest trendy startup to come out of Silicon Valley. Driving for Uber was mysterious and cool *and* you got paid for it.
 
 Things have changed a lot since then. People have realized that Uber drivers are glorified taxi drivers with even lower profit margins. But, being unemployed once again, I turned to Uber as a familiar side-hustle to guarantee some quick cash. After about two weeks of background checks, inspections, and gathering documents I was all set to start driving.
 
@@ -58,7 +58,7 @@ It's a real drag on one's mental energy. Ever met an angry driver? This is proba
 
 This has been highly publicized, because it should be a deal breaker for almost everybody. The thought of car expenses on a driver's income is scary. A single accident or breakdown can cost thousands, basically invalidating the past couple months of earnings. Not cool at all.
 
-Also the increase in gas price directly translates to hours of more work per week to earn the same amount of money as before. This *really* sucks.
+Also the increase in gas price directly translates to more hours of work per week to earn the same amount of money as before. This *really* sucks.
 
 ![Insane gas prices](/articles/gas-prices.jpg "California in a nutshell")
 
@@ -82,7 +82,7 @@ Let's take another look at this chart.
 
 Notice that there is a slow upward trend. This can be explained by me learning more tips and tricks to save gas and be more efficient at the job. I max out sometime mid-April where I remain steadily around the $30 - $35 range I mentioned before.
 
-The second thing that I'm noticing is exactly how shafted I'm getting with respect to gas expense...
+The second thing that I'm noticing is exactly how shafted I'm getting with respect to gas expenses...
 
 ### Dollars Per Month
 
@@ -177,4 +177,4 @@ I hope I won't need to drive people around for much longer. The longer this goes
 
 <StackedBarChart title={"Monthly Total"} legend={''} data={[{ month: 'June', stocks: 200, uber: 2400}]} />
 
-It's not glamorous, but I finally got some money coming in. I don't think anyone would consider this a successful career move, but I technically am now self-sufficient. Now that I have my expenses under control, I can concentrate on diversifying my income with something less laborious and more tech related.
+It's not glamorous, but I finally got some money coming in. I don't think anyone would consider this a successful career move, but I am now technically self-sufficient. Now that I have my expenses under control, I can concentrate on diversifying my income with something less laborious and more tech related.
