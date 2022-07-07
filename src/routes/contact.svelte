@@ -31,7 +31,7 @@
   const { form, errors, state, handleChange, handleSubmit } = createForm({
     initialValues: {
       name: "",
-      honeypot: "",
+      submit_id: "",
       subject: "",
       email: "",
       message: "",
@@ -86,7 +86,7 @@
 
   <div class="flex flex-col-reverse sm:flex-row sm:items-start mb-12">
     <form id="contactform" on:submit|preventDefault={handleSubmit} action="{form_endpoint}" method="post" class="grow scroll-mt-28 sm:pr-8">
-      <input type="text" name="honeypot" style="display:none" on:change={handleChange} bind:value={$form.honeypot}>
+      <input type="text" name="submit_id" style="display:none" on:change={handleChange} bind:value={$form.submit_id}>
 
       {#if $errors.email || $errors.message || $errors.response || query_errors.length > 0}
         <div class="bg-red-100 border-red-500 border rounded-lg p-4 mb-6">

@@ -23,6 +23,17 @@ export async function post({ request }) {
       }
     }
 
+    if (data.submit_id != '') {
+      console.log("Ignoring submission.");
+
+      return {
+        status: 403,
+        body: {
+          error: "Invalid form data.",
+        },
+      };
+    }
+
     // since we don't have captcha (and this endpoint should only be used for 'dev'
     // do not add contact to list if the list is larger than VITE_SENDGRID_MAX_CONTACTS)
     let list_size = await getListContactCount({ id: env.var.VITE_SENDGRID_LIST_ID });

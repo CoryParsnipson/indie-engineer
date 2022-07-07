@@ -16,6 +16,7 @@
 
   const { form, errors, state, handleChange, handleSubmit } = createForm({
     initialValues: {
+      submit_id: "",
       email: "",
     },
     validationSchema: yup.object().shape({
@@ -68,6 +69,8 @@
   <p class="sidenote text-right m-0"><span class="required">*</span> indicates required</p>
 
   <form on:submit|preventDefault={handleSubmit} method='POST' action="{formEndpoint}" class="flex flex-col gap-2">
+    <input type="text" name="submit_id" style="display:none" on:change={handleChange} bind:value={$form.submit_id}>
+
     <label for="email">Email Address <span class="required">*</span></label>
     <input id="email" name="email" type="text" class="flex-grow" on:change={handleChange} bind:value={$form.email} />
     {#if $errors.email}

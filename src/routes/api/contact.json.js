@@ -22,14 +22,13 @@ export async function post({ request }) {
       }
     }
  
-    // ignore requests that have honeypot set (bot spammer)
-    if (data.honeypot != '') {
-      console.log("honeypot field is set. Ignoring submission.");
+    if (data.submit_id != '') {
+      console.log("Ignoring submission.");
 
       return {
         status: 403,
         body: {
-          error: "Honeypot is set. Ignoring.",
+          error: "Invalid form data.",
         },
       };
     }
