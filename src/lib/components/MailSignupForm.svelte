@@ -52,11 +52,15 @@
 </script>
 
 {#if instance == "prod"}
-<iframe
-  title="mailing-list-signup"
-  src="https://cdn.forms-content.sg-form.com/4134f5b0-ad79-11ec-8a37-c21c974bde22"
-  class="block w-full min-h-[500px] mb-12"
-/>
+<div class="iframe-wrapper">
+  <iframe
+    title="mailing-list-signup"
+    width="100%"
+    height="100%"
+    src="https://cdn.forms-content.sg-form.com/4134f5b0-ad79-11ec-8a37-c21c974bde22"
+    style="min-height: 500px"
+  ></iframe>
+</div>
 {:else if instance == "dev"}
 <div class="mail-signup-form border-2 border-cream-800 bg-cream-50 mb-8 p-8">
   <h2 id="mailform" class="mb-4">Be notified when there's a new blog post</h2>

@@ -6,10 +6,8 @@ This is a sveltekit + MDsveX blog.
 
 * google recaptcha on forms
 * csrf tokens for forms and api calls
-
 * next gen images - (low res placeholder, multiple res, etc)
 * add in tag manager events for share button clicks + subscribe clicks
-* iframe autoresize? (for sendgrid sign up form)
 * rate limiting api endpoints
 
 * add links to next and prev posts. Also section for "posts you may also like"?
