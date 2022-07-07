@@ -4,17 +4,17 @@ This is a sveltekit + MDsveX blog.
 
 ## TODO
 
+* set up redirect email from namecheap, use for contact and automatic new post notifications
+  * verify this domain with sendgrid
+
 * google recaptcha on forms
+
+* add links to next and prev posts. Also section for "posts you may also like"?
+
 * csrf tokens for forms and api calls
 * next gen images - (low res placeholder, multiple res, etc)
 * add in tag manager events for share button clicks + subscribe clicks
 * rate limiting api endpoints
-
-* add links to next and prev posts. Also section for "posts you may also like"?
-
-* set up redirect email from namecheap, use for contact and automatic new post notifications
-  * verify this domain with sendgrid
-
 * fix all high priority issues in SEO site checkup: https://seositecheckup.com
 
 ## Creating a svelte kit project
