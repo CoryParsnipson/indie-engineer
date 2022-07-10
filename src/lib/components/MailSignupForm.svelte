@@ -92,20 +92,22 @@
       <p class="sidenote leading-tight text-lime-600 m-1">{successMsg}</p>
     {/if}
 
-    <Captcha
-      enable={env.var.VITE_CAPTCHA_ENABLE == "true"}
-      sitekey={env.var.VITE_CAPTCHA_SITEKEY}
-      action="email_signup"
-      bind:form_enable={recaptcha}
-      bind:errors={$errors}
-    />
-
     <button disabled='{formBusy || $errors.email || !recaptcha}' type="submit"
       class="btn font-title text-xl self-center text-zinc-800 bg-emerald-500
              disabled:bg-zinc-400 disabled:text-zinc-600 disabled:hover:bg-zinc-400 disabled:hover:text-zinc-600 disabled:cursor-not-allowed
              hover:bg-emerald-700 hover:text-zinc-300 rounded-md mt-3 py-2 px-8">
       Subscribe
     </button>
+
+    <div class="self-end mt-12">
+      <Captcha
+        enable={env.var.VITE_CAPTCHA_ENABLE == "true"}
+        sitekey={env.var.VITE_CAPTCHA_SITEKEY}
+        action="email_signup"
+        bind:form_enable={recaptcha}
+        bind:errors={$errors}
+      />
+    </div>
   </form>
 </div>
 

@@ -4,9 +4,6 @@ This is a sveltekit + MDsveX blog.
 
 ## TODO
 
-* set up redirect email from namecheap, use for contact and automatic new post notifications
-  * verify this domain with sendgrid
-
 * add links to next and prev posts. Also section for "posts you may also like"?
 
 * csrf tokens for forms and api calls

@@ -1,4 +1,5 @@
 <script>
+  import Captcha from '$lib/components/Captcha.svelte';
   import MetaData from '$lib/components/MetaData.svelte';
 
   import { page } from '$app/stores';
@@ -20,6 +21,7 @@
   let form_endpoint = '/api/contact.json';
   let form_success_msg = $page.url.searchParams.has('success') ? SUCCESS_MSG : '';
   let query_errors = [];
+  let recaptcha = env.var.VITE_RECAPTCHA_ENABLE != "true";
 
   for (let pair of $page.url.searchParams.entries()) {
     if (pair[0] == "success") {
@@ -119,9 +121,21 @@
         <label for="message">Message <span class="required">*</span></label>
         <textarea id="message" name="message" rows="4" placeholder="Hello!" class="min-h-[100px]" on:change={handleChange} bind:value={$form.message}></textarea>
 
-        <p class="font-serif text-lg text-right mb-3"><span class="required">*</span> indicates required</p>
+        <div class="flex mb-6">
+          <div class="grow mb-6">
+            <Captcha
+              enable={env.var.VITE_CAPTCHA_ENABLE == "true"}
+              sitekey={env.var.VITE_CAPTCHA_SITEKEY}
+              action="contact"
+              bind:form_enable={recaptcha}
+              bind:errors={$errors}
+            />
+          </div>
 
-        <input type="submit" value="Submit" disabled='{form_busy || $errors.email || $errors.message}'
+          <p class="font-serif text-lg text-right mb-3"><span class="required">*</span> indicates required</p>
+        </div>
+
+        <input type="submit" value="Submit" disabled='{form_busy || $errors.email || $errors.message || !recaptcha}'
           class="self-center font-title text-xl text-zinc-800 rounded-lg px-8 py-4
                  bg-emerald-500
                  hover:bg-emerald-700 hover:text-zinc-300 hover:cursor-pointer
