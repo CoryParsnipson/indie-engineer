@@ -147,6 +147,25 @@ It's recommended to create 2--one for unsubscribing from automated blog post not
 
 Then get the suppression group ID from the sendgrid dashboard and put it in the VITE\_SENDGRID\_UNSUBSCRIBE\_GROUP environment variable.
 
+## Set up reCAPTCHA Enterprise (Requires GCP account)
+
+1. Create a GCP account and make a GCP project. (I called mine "indie-engineer").
+
+1. Enable the reCAPTCHA Enterprise API
+
+1. Create a sitekey (See [10].) for a score based test. You need to make one key for dev and another for prod. For dev, add "localhost" and "indie-engineer-dev.herokuapp.com" to the domains. For prod, add "indieengineer.com".
+
+1. Create a google cloud API key and restrict it to only allow it for reCAPTCHA Enterprise API. (See [11]).
+
+1. Set these environment variables:
+
+```
+VITE_CAPTCHA_ENABLE=true
+VITE_CAPTCHA_SITEKEY=\<sitekey from GCP dashboard\>
+VITE_CAPTCHA_API_KEY=\<api key\>
+VITE_CAPTCHA_PROJECT_ID=<gcp project id--e.g. 'indie-engineer'>
+```
+
 ## References
 
 1. <https://dev.to/nostro/deploying-to-heroku-with-sveltekit-3350>
@@ -158,3 +177,6 @@ Then get the suppression group ID from the sendgrid dashboard and put it in the 
 1. <https://devcenter.heroku.com/articles/authentication>
 1. <https://docs.sendgrid.com/api-reference/sender-identities-api/view-a-sender-identity>
 1. <https://docs.sendgrid.com/ui/sending-email/unsubscribe-groups>
+1. <https://cloud.google.com/recaptcha-enterprise/docs/create-key>
+1. <https://cloud.google.com/recaptcha-enterprise/docs/instrument-web-pages-with-checkbox>
+1. <https://auth0.com/docs/secure/attack-protection/bot-detection/configure-recaptcha-enterprise#create-an-api-key>

@@ -17,7 +17,7 @@
     @apply min-h-screen;
   }
 
-  body > div {
+  body > div:first-child {
     @apply min-h-screen flex flex-col bg-cream-100;
   }
 

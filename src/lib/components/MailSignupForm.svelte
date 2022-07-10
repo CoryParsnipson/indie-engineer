@@ -1,4 +1,6 @@
 <script>
+  import Captcha from '$lib/components/Captcha.svelte';
+
   import { page } from '$app/stores';
   import { createForm } from 'svelte-forms-lib';
   import * as yup from 'yup';
@@ -84,6 +86,8 @@
     {#if successMsg}
       <p class="sidenote leading-tight text-lime-600 m-1">{successMsg}</p>
     {/if}
+
+    <Captcha enable={env.var.VITE_CAPTCHA_ENABLE == "true"} sitekey={env.var.VITE_CAPTCHA_SITEKEY} />
 
     <button disabled='{formBusy || $errors.email}' type="submit"
       class="btn font-title text-xl self-center text-zinc-800 bg-emerald-500
