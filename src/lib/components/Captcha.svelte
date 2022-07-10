@@ -2,9 +2,17 @@
   import { browser } from '$app/env';
   import { onMount } from 'svelte';
 
+  import { evalAssessment } from '$lib/services/recaptcha';
+  import { env } from '$lib/util/env';
+
   export let enable = false;
   export let sitekey;
   export let action = "submit";
+
+  export let form_enable;
+  export let errors;
+
+  const CAPTCHA_THRESHOLD = 0.5;
 
   let recaptcha_target;
 
@@ -25,8 +33,26 @@
 
     // generate assessment on page load
     grecaptcha.enterprise.ready(function() {
-      grecaptcha.enterprise.execute(clientId, { action: action }).then(function (token) {
-        console.log("reCAPTCHA token: ", token);
+      grecaptcha.enterprise.execute(clientId, { action: action }).then(async function (token) {
+        let data = {
+          token: token,
+          action: action,
+        };
+
+        let result = await fetch('/api/recaptcha.json', {
+          method: 'post',
+          body: JSON.stringify(data),
+        });
+
+        let assessment = await result.json();
+
+        let res = evalAssessment(assessment, CAPTCHA_THRESHOLD, action);
+        if (res.decision) {
+          form_enable = true;
+        } else {
+          // show error message on form about failed captcha
+          errors.recaptcha = env.var.VITE_INSTANCE == "dev" ? JSON.stringify(res.reasons) : "Captcha failed. Form is disabled.";
+        }
       });
     });
   }
@@ -35,6 +61,9 @@
     if (!browser || !enable) {
       return;
     }
+
+    // disable the form ASAP and then re-enable if captcha passes
+    form_enable = false;
 
     // need to add this script tag here so the code above can run first
     let script = document.createElement('script');

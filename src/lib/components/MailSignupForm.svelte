@@ -10,6 +10,7 @@
   const SUCCESS_MSG = "Successfully subscribed. Thanks for your support!";
 
   let instance = env.var.VITE_INSTANCE;
+  let recaptcha = env.var.VITE_RECAPTCHA_ENABLE != "true";
 
   let formBusy = false;
   let formEndpoint = '/api/registerEmail.json';
@@ -79,6 +80,10 @@
       <p class="sidenote leading-tight text-red-600 m-1">{$errors.email}</p>
     {/if}
 
+    {#if $errors.recaptcha}
+      <p class="sidenote leading-tight text-red-600 m-1">{$errors.recaptcha}</p>
+    {/if}
+
     {#if qError}
       <p class="sidenote leading-tight text-red-600 m-1">{qError}</p>
     {/if}
@@ -87,9 +92,15 @@
       <p class="sidenote leading-tight text-lime-600 m-1">{successMsg}</p>
     {/if}
 
-    <Captcha enable={env.var.VITE_CAPTCHA_ENABLE == "true"} sitekey={env.var.VITE_CAPTCHA_SITEKEY} />
+    <Captcha
+      enable={env.var.VITE_CAPTCHA_ENABLE == "true"}
+      sitekey={env.var.VITE_CAPTCHA_SITEKEY}
+      action="email_signup"
+      bind:form_enable={recaptcha}
+      bind:errors={$errors}
+    />
 
-    <button disabled='{formBusy || $errors.email}' type="submit"
+    <button disabled='{formBusy || $errors.email || !recaptcha}' type="submit"
       class="btn font-title text-xl self-center text-zinc-800 bg-emerald-500
              disabled:bg-zinc-400 disabled:text-zinc-600 disabled:hover:bg-zinc-400 disabled:hover:text-zinc-600 disabled:cursor-not-allowed
              hover:bg-emerald-700 hover:text-zinc-300 rounded-md mt-3 py-2 px-8">

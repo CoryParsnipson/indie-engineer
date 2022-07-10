@@ -7,8 +7,6 @@ This is a sveltekit + MDsveX blog.
 * set up redirect email from namecheap, use for contact and automatic new post notifications
   * verify this domain with sendgrid
 
-* google recaptcha on forms
-
 * add links to next and prev posts. Also section for "posts you may also like"?
 
 * csrf tokens for forms and api calls
@@ -180,3 +178,4 @@ VITE_CAPTCHA_PROJECT_ID=<gcp project id--e.g. 'indie-engineer'>
 1. <https://cloud.google.com/recaptcha-enterprise/docs/create-key>
 1. <https://cloud.google.com/recaptcha-enterprise/docs/instrument-web-pages-with-checkbox>
 1. <https://auth0.com/docs/secure/attack-protection/bot-detection/configure-recaptcha-enterprise#create-an-api-key>
+1. <https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment>
