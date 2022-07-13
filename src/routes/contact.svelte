@@ -123,8 +123,9 @@
 
         <div class="flex mb-6">
           <div class="grow mb-6">
+            <!-- keep contact form captcha always enabled -->
             <Captcha
-              enable={env.var.VITE_CAPTCHA_ENABLE == "true"}
+              enable={true}
               sitekey={env.var.VITE_CAPTCHA_SITEKEY}
               action="contact"
               bind:form_enable={recaptcha}
