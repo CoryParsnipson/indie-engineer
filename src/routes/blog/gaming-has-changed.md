@@ -7,6 +7,7 @@ date: Sun Jun 26 02:09:23 PM PDT 2022
 categories:
   - fun
   - video games
+  - rpi
   - raspberry pi
   - electronics
   - work diet
